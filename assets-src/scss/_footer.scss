@@ -1,0 +1,9 @@
+.site-footer {
+  background: lightgray;
+  margin-top: 5em;
+}
+
+.footer-nav {
+  float: right;
+  @extend %scut-list-inline;
+}

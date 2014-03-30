@@ -1,0 +1,14 @@
+.container {
+  @include scut-center-block(scut-em(1000));
+}
+
+.container-padded {
+  padding: 1em;
+}
+
+.breadcrumb {
+  @extend %scut-list-inline;
+  > li:after {
+    content: $scut-rsaquo;
+  }
+}

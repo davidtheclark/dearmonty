@@ -1,0 +1,29 @@
+// compiles to /style/css/main.css -- one stylesheet for the whole site
+
+@import "../../bower_components/normalize-scss/normalize";
+
+// SCSS-utils
+@import "../../bower_components/scut/dist/scut";
+@include scut-reset(semanticize);
+
+/*============================ */
+
+
+// Icons, SVG, sprites
+//@import "datauris/svg-datauris";
+//@import "sprites/sprite-all";
+//@import "iconfonts/icons";
+
+
+// Universals
+@import "utility";
+@import "variables";
+@import "type";
+@import "base";
+
+// Pages and Modules
+@import "header";
+@import "footer";
+@import "home";
+@import "posts";
+@import "steps";

@@ -1,0 +1,35 @@
+// main content
+
+.home-hero {
+  background: gray;
+  color: white;
+  @include scut-ratio-box(16/5);
+}
+
+.home-hero-text {
+  @include scut-absolute(n n 1em 1em);
+}
+
+// actions
+
+.home-actions-list {
+  @extend %scut-list-floated;
+}
+
+.home-action {
+  width: (100% / 3);
+  border: 5px solid lightgray;
+  padding: 1em;
+  @extend %reset-links;
+}
+
+// testimonials
+
+.home-testimonials-list {
+  @extend %scut-list-unstyled;
+}
+
+.home-testimonial-blockquote {
+  margin-left: 0;
+  font-style: italic;
+}
