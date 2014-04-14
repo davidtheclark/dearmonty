@@ -30,7 +30,9 @@
 	<!-- Don't forget to replace Modernizr's full dev script with a custom build! -->
 	<script src="<?php echo get_template_directory_uri(); ?>/assets-dist/js/modernizr-dev.js"></script>
 
-	<style>#skipNav{display: block;background-color:#fff;padding:1em;position: absolute;top: 0;left: -9999px;}#skipNav:focus{left:0;}</style>
+	<?php // skip nav styling and JS fix from http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links ?>
+	<style>#skip-nav{display:block;background-color:#fff;padding:1em;position:absolute;top:0;left:-9999px;}#skipNav:focus{left:0;}</style>
+	<script>window.addEventListener("hashchange",function(e){var t=document.getElementById(location.hash.substring(1));if(t){if(!/^(?:a|select|input|button|textarea)$/i.test(t.tagName)){t.tabIndex=-1}t.focus()}},false)</script>
 
 	<?php wp_head(); ?>
 </head>
@@ -43,13 +45,16 @@
 
 		<header class="site-header" role="banner">
 
-			<div class="container container-padded">
+			<div class="container">
 
 				<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php bloginfo( 'name' ); ?>
 				</a>
 
-				<a id="skipNav" href="#siteBody">Skip navigation</a>
+				<a id="skip-nav" href="#site-body">Skip to content</a>
+
+				<?php get_search_form(); ?>
+
 				<nav class="site-nav-c" role="navigation">
 					<?php wp_nav_menu( array(
 						'theme_location' => 'primary',
@@ -58,8 +63,10 @@
 					)); ?>
 				</nav>
 
+				<a href="#" class="header-follow-link">Follow &amp; Subscribe</a>
+
 			</div>
 
 		</header>
 
-		<div id="siteBody" class="site-body">
+		<div id="site-body" class="site-body">

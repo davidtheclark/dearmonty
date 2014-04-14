@@ -6,10 +6,10 @@
  */
 ?>
 
-<form method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+<form method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/search' ) ); ?>" role="search">
 	<label for="searchInput">
     Search
   </label>
-	<input id="searchInput" type="search" class="search-input" name="searchInput">
-	<input id="searchSubmit" type="submit" class="search-submit" value="Submit" />
+	<input id="q" type="search" class="search-input" name="q">
+	<button id="searchSubmit" type="submit" class="search-submit">Submit</button>
 </form>

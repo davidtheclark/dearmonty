@@ -41,7 +41,7 @@ module.exports = (grunt) ->
     # Compile SCSS to CSS.
     sass:
       options:
-        lineNumbers: true
+        sourceComments: "map"
       style:
         dest: "<%= vars.cssDir %>/main.css"
         src: "<%= vars.scssDir %>/main.scss"

@@ -2,25 +2,16 @@ $nav-gutter: 0.3em;
 
 .site-header {
   background: $color-font;
-  @extend %scut-clearfix;
+  @include scut-clearfix;
 }
 
 .site-title {
-  float: left;
+  display: block;
   margin-right: 1em;
   @include scut-size(5em);
   background: lightgray;
 }
 
 .site-nav {
-  float: left;
-  @extend %scut-list-floated;
-  @extend %reset-links;
-  @include scut-margin(n (-$nav-gutter / 2));
-  > li {
-    padding: 0.5em 1em;
-    background: lightgray;
-    position: relative;
-    margin: ($nav-gutter / 2);
-  }
+  @include scut-list-unstyled;
 }
