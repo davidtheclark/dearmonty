@@ -1,5 +1,11 @@
+html, body {
+  overflow-x: hidden;
+}
+
 .container {
+  @include scut-clearfix;
   @include scut-center-block(scut-em(1000));
+  position: relative;
 }
 
 .container-padded {
@@ -7,7 +13,7 @@
 }
 
 .breadcrumb {
-  @extend %scut-list-inline;
+  @include scut-list-inline;
   > li:after {
     content: $scut-rsaquo;
   }

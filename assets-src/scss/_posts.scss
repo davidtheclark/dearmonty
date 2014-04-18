@@ -4,22 +4,22 @@
 
 $category-margin: 0.3em;
 
-.categories {
-  @extend %scut-key-val;
-  > dt {
-    padding: 0.3em;
-  }
-}
-.categories-list {
-  @extend %scut-list-floated;
-  margin: (-$category-margin);
-  > li {
-    display: inline-block;
-    @include scut-margin(n ($category-margin / 2) ($category-margin / 2));
-    > a {
-      display: block;
-      padding: 0.3em;
-      border: 1px solid gray;
-    }
-  }
-}
+// .categories {
+//   @extend %scut-key-val;
+//   > dt {
+//     padding: 0.3em;
+//   }
+// }
+// .categories-list {
+//   @extend %scut-list-floated;
+//   margin: (-$category-margin);
+//   > li {
+//     display: inline-block;
+//     @include scut-margin(n ($category-margin / 2) ($category-margin / 2));
+//     > a {
+//       display: block;
+//       padding: 0.3em;
+//       border: 1px solid gray;
+//     }
+//   }
+// }

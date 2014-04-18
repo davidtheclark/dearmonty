@@ -24,11 +24,7 @@ module.exports = (grunt) ->
       imageDistDir: "<%= vars.distDir %>/images"
       fontSrcDir: "<%= vars.srcDir %>/fonts"
       fontDistDir: "<%= vars.distDir %>/fonts"
-      iconfontAssetDir: "<%= vars.imageSrcDir %>/iconfont-assets"
-      iconfontStyleDir: "<%= vars.scssDir %>/iconfonts"
-      iconfontFontDir: "<%= vars.fontDistDir %>/iconfonts"
-      svgAssetDir: "<%= vars.imageSrcDir %>/svg-assets"
-      svgStyleDir: "<%= vars.scssDir %>/datauris"
+      grunticonAssetDir: "<%= vars.imageSrcDir %>/grunticon-assets"
       spriteAssetDir: "<%= vars.imageSrcDir %>/sprite-assets"
       spriteStyleDir: "<%= vars.scssDir %>/sprites"
       spriteDir: "<%= vars.imageDistDir %>/sprites"
@@ -68,52 +64,25 @@ module.exports = (grunt) ->
     svgmin:
       options:
         plugins: [removeViewBox: false]
-      iconfont:
+      grunticon:
         files: [
           expand: true
-          cwd: "<%= vars.iconfontAssetDir %>/raw/"
+          cwd: "<%= vars.grunticonAssetDir %>/raw/"
           src: ["*.svg"]
-          dest: "<%= vars.iconfontAssetDir %>/opt/"
+          dest: "<%= vars.grunticonAssetDir %>/opt/"
         ]
-      svg:
+
+    # Grunticon: SVGs as data-uris with PNG fallback.
+    grunticon:
+      options:
+        cssprefix: ".grunticon-"
+      all:
         files: [
           expand: true
-          cwd: "<%= vars.svgAssetDir %>/raw/"
-          src: ["*.svg"]
-          dest: "<%= vars.svgAssetDir %>/opt/"
+          cwd: "<%= vars.grunticonAssetDir %>/opt/"
+          src: "*.svg"
+          dest: "<%= vars.distDir %>/grunticon/"
         ]
-
-    # Turn SVGs into data-uris stored in SCSS variables.
-    datauri:
-      options:
-        varPrefix: 'svg-'
-      all:
-        src: "<%= vars.svgAssetDir %>/opt/*.svg"
-        dest: "<%= vars.svgStyleDir %>/_svg-datauris.scss"
-
-    # Create an icon font with SVG icon-assets.
-    webfont:
-      font:
-        options:
-          font: "icons"
-          stylesheet: "scss"
-          relativeFontPath: "../fonts/iconfonts"
-          hashes: false
-          htmlDemo: false
-          template: "utils/icon-font-template.css"
-        src: "<%= vars.iconfontAssetDir %>/opt/*.svg"
-        dest: "<%= vars.iconfontFontDir %>"
-        destCss: "<%= vars.iconfontStyleDir %>"
-
-    # Create a spritesheet.
-    spriteHD:
-      options:
-        imgUrl: "../images/sprites"
-        destImg: "<%= vars.spriteDir %>"
-        destCSS: "<%= vars.spriteStyleDir %>"
-      all:
-        src: ["<%= vars.spriteAssetDir %>/all/*"]
-        spriteName: "all"
 
 
     # ================================
@@ -131,7 +100,9 @@ module.exports = (grunt) ->
       build:
         dest: "<%= vars.jsSrcDir %>/lib/lodash.build.js"
         options:
-          include: "debounce"
+          include: [
+            "throttle"
+          ]
           flags: ["debug"]
 
     # Concatenate third-party JS.
@@ -140,7 +111,7 @@ module.exports = (grunt) ->
         src: [
           # Insert third-party JS here, in the right order
           "<%= lodash.build.dest %>"
-          "bower_components/jquery/dist/jquery.js"
+          "bower_components/matchmedia/matchMedia.js"
         ]
         dest: "<%= vars.jsDistDir %>/libs.js"
 
@@ -171,19 +142,12 @@ module.exports = (grunt) ->
       js:
         src: "<%= vars.jsSrcDir %>/lib/modernizr-dev.js"
         dest: "<%= vars.jsDistDir %>/modernizr-dev.js"
-      images:
+      dist:
         files: [
           expand: true
-          cwd: "<%= vars.imageSrcDir %>/copy-to-dist/"
+          cwd: "<%= vars.srcDir %>/copy-to-dist/"
           src: ["*", "**/*"]
-          dest: "<%= vars.imageDistDir %>"
-        ]
-      fonts:
-        files: [
-          expand: true
-          cwd: "<%= vars.fontSrcDir %>/"
-          src: ["*"]
-          dest: "<%= vars.fontDistDir %>"
+          dest: "<%= vars.distDir %>"
         ]
 
     # Clean up folders.
@@ -192,11 +156,7 @@ module.exports = (grunt) ->
         "<%= vars.cssDir %>/*"
       ]
       svg: [
-        "<%= vars.iconfontAssetDir %>/opt/*"
-        "<%= vars.iconfontFontDir %>/*"
-        "<%= vars.iconfontStyleDir %>/*"
-        "<%= vars.svgAssetDir %>/opt/*"
-        "<%= vars.svgStyleDir %>/*"
+        "<%= vars.grunticonAssetDir %>/opt/*"
       ]
       js: [
         "<%= vars.jsDistDir %>"
@@ -229,11 +189,8 @@ module.exports = (grunt) ->
       sprite:
         files: ["<%= vars.spriteAssetDir %>/**/*"]
         tasks: ["sprite"]
-      font:
-        files: ["<%= vars.iconfontAssetDir %>/raw/*.svg"]
-        tasks: ["font"]
       svg:
-        files: ["<%= vars.svgAssetDir %>/raw/*.svg"]
+        files: ["<%= vars.grunticonAssetDir %>/raw/*.svg"]
         tasks: ["svg"]
       js:
         files: ["<%= vars.jsSrcDir %>/*.js"]
@@ -252,19 +209,9 @@ module.exports = (grunt) ->
   ]
 
   # Image thing tasks
-  grunt.registerTask "sprite", [
-    "spriteHD"
-    "style"
-  ]
-  grunt.registerTask "reSprite", [
-    "clean:sprite"
-    "sprite"
-  ]
   grunt.registerTask "svg", [
     "svgmin"
-    "datauri"
-    "webfont"
-    "style"
+    "grunticon"
   ]
   grunt.registerTask "reSvg", [
     "clean:svg"

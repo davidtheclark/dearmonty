@@ -2,3 +2,7 @@ body {
   color: $color-font;
   font-family: $font-base;
 }
+
+label {
+  display: block;
+}

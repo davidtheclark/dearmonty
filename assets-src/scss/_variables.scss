@@ -7,6 +7,7 @@ $color-rust: #A63921;
 $color-brown: #D97B29;
 $color-light: #D9D3B4;
 $color-blue: #3698BF;
+$color-white: #fff;
 
 $color-font: #2D2D2D;
 $color-font-accent: #A63921;
@@ -23,6 +24,10 @@ $font-base: 'Lato', "lucida grande", lucida, "trebuchet ms", trebuchet, arial, v
 DIMENSIONS
 ==========================*/
 
+$search-y: 40px;
+$search-x: 250px;
+$search-bd-x: 2px;
+$search-total-y: $search-y + ($search-bd-x * 2);
 
 /*==========================
 MEDIA QUERIES

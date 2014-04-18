@@ -19,7 +19,7 @@
 
   <div class="entry-summary">
     <?php the_excerpt(); ?>
-    <a class="entry-more" href="<?php echo get_permalink(get_the_ID()); ?>">read more</a>
+    <!-- <a class="entry-more" href="<?php echo get_permalink(get_the_ID()); ?>">read more</a> -->
   </div>
 
   <footer>

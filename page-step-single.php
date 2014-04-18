@@ -18,6 +18,7 @@ get_header(); ?>
       $parent_id = $post->post_parent;
       $parent_title = get_post($parent_id)->post_title;
       $parent_url = get_permalink($parent_id);
+      $step_title = get_the_title();
       ?>
 
       <h1>
@@ -49,7 +50,7 @@ get_header(); ?>
       </ol>
 
       <a href="<?php echo esc_url(get_category_link($category)); ?>">
-        Browse all Q&amp;A Articles about this step
+        Browse all Q&amp;A Articles about <?php echo $step_title; ?>
       </a>
 
     <?php endwhile; ?>

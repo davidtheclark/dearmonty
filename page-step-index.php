@@ -12,7 +12,7 @@ get_header(); ?>
   <div class="container container-padded">
     <?php while ( have_posts() ) : the_post(); ?>
 
-      <?php include('breadcrumb.php'); ?>
+      <?php // include('breadcrumb.php'); ?>
 
       <h1><?php the_title(); ?></h1>
       <?php the_content(); ?>

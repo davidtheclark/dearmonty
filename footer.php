@@ -11,21 +11,24 @@
  */
 ?>
 
-    	</div>
+      	</div>
 
-    	<footer class="site-footer">
-        <div class="container container-padded">
-          &copy; 2014 DearMonty.com, LLC, All Rights Reserved
+      	<footer class="site-footer">
 
-          <nav class="footer-nav">
-            <?php wp_nav_menu( array(
-              'theme_location' => 'footer',
-              'menu_class' => 'footer-nav',
-              'container' => ''
-            )); ?>
-          </nav>
-        </div>
-    	</footer>
+          <div class="container container-padded">
+            &copy; 2014 DearMonty.com, LLC, All Rights Reserved
+
+            <nav class="footer-nav">
+              <?php wp_nav_menu( array(
+                'theme_location' => 'footer',
+                'menu_class' => 'footer-nav',
+                'container' => ''
+              )); ?>
+            </nav>
+          </div>
+      	</footer>
+
+      </div>
 
     </div>
 

@@ -1,3 +1,43 @@
+// form
+
+.search-form {
+  position: relative;
+  width: $search-x;
+  height: $search-total-y;
+  border: $search-bd-x solid $color-font;
+  //box-sizing: content-box;
+}
+
+#search-input {
+  @include scut-absolute(0 n n 0);
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  @include scut-padding(10px ($search-y + 10px) 10px 10px);
+  font-size: 15px;
+  line-height: 20px;
+  -webkit-appearance: none;
+  border-radius: 0;
+  box-shadow: 0;
+}
+
+.grunticon-search {
+  display: block;
+  @include scut-size(20px);
+  @include scut-margin(n auto);
+}
+
+.search-submit {
+  @include scut-absolute(0 0 n n);
+  height: $search-y;
+  width: 40px;
+  text-align: center;
+  border-left: 2px solid $color-font;
+}
+
+
+// results
+
 #search-results-c {
 
   .gsc-results {
