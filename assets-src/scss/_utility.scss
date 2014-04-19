@@ -21,3 +21,11 @@
 figure {
   @include scut-margin(0);
 }
+
+.us-li {
+  @include scut-list-unstyled;
+}
+
+%floater {
+  float: left;
+}

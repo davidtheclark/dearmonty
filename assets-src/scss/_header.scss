@@ -2,7 +2,8 @@ $nav-gutter: 0.3em;
 
 .site-header {
   border-bottom: 2px solid $color-font;
-  padding: 1em;
+  padding-top: 1em;
+  padding-bottom: 2px;
   overflow: hidden;
 }
 
@@ -41,9 +42,13 @@ $nav-gutter: 0.3em;
   text-decoration: none;
 }
 
-#mbl-nav-btn,
-#mbl-search-btn {
-  @include scut-vcenter-lh(40px);
+.mbl-header-btn {
+  background: lightgray;
+  padding: 0.5em 1em;
+}
+
+#mbl-nav-btn {
+  float: left;
 }
 
 #mbl-search-btn {
@@ -67,17 +72,20 @@ SMALLER SIZE
 
   #header-search {
     position: static;
+    margin-top: 0.5em;
     height: 1px;
     overflow: hidden;
     opacity: 0;
     transition: all 0.2s;
     &.is-visible {
       height: 44px;
-      margin: 0;
       opacity: 1;
     }
     .search-form {
       width: 100%;
+    }
+    .search-input {
+      font-size: 1em;
     }
   }
 
@@ -97,7 +105,7 @@ SMALLER SIZE
   }
 
   #nav-container {
-    @include scut-absolute(0 n n -250px);
+    @include scut-absolute(0 n n -230px);
     min-height: 100%;
     padding: 1em;
     width: 230px;
@@ -107,7 +115,7 @@ SMALLER SIZE
   #wrapper {
     transition: transform 0.15s;
     &.is-showing-menu {
-      transform: translateX(250px);
+      transform: translateX(230px);
     }
   }
 

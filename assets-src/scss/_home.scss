@@ -12,13 +12,8 @@
 
 // actions
 
-.home-actions-list {
-  @extend %scut-list-floated;
-}
-
 .home-action {
-  width: (100% / 3);
-  border: 5px solid lightgray;
+  border: 2px solid;
   padding: 1em;
   @extend %reset-links;
 }

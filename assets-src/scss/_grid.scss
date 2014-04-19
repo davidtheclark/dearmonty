@@ -1,0 +1,20 @@
+.row {
+  @include scut-clearfix;
+}
+
+.grid-third {
+  @extend %floater;
+  width: (100% / 3);
+}
+.grid-half {
+  @extend %floater;
+  width: (100% / 2);
+}
+
+@media (max-width: 37.5em) {
+  .grid-third,
+  .grid-half {
+    float: none;
+    width: 100%;
+  }
+}

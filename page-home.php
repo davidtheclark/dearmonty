@@ -22,20 +22,20 @@ get_header(); ?>
         <?php the_content(); ?>
 
         <h2>Actions</h2>
-        <ul class="home-actions-list">
-          <li class="home-action">
+        <ul class="us-li row">
+          <li class="grid-third home-action">
             <a href="<?php the_field('home_cta_one_url'); ?> ">
               <h3><?php the_field('home_cta_one_title'); ?></h3>
               <?php the_field('home_cta_one_text'); ?>
             </a>
           </li>
-          <li class="home-action">
+          <li class="grid-third home-action">
             <a href="<?php the_field('home_cta_two_url'); ?> ">
               <h3><?php the_field('home_cta_two_title'); ?></h3>
               <?php the_field('home_cta_two_text'); ?>
             </a>
           </li>
-          <li class="home-action">
+          <li class="grid-third home-action">
             <a href="<?php the_field('home_cta_three_url'); ?> ">
               <h3><?php the_field('home_cta_three_title'); ?></h3>
               <?php the_field('home_cta_three_text'); ?>

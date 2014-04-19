@@ -1,22 +1,26 @@
-require('./lib/classlist-polyfill');
-
 var showingMenuClass = 'is-showing-menu',
     visibleClass = 'is-visible',
-    navContainer = document.getElementById('nav-container'),
-    headerContainer = document.getElementById('header-container'),
-    wrapper = document.getElementById('wrapper'),
-    page = document.getElementById('page'),
-    searchContainer = document.getElementById('header-search'),
-    searchForm = document.getElementById('search-form'),
+    $navContainer = $('#nav-container'),
+    $headerContainer = $('#header-container'),
+    $wrapper = $('#wrapper'),
+    $page = $('#page'),
+    $searchContainer = $('#header-search'),
+    $searchForm = $('#search-form'),
+    $mblBtnContainer = $('<div class="row" />'),
+    $mblSearchBtn = $('<button id="mbl-search-btn" class="mbl-header-btn">Search</button>'),
+    $mblNavBtn = $('<button id="mbl-nav-btn" class="mbl-header-btn">Menu</button>'),
+    $searchInput = $('#search-input'),
     isShowingMenu = false,
     isShowingSearch = false;
 
 function showMenu() {
   // show
-  wrapper.classList.add(showingMenuClass);
+  $wrapper.addClass(showingMenuClass);
+  // if you're not at the top of the screen, go there
+  $('html,body').scrollTop(0);
   // clicking outside menu closes it
   setTimeout(function() {
-    page.addEventListener('click', hideMenu);
+    $page.on('click', hideMenu);
   }, 300);
   // set state
   isShowingMenu = true;
@@ -24,30 +28,36 @@ function showMenu() {
 
 function hideMenu() {
   // hide
-  wrapper.classList.remove(showingMenuClass);
+  $wrapper.removeClass(showingMenuClass);
   // remove click-outside-closes listener
-  page.removeEventListener('click', hideMenu);
+  $page.off('click', hideMenu);
   // set state
   isShowingMenu = false;
 }
 
 function showSearch() {
-  searchContainer.classList.add(visibleClass);
+  $searchContainer.addClass(visibleClass);
+  $searchInput.focus();
   isShowingSearch = true;
 }
 
 function hideSearch() {
-  searchContainer.classList.remove(visibleClass);
+  $searchContainer.removeClass(visibleClass);
+  $searchInput.blur();
   isShowingSearch = false;
 }
 
 function init() {
+
+  // insert mobile button container
+  $mblBtnContainer.insertBefore($searchContainer);
+
   // insert mobile menu button
-  navContainer.insertAdjacentHTML('beforebegin', '<button id="mbl-nav-btn">Menu</button>');
+  $mblBtnContainer.append($mblNavBtn);
   // move menu to special place
-  wrapper.insertBefore(navContainer, page);
+  $navContainer.insertBefore($page);
   // make the button work
-  document.getElementById('mbl-nav-btn').addEventListener('click', function() {
+  $mblNavBtn.on('click', function() {
     if (!isShowingMenu) {
       showMenu();
     } else {
@@ -56,11 +66,11 @@ function init() {
   });
 
   // indicate that search-toggling will happen
-  searchForm.classList.add('will-toggle');
-  // insert mobile search mutton
-  searchContainer.insertAdjacentHTML('beforebegin', '<button id="mbl-search-btn">Search</button>');
+  $searchForm.addClass('will-toggle');
+  // insert mobile search button
+  $mblBtnContainer.append($mblSearchBtn);
   // make the button work
-  document.getElementById('mbl-search-btn').addEventListener('click', function() {
+  $mblSearchBtn.on('click', function() {
     if (!isShowingSearch) {
       showSearch();
     } else {
@@ -70,11 +80,10 @@ function init() {
 }
 
 function remove() {
-  headerContainer.removeChild(document.getElementById('mbl-nav-btn'));
-  headerContainer.insertBefore(navContainer, searchContainer);
+  $mblNavBtn.remove();
+  $mblSearchBtn.remove();
+  $navContainer.insertBefore($searchContainer);
   hideMenu();
-
-  headerContainer.removeChild(document.getElementById('mbl-search-btn'));
   hideSearch();
 }
 

@@ -111,6 +111,7 @@ module.exports = (grunt) ->
         src: [
           # Insert third-party JS here, in the right order
           "<%= lodash.build.dest %>"
+          "bower_components/jquery/dist/jquery.js"
           "bower_components/matchmedia/matchMedia.js"
         ]
         dest: "<%= vars.jsDistDir %>/libs.js"

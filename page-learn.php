@@ -22,7 +22,14 @@ get_header(); ?>
       <?php if ($page_num === 1): ?>
         <?php the_content(); ?>
 
-        <p>stuff about buying and selling</p>
+        <div class="row">
+          <div class="grid-half learn-feature">
+            BUYING
+          </div>
+          <div class="grid-half learn-feature">
+            SELLING
+          </div>
+        </div>
 
         <h2>Q &amp; A Posts</h2>
       <?php endif; ?>
