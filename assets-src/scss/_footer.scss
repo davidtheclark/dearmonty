@@ -7,3 +7,9 @@
   float: right;
   @extend %scut-list-inline;
 }
+
+.footer-action {
+  padding: 1em;
+  border: 1px solid;
+  text-align: center;
+}

@@ -15,7 +15,7 @@ function noMobile() {
 }
 
 function checkViewportWidth() {
-  width = window.innerWidth;
+  width = $(window).width();
   if (!isMobile && width < 769) {
     goMobile();
   } else if (isMobile && width > 769) {
@@ -23,11 +23,11 @@ function checkViewportWidth() {
   }
 }
 
-if (window.innerWidth) {
+if (Modernizr.csstransforms) {
   checkViewportWidth();
 }
 
-window.addEventListener('resize', _.throttle(checkViewportWidth, 500));
+$(window).on('resize', _.throttle(checkViewportWidth, 500));
 },{"./nav":2}],2:[function(require,module,exports){
 var showingMenuClass = 'is-showing-menu',
     visibleClass = 'is-visible',

@@ -29,7 +29,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
 	<!-- Don't forget to replace Modernizr's full dev script with a custom build! -->
-	<script src="<?php echo get_template_directory_uri(); ?>/assets-dist/js/modernizr-dev.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/assets-dist/js/modernizr-custom.js"></script>
 
 	<?php // skip nav styling and JS fix from http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links ?>
 	<style>#skip-nav{display:block;background-color:#fff;padding:1em;position:absolute;top:0;left:-9999px;}#skip-nav:focus{left:0;}</style>

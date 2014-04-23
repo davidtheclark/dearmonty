@@ -119,6 +119,10 @@ module.exports = (grunt) ->
     # Prepare production-built Modernizr.
     modernizr:
       build:
+        parseFiles: false
+        tests: [
+          "csstransforms"
+        ]
         devFile: "<%= vars.jsSrcDir %>/lib/modernizr-dev.js"
         outputFile: "<%= vars.jsDistDir %>/modernizr-custom.js"
 

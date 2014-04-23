@@ -15,6 +15,12 @@
 
       	<footer class="site-footer">
 
+          <?php
+            if (!is_front_page()) {
+              include "module-actions.php";
+            }
+          ?>
+
           <div class="container container-padded">
             &copy; 2014 DearMonty.com, LLC, All Rights Reserved
 

@@ -1,0 +1,11 @@
+.well {
+  border: 1px solid $color-white;
+  border-radius: 4px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.52);
+  padding: 2em;
+}
+
+.well-brown {
+  background-color: $color-brown-light;
+  color: $color-brown;
+}

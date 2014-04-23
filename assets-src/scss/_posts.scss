@@ -2,24 +2,28 @@
   @extend %scut-list-unstyled;
 }
 
-$category-margin: 0.3em;
+.post-in-list {
+  & + & {
+    margin-top: $pad-sm;
+  }
+}
 
-// .categories {
-//   @extend %scut-key-val;
-//   > dt {
-//     padding: 0.3em;
-//   }
-// }
-// .categories-list {
-//   @extend %scut-list-floated;
-//   margin: (-$category-margin);
-//   > li {
-//     display: inline-block;
-//     @include scut-margin(n ($category-margin / 2) ($category-margin / 2));
-//     > a {
-//       display: block;
-//       padding: 0.3em;
-//       border: 1px solid gray;
-//     }
-//   }
-// }
+.entry-summary {
+  margin-top: 0.5em;
+}
+
+.categories {
+  > dt,
+  > dd {
+    display: inline-block;
+  }
+  > dt {
+    &:after {
+      content: ":";
+      margin-right: 0.3em;
+    }
+  }
+  > dd {
+    margin-left: 0;
+  }
+}

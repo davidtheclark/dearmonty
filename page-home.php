@@ -21,27 +21,7 @@ get_header(); ?>
 
         <?php the_content(); ?>
 
-        <h2>Actions</h2>
-        <ul class="us-li row">
-          <li class="grid-third home-action">
-            <a href="<?php the_field('home_cta_one_url'); ?> ">
-              <h3><?php the_field('home_cta_one_title'); ?></h3>
-              <?php the_field('home_cta_one_text'); ?>
-            </a>
-          </li>
-          <li class="grid-third home-action">
-            <a href="<?php the_field('home_cta_two_url'); ?> ">
-              <h3><?php the_field('home_cta_two_title'); ?></h3>
-              <?php the_field('home_cta_two_text'); ?>
-            </a>
-          </li>
-          <li class="grid-third home-action">
-            <a href="<?php the_field('home_cta_three_url'); ?> ">
-              <h3><?php the_field('home_cta_three_title'); ?></h3>
-              <?php the_field('home_cta_three_text'); ?>
-            </a>
-          </li>
-        </ul>
+        <?php include "module-actions.php"; ?>
 
       <?php endwhile; ?>
     </div>
@@ -74,12 +54,14 @@ get_header(); ?>
 
   <section>
     <div class="container container-padded">
-      <h2>Testimonials</h2>
+      <h2 class="hide-visually">Testimonials</h2>
       <ul class="home-testimonials-list">
         <?php
         // Query for testimonials.
         $testimonials_args = array(
           'post_type' => 'testimonial',
+          'order_by' => 'rand',
+          'posts_per_page' => '1',
           'nopaging' => true
         );
         $testimonials_query = new WP_Query( $testimonials_args );

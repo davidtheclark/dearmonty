@@ -5,9 +5,11 @@ COLORS
 $color-red: #D92A1A;
 $color-rust: #A63921;
 $color-brown: #D97B29;
+$color-brown-light: #EAE7D9;
 $color-light: #D9D3B4;
 $color-blue: #3698BF;
 $color-white: #fff;
+$color-gray: #696969;
 
 $color-font: #2D2D2D;
 $color-font-accent: #A63921;
@@ -28,6 +30,8 @@ $search-y: 40px;
 $search-x: 250px;
 $search-bd-x: 2px;
 $search-total-y: $search-y + ($search-bd-x * 2);
+$pad-base: scut-em(40);
+$pad-sm: 1.5em;
 
 /*==========================
 MEDIA QUERIES

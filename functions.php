@@ -76,7 +76,7 @@ function dearmonty_scripts() {
 	function the_scripts() {
 		global $wp_scripts;
 		// load third-party libs
-		wp_enqueue_script('jquery');
+		wp_deregister_script('jquery');
 		wp_register_script( 'libs', get_template_directory_uri() . '/assets-dist/js/libs.js', array(), false, true);
 		// load compiled app
 		wp_register_script( 'app', get_template_directory_uri() . '/assets-dist/js/app.js', array('libs'), false, true);

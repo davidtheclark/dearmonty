@@ -493,10 +493,38 @@ MEDIA QUERIES
 ==========================*/
 body {
   color: #2D2D2D;
-  font-family: 'Lato', "lucida grande", lucida, "trebuchet ms", trebuchet, arial, verdana, sans-serif; }
+  font-family: 'Lato', "lucida grande", lucida, "trebuchet ms", trebuchet, arial, verdana, sans-serif;
+  font-size: 100%;
+  line-height: 1.5; }
 
 label {
   display: block; }
+
+a {
+  color: #3698BF; }
+  a:hover, a:focus {
+    color: #2b7997; }
+
+b {
+  font-weight: bold; }
+
+.heading-1, .heading-1 > a, .heading-2, .heading-2 > a {
+  color: #D92A1A;
+  font-weight: bold;
+  line-height: 1.38;
+  text-decoration: none; }
+.heading-1 > a:hover, .heading-1 > a:focus, .heading-2 > a:hover, .heading-2 > a:focus {
+  border-bottom: 1px dotted; }
+
+.heading-1 {
+  font-size: 1.625em; }
+
+.heading-2 {
+  font-size: 1.125em; }
+
+.f-sm {
+  color: #696969;
+  font-size: 0.75em; }
 
 .row:after {
   content: "";
@@ -539,6 +567,39 @@ html, body {
     display: inline-block; }
   .breadcrumb > li:after {
     content: "\203A"; }
+
+.btn {
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 4px;
+  height: 2.5em;
+  line-height: 2.5em;
+  padding-left: 1em;
+  padding-right: 1em; }
+  .btn:hover, .btn:focus {
+    color: #fff; }
+
+.btn-dark {
+  background-color: #D92A1A; }
+  .btn-dark:hover, .btn-dark:focus {
+    background-color: #ab2115; }
+
+.btn-light {
+  background-color: #3698BF; }
+  .btn-light:hover, .btn-light:focus {
+    background-color: #2b7997; }
+
+.well {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.52);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.52);
+  padding: 2em; }
+
+.well-brown {
+  background-color: #EAE7D9;
+  color: #D97B29; }
 
 .search-form {
   position: relative;
@@ -615,11 +676,13 @@ html, body {
   overflow: hidden; }
 
 .site-title {
+  background: url(http://www.dearmonty.com/wp-content/themes/dearmonty-wp/images/main/logoint.png) no-repeat center center;
+  -webkit-background-size: contain;
+  background-size: contain;
   display: block;
   height: 100px;
   width: 325px;
   max-width: 100%;
-  background: lightgray;
   margin-bottom: 1em; }
 
 #header-search {
@@ -633,7 +696,8 @@ html, body {
   margin-top: 0;
   margin-bottom: 0;
   text-transform: uppercase;
-  margin: -6px -3px; }
+  margin: -6px -3px;
+  font-weight: bold; }
   .site-nav:after {
     content: "";
     display: table;
@@ -641,12 +705,15 @@ html, body {
   .site-nav > li {
     float: left; }
   .site-nav > li {
-    background: lightgray;
+    background-color: #3698BF;
     margin: 6px 3px; }
     .site-nav > li > a {
+      color: #fff;
       display: block;
       padding: 1em;
       text-decoration: none; }
+      .site-nav > li > a:hover, .site-nav > li > a:focus {
+        background-color: #2b7997; }
 
 #header-follow-link {
   position: absolute;
@@ -710,7 +777,13 @@ SMALLER SIZE
     background-color: #2D2D2D; }
   #wrapper {
     -webkit-transition: -webkit-transform 0.15s;
-    transition: transform 0.15s; }
+    transition: transform 0.15s;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000; }
     #wrapper.is-showing-menu {
       -webkit-transform: translateX(230px);
       -ms-transform: translateX(230px);
@@ -722,6 +795,11 @@ SMALLER SIZE
 
 .footer-nav {
   float: right; }
+
+.footer-action {
+  padding: 1em;
+  border: 1px solid;
+  text-align: center; }
 
 .home-hero {
   background: gray;
@@ -748,6 +826,20 @@ SMALLER SIZE
   margin-left: 0;
   font-style: italic; }
 
+
+.post-in-list + .post-in-list {
+  margin-top: 1.5em; }
+
+.entry-summary {
+  margin-top: 0.5em; }
+
+.categories > dt, .categories > dd {
+  display: inline-block; }
+.categories > dt:after {
+  content: ":";
+  margin-right: 0.3em; }
+.categories > dd {
+  margin-left: 0; }
 
 
 .learn-feature {

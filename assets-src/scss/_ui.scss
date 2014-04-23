@@ -1,0 +1,25 @@
+.btn {
+  color: $color-white;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 4px;
+  @include scut-vcenter-lh(scut-em(40));
+  @include scut-padding(n 1em);
+  @include scut-selected {
+    color: $color-white;
+  }
+}
+
+.btn-dark {
+  background-color: $color-red;
+  @include scut-selected {
+    background-color: darken($color-red, 10);
+  }
+}
+
+.btn-light {
+  background-color: $color-blue;
+  @include scut-selected {
+    background-color: darken($color-blue, 10);
+  }
+}

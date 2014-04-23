@@ -5,12 +5,13 @@
  * @package dearmonty
  */
 
-get_header(); ?>
+get_header();?>
 
 <main class="site-content" role="main">
 
   <div class="container container-padded">
-    <?php while ( have_posts() ) : the_post(); ?>
+    <?php while ( have_posts() ) : the_post();
+      $page_num = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
 
       <?php include('breadcrumb.php'); ?>
 
@@ -22,21 +23,22 @@ get_header(); ?>
       ?>
 
       <h1>
-        <?php echo $parent_title; ?> Step <?php echo $post->menu_order; ?>:
-        <br>
-        <?php the_title(); ?>
+        <?php echo $parent_title; ?> &#35;<?php echo $post->menu_order; ?>: <?php the_title(); ?>
       </h1>
-      <?php the_content(); ?>
 
-      <h2>Recent Related Posts</h2>
+      <?php if ($page_num === 1) {
+        the_content();
+        echo '<h2 class="hide-visually">Recent Related Posts</h2>';
+      } else {
+        echo '<h2>page ' . $page_num . '</h2>';
+      }?>
+
       <ol class="post-list">
         <?php
         $category = get_field('associated_category');
         // Get posts of the associated category.
         $steps_posts_args = array(
-          'cat' => $category,
-          'post_count' => 3,
-          'nopaging' => true
+          'cat' => $category
         );
         $steps_posts_query = new WP_Query($steps_posts_args);
         // The Loop
@@ -49,9 +51,7 @@ get_header(); ?>
         <?php endwhile; ?>
       </ol>
 
-      <a href="<?php echo esc_url(get_category_link($category)); ?>">
-        Browse all Q&amp;A Articles about <?php echo $step_title; ?>
-      </a>
+      <?php dearmonty_pagination($steps_posts_query); ?>
 
     <?php endwhile; ?>
   </div>

@@ -1,8 +1,49 @@
 body {
   color: $color-font;
   font-family: $font-base;
+  font-size: 100%;
+  line-height: 1.5;
 }
 
 label {
   display: block;
+}
+
+a {
+  color: $color-blue;
+  @include scut-selected {
+    color: darken($color-blue,10);
+  }
+}
+
+b {
+  font-weight: bold;
+}
+
+.heading-1,
+.heading-2 {
+  &, & > a {
+    color: $color-red;
+    font-weight: bold;
+    line-height: 1.38;
+    text-decoration: none;
+  }
+  & > a {
+    @include scut-selected {
+      border-bottom: 1px dotted;
+    }
+  }
+}
+
+.heading-1 {
+  font-size: scut-em(26);
+}
+
+.heading-2 {
+  font-size: scut-em(18);
+}
+
+.f-sm {
+  color: $color-gray;
+  font-size: scut-em(12);
 }

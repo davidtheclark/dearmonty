@@ -8,11 +8,12 @@ $nav-gutter: 0.3em;
 }
 
 .site-title {
+  background: url(http://www.dearmonty.com/wp-content/themes/dearmonty-wp/images/main/logoint.png) no-repeat center center;
+  background-size: contain;
   display: block;
   height: 100px;
   width: 325px;
   max-width: 100%;
-  background: lightgray;
   margin-bottom: 1em;
 }
 
@@ -24,13 +25,18 @@ $nav-gutter: 0.3em;
   @include scut-list-floated();
   text-transform: uppercase;
   margin: -6px -3px;
+  font-weight: bold;
   > li {
-    background: lightgray;
+    background-color: $color-blue;
     margin: 6px 3px;
     > a {
+      color: $color-white;
       display: block;
       padding: 1em;
       text-decoration: none;
+      @include scut-selected {
+        background-color: darken($color-blue,10);
+      }
     }
   }
 }
@@ -114,6 +120,8 @@ SMALLER SIZE
 
   #wrapper {
     transition: transform 0.15s;
+    backface-visibility: hidden;
+    perspective: 1000;
     &.is-showing-menu {
       transform: translateX(230px);
     }
