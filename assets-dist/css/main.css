@@ -345,7 +345,7 @@ td, th {
 * Docs at http://davidtheclark.github.io/scut
 */
 
-.home-testimonials-list, .post-list, .step-list {
+.home-testimonials-list, .step-list {
   list-style-type: none;
   padding-left: 0;
   margin-top: 0;
@@ -523,8 +523,10 @@ b {
   font-size: 1.125em; }
 
 .f-sm {
-  color: #696969;
   font-size: 0.75em; }
+
+.f-light {
+  color: #696969; }
 
 .row:after {
   content: "";
@@ -736,7 +738,7 @@ html, body {
 /*==========================
 SMALLER SIZE
 ==========================*/
-@media only screen and (max-width: 48.0625em) {
+@media only screen and (max-width: 48.1em) {
   .site-header {
     overflow-x: hidden; }
   .site-title {
@@ -826,6 +828,11 @@ SMALLER SIZE
   margin-left: 0;
   font-style: italic; }
 
+.post-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0; }
 
 .post-in-list + .post-in-list {
   margin-top: 1.5em; }
@@ -834,12 +841,17 @@ SMALLER SIZE
   margin-top: 0.5em; }
 
 .categories > dt, .categories > dd {
-  display: inline-block; }
+  float: left; }
 .categories > dt:after {
   content: ":";
   margin-right: 0.3em; }
 .categories > dd {
   margin-left: 0; }
+.categories > dd + dd:before {
+  content: "\00b7";
+  float: left;
+  margin-left: 0.3em;
+  margin-right: 0.3em; }
 
 
 .learn-feature {

@@ -1,5 +1,5 @@
 .post-list {
-  @extend %scut-list-unstyled;
+  @include scut-list-unstyled;
 }
 
 .post-in-list {
@@ -15,7 +15,7 @@
 .categories {
   > dt,
   > dd {
-    display: inline-block;
+    float: left;
   }
   > dt {
     &:after {
@@ -25,5 +25,10 @@
   }
   > dd {
     margin-left: 0;
+  }
+  > dd + dd:before {
+    content: $scut-middot;
+    float: left;
+    @include scut-margin(n 0.3em);
   }
 }

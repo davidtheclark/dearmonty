@@ -53,39 +53,12 @@ get_header(); ?>
   </section>
 
   <section>
-    <div class="container container-padded">
+    <div id="random-testimonial" class="container container-padded">
       <h2 class="hide-visually">Testimonials</h2>
-      <ul class="home-testimonials-list">
-        <?php
-        // Query for testimonials.
-        $testimonials_args = array(
-          'post_type' => 'testimonial',
-          'order_by' => 'rand',
-          'posts_per_page' => '1',
-          'nopaging' => true
-        );
-        $testimonials_query = new WP_Query( $testimonials_args );
-        // The Loop
-        while ( $testimonials_query->have_posts() ):
-          $testimonials_query->the_post();
-        ?>
-        <li>
-          <figure>
-            <blockquote class="home-testimonial-blockquote">
-              <?php the_content(); ?>
-            </blockquote>
-            <figcaption>
-              <?php the_field('source'); ?>
-              <?php if ( get_field('location') ): ?>
-              <div>
-                <?php the_field('location'); ?>
-              </div>
-              <?php endif; ?>
-            </figcaption>
-          </figure>
-        </li>
-        <?php endwhile; ?>
-      </ul>
+      <div id="random-testimonial-inner">
+        <?php include "module-random-testimonial.php"; ?>
+      </div>
+      <a href="<?php echo get_permalink(get_page_by_path('Random Testimonial')); ?>" class="btn btn-light js-testimonials-link">See All</a>
     </div>
   </section>
 

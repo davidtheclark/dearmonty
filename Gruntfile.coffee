@@ -102,6 +102,7 @@ module.exports = (grunt) ->
         options:
           include: [
             "throttle"
+            "sample"
           ]
           flags: ["debug"]
 
@@ -180,6 +181,7 @@ module.exports = (grunt) ->
           livereload: true
           debounceDelay: 2000
         files: [
+          "*.php"
           "<%= vars.cssDir %>/*.css"
           "<%= vars.jsDistDir %>/*.js"
           "<%= vars.imageDistDir %>/*"

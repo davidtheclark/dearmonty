@@ -1,8 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var nav = require('./nav');
 
-
-var width, isMobile;
+var isMobile;
 
 function goMobile() {
   nav.init();
@@ -15,10 +14,11 @@ function noMobile() {
 }
 
 function checkViewportWidth() {
-  width = $(window).width();
-  if (!isMobile && width < 769) {
+  width = $(window).outerWidth();
+  console.log(width);
+  if (!isMobile && matchMedia('only screen and (max-width: 48.1em)').matches) {
     goMobile();
-  } else if (isMobile && width > 769) {
+  } else if (isMobile) {
     noMobile();
   }
 }
@@ -28,7 +28,11 @@ if (Modernizr.csstransforms) {
 }
 
 $(window).on('resize', _.throttle(checkViewportWidth, 500));
-},{"./nav":2}],2:[function(require,module,exports){
+},{"./nav":3}],2:[function(require,module,exports){
+require('./inject-nav');
+
+require('./testimonial');
+},{"./inject-nav":1,"./testimonial":4}],3:[function(require,module,exports){
 var showingMenuClass = 'is-showing-menu',
     visibleClass = 'is-visible',
     $navContainer = $('#nav-container'),
@@ -123,4 +127,44 @@ module.exports = {
   init: init,
   remove: remove
 };
-},{}]},{},[1])
+},{}],4:[function(require,module,exports){
+var $inner = $('#random-testimonial-inner');
+var $helper = $('<div />').appendTo($inner).css('display', 'none');
+var $link = $('.js-testimonials-link').first();
+var $btn = $link.clone()
+  .text('See Another')
+  .insertBefore($link);
+var testimonials = [];
+var onDeck = 0;
+
+function nextOnDeck() {
+  onDeck = (onDeck < testimonials.length - 1) ? onDeck + 1 : 0;
+}
+
+function populateRandomTestimonials() {
+  var currentId = $inner.find('.testimonial').first().attr('id');
+  var duplicate = testimonials[onDeck].id === currentId;
+  if (duplicate) {
+    nextOnDeck();
+    populateRandomTestimonials();
+  } else {
+    $inner.html(testimonials[onDeck]);
+    nextOnDeck();
+  }
+}
+
+$btn.click(function(e) {
+  e.preventDefault();
+  if (!testimonials.length) {
+    var href = $(this).attr('href');
+    $helper.empty().load(href + ' #testimonials', function() {
+      $helper.find('.testimonial').each(function() {
+        testimonials.push(this);
+      });
+      populateRandomTestimonials();
+    });
+  } else {
+    populateRandomTestimonials();
+  }
+});
+},{}]},{},[2])

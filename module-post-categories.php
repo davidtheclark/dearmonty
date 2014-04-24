@@ -3,7 +3,7 @@
   if (count($post_categories) > 1 || $post_categories[0] != 1):
 ?>
 <footer>
-  <dl class="categories f-sm">
+  <dl class="categories row f-light">
     <dt>Categories</dt>
 
     <?php foreach($post_categories as $c):
@@ -11,9 +11,7 @@
           $cat = get_category($c);
     ?>
     <dd>
-      <a href="<?php echo $cat->slug; ?>" class="btn btn-light">
-        <?php echo $cat->name; ?>
-      </a>
+      <a href="<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></a>
     </dd>
     <?php
       endif;
