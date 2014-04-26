@@ -11,10 +11,3 @@ html, body {
 .container-padded {
   padding: 1em;
 }
-
-.breadcrumb {
-  @include scut-list-inline;
-  > li:after {
-    content: $scut-rsaquo;
-  }
-}

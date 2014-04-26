@@ -13,7 +13,7 @@ get_header();?>
     <?php while ( have_posts() ) : the_post();
       $page_num = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
 
-      <?php include('breadcrumb.php'); ?>
+      <?php include('module-breadcrumb.php'); ?>
 
       <?php
       $parent_id = $post->post_parent;

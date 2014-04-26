@@ -2,6 +2,7 @@
 COLORS
 ==========================*/
 
+$color-font: #2D2D2D;
 $color-red: #D92A1A;
 $color-rust: #A63921;
 $color-brown: #D97B29;
@@ -10,10 +11,9 @@ $color-light: #D9D3B4;
 $color-blue: #3698BF;
 $color-white: #fff;
 $color-gray: #696969;
+$color-gray-light: #b3b3b3;
+$color-dark: $color-font;
 
-$color-font: #2D2D2D;
-$color-font-accent: #A63921;
-$color-link: #3697BE;
 
 /*==========================
 FONTS
@@ -32,6 +32,16 @@ $search-bd-x: 2px;
 $search-total-y: $search-y + ($search-bd-x * 2);
 $pad-base: scut-em(40);
 $pad-sm: 1.5em;
+$curve: 4px;
+
+$base: 16;
+$line: 24;
+$line-xsm: 4;
+$line-sm: 12;
+$line-lg: 48;
+$f-sm: 0.75em;
+$f-med: 1.5em;
+$f-lg: 3em;
 
 /*==========================
 MEDIA QUERIES

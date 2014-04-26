@@ -1,12 +1,8 @@
 body {
   color: $color-font;
   font-family: $font-base;
-  font-size: 100%;
-  line-height: 1.5;
-}
-
-label {
-  display: block;
+  font-size: 100%; // 16px
+  line-height: 1.5; // 24px
 }
 
 a {
@@ -36,15 +32,24 @@ b {
 }
 
 .heading-1 {
-  font-size: scut-em(26);
+  font-size: $f-lg;
+  line-height: 1;
+  @extend .m-tb;
 }
 
 .heading-2 {
-  font-size: scut-em(18);
+  font-size: $f-med;
+  line-height: 1;
+  @extend .m-t;
+  @extend .m-sm-b;
+}
+
+.heading-3 {
+  font-weight: bold;
 }
 
 .f-sm {
-  font-size: scut-em(12);
+  font-size: $f-sm;
 }
 
 .f-light {

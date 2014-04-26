@@ -1,11 +1,15 @@
 .well {
-  border: 1px solid $color-white;
-  border-radius: 4px;
+  border: 1px solid $color-gray-light;
+  border-radius: $curve;
+  @extend .padded;
+}
+
+.well-shadowed {
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.52);
-  padding: 2em;
+  border-color: $color-white;
 }
 
 .well-brown {
   background-color: $color-brown-light;
-  color: $color-brown;
+  color: $color-gray;
 }

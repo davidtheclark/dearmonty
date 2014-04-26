@@ -1,9 +1,7 @@
 <nav>
   <ul class="breadcrumb">
-    <li>
-      <a href="<?php get_home_url(); ?>">Home</a>
-    </li>
     <?php
+    // assuming a $post
     $ancestors = array_reverse(get_ancestors($post->ID, 'page'));
     foreach($ancestors as $a):
     ?>
@@ -11,5 +9,8 @@
       <a href="<?php echo get_permalink($a); ?> "><?php echo get_the_title($a); ?></a>
     </li>
     <?php endforeach; ?>
+    <li>
+      <?php echo the_title(); ?>
+    </li>
   </ul>
 </nav>
