@@ -16,6 +16,14 @@ b {
   font-weight: bold;
 }
 
+blockquote {
+  font-style: italic;
+  margin-left: 0;
+  color: $color-gray;
+  border-left: 2px solid $color-gray-light;
+  padding-left: $f-sm;
+}
+
 .heading-1,
 .heading-2 {
   &, & > a {

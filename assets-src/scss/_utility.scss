@@ -80,15 +80,22 @@ figure {
   @include scut-rem-fallback($line, padding-left);
   @include scut-rem-fallback($line, padding-right);
 }
+.p-sm-tb {
+  @include scut-rem-fallback($line-sm, padding-top);
+  @include scut-rem-fallback($line-sm, padding-bottom);
+}
+.p-sm-lr {
+  @include scut-rem-fallback($line-sm, padding-left);
+  @include scut-rem-fallback($line-sm, padding-right);
+}
 .padded {
   @include scut-rem-fallback($line, padding-top);
   @include scut-rem-fallback($line, padding-bottom);
   @extend .p-lr;
 }
 .padded-sm {
-  @include scut-rem-fallback($line-sm, padding-top);
-  @include scut-rem-fallback($line-sm, padding-bottom);
-  @extend .p-lr;
+  @extend .p-sm-tb;
+  @extend .p-sm-lr;
 }
 .padded-xsm {
   @include scut-rem-fallback(($line-sm/2), padding-top);

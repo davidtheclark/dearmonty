@@ -3,7 +3,7 @@
   if (count($post_categories) > 1 || $post_categories[0] != 1):
 ?>
 <footer>
-  <dl class="categories row f-light">
+  <dl class="categories">
     <dt>Categories</dt>
 
     <?php foreach($post_categories as $c):

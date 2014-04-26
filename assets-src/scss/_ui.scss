@@ -9,7 +9,8 @@
 }
 
 .btn {
-  @extend .padded-sm;
+  @extend .p-sm-tb;
+  @extend .p-lr;
 }
 
 .btn-sm {
@@ -30,6 +31,15 @@
   @include scut-selected {
     background-color: darken($color-blue, 10);
   }
+}
+
+.btn-empty {
+  color: $color-blue;
+  border: 1px solid;
+}
+
+form {
+  max-width: scut-em(700);
 }
 
 input[type="text"],
@@ -54,4 +64,33 @@ label {
   @extend .m-sm-t;
   @extend .m-xsm-b;
   @extend .f-light;
+}
+
+
+// page numbers
+
+ul.page-numbers {
+  @extend %scut-list-floated;
+  display: table;
+  color: $color-gray;
+  border: 1px solid $color-blue;
+  border-radius: $curve;
+  > li {
+    border-left: 1px solid $color-blue;
+  }
+  > li:first-child {
+    border-left: 0;
+  }
+}
+a.page-numbers,
+span.page-numbers {
+  display: block;
+  @extend .padded-xsm;
+  text-decoration: none;
+}
+a.page-numbers {
+  @include scut-selected {
+    background-color: $color-blue;
+    color: $color-white;
+  }
 }

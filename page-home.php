@@ -10,7 +10,7 @@ get_header(); ?>
 <main class="site-content" role="main">
 
   <!-- temporary pattern library -->
-  <div class="pattern-library" style="padding: 2em;">
+  <div class="pattern-library container" style="padding: 2em;">
 
     <h1 class="heading-1">Pattern Library</h1>
 
@@ -40,6 +40,35 @@ get_header(); ?>
       <h3 class="heading-3">Small Text</h3>
       <p class="f-sm">This is smaller text, useful for stuff that people may as well ignore and probably will.</p>
     </section>
+    <section class="m-sm-tb">
+      <h3 class="heading-3">Blockquote Text</h3>
+      <blockquote>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</blockquote>
+    </section>
+    <section class="m-sm-tb">
+      <h3 class="heading-3">Lists</h3>
+      <ul>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+      </ul>
+      <ol>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+      </ol>
+      <dl class="categories">
+        <dt>Categories</dt>
+        <dd>
+          <a href="#">some category</a>
+        </dd>
+        <dd>
+          <a href="#">some category</a>
+        </dd>
+        <dd>
+          <a href="#">some category</a>
+        </dd>
+      </dl>
+    </section>
 
     <p>
       <button class="btn btn-light">light button</button>
@@ -63,13 +92,12 @@ get_header(); ?>
       </p>
     </div>
 
-    <div class="m-tb">
+    <form class="m-tb">
       <h2 class="heading-2">Form</h2>
       <label>Input</label>
       <input type="text">
       <label>Textarea</label>
       <textarea name="" id="" rows="3"></textarea>
-      <label>Radios and Checkboxes</label>
       <label>
         <input type="radio">
         radio
@@ -86,6 +114,18 @@ get_header(); ?>
         <input type="checkbox">
         checkbox
       </label>
+    </form>
+
+    <div class="m-tb">
+      <h2 class="heading-2">Page Numbers</h2>
+      <ul class="page-numbers">
+        <li><span class="page-numbers current">1</span></li>
+        <li><a class="page-numbers" href="#">2</a></li>
+        <li><a class="page-numbers" href="#">3</a></li>
+        <li><span class="page-numbers dots">…</span></li>
+        <li><a class="page-numbers" href="#">10</a></li>
+        <li><a class="next page-numbers" href="#">Next »</a></li>
+      </ul>
     </div>
 
   </div>

@@ -13,6 +13,8 @@
 }
 
 .categories {
+  @extend %scut-clearfix;
+  @extend .f-light;
   > dt,
   > dd {
     float: left;
