@@ -64,7 +64,7 @@
 
 						<nav id="nav" role="navigation">
 						  <?php wp_nav_menu( array(
-						    'theme_location' => 'primary',
+						    'theme_location' => 'header_primary',
 						    'menu_class' => 'site-nav',
 						    'container' => ''
 						  )); ?>

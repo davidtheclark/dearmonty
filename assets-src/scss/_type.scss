@@ -1,6 +1,6 @@
 body {
   color: $color-font;
-  font-family: $font-base;
+  //font-family: $font-base;
   font-size: 100%; // 16px
   line-height: 1.5; // 24px
 }
@@ -27,7 +27,7 @@ blockquote {
 .heading-1,
 .heading-2 {
   &, & > a {
-    color: $color-red;
+    color: $color-rust;
     font-weight: bold;
     line-height: 1.38;
     text-decoration: none;
@@ -41,6 +41,9 @@ blockquote {
 
 .heading-1 {
   font-size: $f-lg;
+  @media #{$bp-until-med} {
+    font-size: 2em;
+  }
   line-height: 1;
   @extend .m-tb;
 }

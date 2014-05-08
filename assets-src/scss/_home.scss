@@ -10,14 +10,6 @@
   @include scut-absolute(n n 1em 1em);
 }
 
-// actions
-
-.home-action {
-  border: 2px solid;
-  padding: 1em;
-  @extend %reset-links;
-}
-
 // testimonials
 
 .home-testimonials-list {

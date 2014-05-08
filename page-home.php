@@ -176,11 +176,12 @@ get_header(); ?>
 
   <section>
     <div id="random-testimonial" class="container container-padded">
-      <h2 class="hide-visually">Testimonials</h2>
-      <div id="random-testimonial-inner">
-        <?php include "module-random-testimonial.php"; ?>
+      <div class="well well-shadowed">
+        <div id="random-testimonial-inner">
+          <?php include "module-random-testimonial.php"; ?>
+        </div>
+        <a href="<?php echo get_permalink(get_page_by_path('Random Testimonial')); ?>" class="testimonial-btn btn-sm btn-light js-testimonials-link">See All</a>
       </div>
-      <a href="<?php echo get_permalink(get_page_by_path('Random Testimonial')); ?>" class="btn btn-light js-testimonials-link">See All</a>
     </div>
   </section>
 

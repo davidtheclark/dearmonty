@@ -13,6 +13,7 @@ $color-white: #fff;
 $color-gray: #696969;
 $color-gray-light: #b3b3b3;
 $color-dark: $color-font;
+$color-green: #85BF76;
 
 
 /*==========================
@@ -46,3 +47,5 @@ $f-lg: 3em;
 /*==========================
 MEDIA QUERIES
 ==========================*/
+
+$bp-until-med: 'only screen and (max-width: 48em)';

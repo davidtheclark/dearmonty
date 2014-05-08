@@ -40,8 +40,10 @@ function dearmonty_setup() {
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'dearmonty' ),
-		'footer' => 'Footer Menu'
+		'header_primary' => 'Header Primary',
+		'header_secondary' => 'Heaer Secondary',
+		'footer_main' => 'Footer Main',
+		'footer_fine_print' => 'Footer Fine Print',
 	) );
 
 	/**

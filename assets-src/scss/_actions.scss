@@ -1,0 +1,37 @@
+.action {
+  display: block;
+  color: $color-white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1.5em;
+  .heading-2 {
+    border-bottom: 1px solid;
+    color: $color-white;
+    margin-top: 0;
+  }
+  @include scut-selected {
+    color: $color-white;
+  }
+}
+
+.action-learn {
+  background-color: $color-blue;
+  margin-right: 0.5em;
+}
+
+.action-ask {
+  background-color: $color-green;
+  @include scut-margin(n 0.5em);
+}
+
+.action-find {
+  background-color: $color-brown;
+  margin-left: 0.5em;
+}
+
+@media (max-width: 37.5em) {
+  .action {
+    @include scut-margin(n 0);
+  }
+}

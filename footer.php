@@ -15,22 +15,52 @@
 
       	<footer class="site-footer">
 
-          <?php
-            if (!is_front_page()) {
-              include "module-actions.php";
-            }
-          ?>
-
           <div class="container container-padded">
-            &copy; 2014 DearMonty.com, LLC, All Rights Reserved
 
-            <nav class="footer-nav">
-              <?php wp_nav_menu( array(
-                'theme_location' => 'footer',
-                'menu_class' => 'footer-nav',
-                'container' => ''
-              )); ?>
-            </nav>
+            <div class="row">
+              <div class="grid-third">
+                <a href="<?php echo get_permalink(43); ?>" class="action action-learn">Learn</a>
+              </div>
+              <div class="grid-third">
+                <a href="<?php echo get_permalink(39); ?> " class="action action-ask">Ask a Question</a>
+              </div>
+              <div class="grid-third">
+                <a href="<?php echo get_permalink(41); ?> " class="action action-find">Find an Agent</a>
+              </div>
+            </div>
+
+            <form id="subscribe" action="" class="footer-signup">
+              <div class="footer-signup-blurb">Read new questions every Tuesday</div>
+              <label for="signup-email" class="hide-visually">Enter your email</label>
+              <input id="signup-email" type="email" placeholder="Enter your email">
+              <button id="signup-submit" type="submit" class="btn btn-dark btn-sm">Subscribe</button>
+            </form>
+
+            <div class="row">
+
+              <div class="grid-third">
+                <div class="footer-logo"></div>
+              </div>
+
+              <nav class="grid-third footer-nav-primary-c">
+                <?php wp_nav_menu( array(
+                  'theme_location' => 'footer_main',
+                  'menu_class' => 'footer-nav-primary',
+                  'container' => ''
+                )); ?>
+              </nav>
+
+              <div class="grid-third footer-fine-print">
+                <nav>
+                  <?php wp_nav_menu( array(
+                    'theme_location' => 'footer_fine_print',
+                    'menu_class' => 'footer-nav-secondary',
+                    'container' => ''
+                  )); ?>
+                </nav>
+                <div class="footer-copy f-sm">&copy; 2014 DearMonty.com, LLC,<br>All Rights Reserved</div>
+              </div>
+            </div>
           </div>
       	</footer>
 

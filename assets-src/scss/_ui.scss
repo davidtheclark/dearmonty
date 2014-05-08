@@ -1,4 +1,5 @@
-.btn {
+.btn,
+input.btn {
   color: $color-white;
   display: inline-block;
   text-decoration: none;
@@ -6,23 +7,21 @@
   @include scut-selected {
     color: $color-white;
   }
-}
-
-.btn {
   @extend .p-sm-tb;
   @extend .p-lr;
 }
 
-.btn-sm {
+.btn-sm,
+ {
   @extend .btn;
   @extend .padded-xsm;
-  @extend .f-sm;
 }
 
-.btn-dark {
-  background-color: $color-red;
+.btn-dark,
+input.btn-dark  {
+  background-color: $color-rust;
   @include scut-selected {
-    background-color: darken($color-red, 10);
+    background-color: $color-red;
   }
 }
 
@@ -36,10 +35,6 @@
 .btn-empty {
   color: $color-blue;
   border: 1px solid;
-}
-
-form {
-  max-width: scut-em(700);
 }
 
 input[type="text"],
@@ -66,11 +61,16 @@ label {
   @extend .f-light;
 }
 
+#ask-form input[type="submit"] {
+  margin-top: $f-med;
+}
+
 
 // page numbers
 
 ul.page-numbers {
   @extend %scut-list-floated;
+  @extend .m-lg-tb;
   display: table;
   color: $color-gray;
   border: 1px solid $color-blue;

@@ -151,7 +151,7 @@ module.exports = (grunt) ->
       dist:
         files: [
           expand: true
-          cwd: "<%= vars.srcDir %>/copy-to-dist/"
+          cwd: "<%= vars.srcDir %>/copy-to-assets/"
           src: ["*", "**/*"]
           dest: "<%= vars.distDir %>"
         ]

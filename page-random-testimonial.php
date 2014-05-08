@@ -17,10 +17,9 @@ get_header(); ?>
 
     <?php include "module-random-testimonial.php"; ?>
 
-    <a href="<?php echo get_permalink(get_page_by_path('Random Testimonial')); ?>" id="random-testimonial-btn" class="btn btn-light">See Another</a>
+    <a href="<?php echo get_permalink(get_page_by_path('Random Testimonial')); ?>" id="random-testimonial-btn" class="btn-sm btn-light">See Another</a>
 
   </div>
-
 
 </main>
 
