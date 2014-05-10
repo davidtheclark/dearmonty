@@ -70,9 +70,15 @@
 						  )); ?>
 						</nav>
 
-						<a href="#" id="header-follow-link">Follow &amp; Subscribe</a>
-
 					</div>
+
+					<nav id="nav-secondary" role="navigation">
+					  <?php wp_nav_menu( array(
+					    'theme_location' => 'header_secondary',
+					    'menu_class' => 'site-nav-secondary',
+					    'container' => ''
+					  )); ?>
+					</nav>
 
 					<div id="header-search" class="header-search">
 						<?php get_search_form(); ?>

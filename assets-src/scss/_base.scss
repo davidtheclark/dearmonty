@@ -2,6 +2,10 @@ html, body {
   overflow-x: hidden;
 }
 
+.rel {
+  position: relative;
+}
+
 .container {
   @include scut-clearfix;
   @include scut-center-block(scut-em(1000));
@@ -10,4 +14,17 @@ html, body {
 
 .container-padded {
   padding: 1em;
+}
+
+.container-section {
+  padding: $f-lg 1em;
+}
+
+.container-narrow {
+  max-width: scut-em(700);
+}
+
+.bg-rust {
+  background-color: $color-rust;
+  color: $color-white;
 }

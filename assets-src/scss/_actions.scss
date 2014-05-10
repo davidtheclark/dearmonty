@@ -35,3 +35,11 @@
     @include scut-margin(n 0);
   }
 }
+
+.home-action {
+  color: inherit;
+  display: block;
+  text-decoration: none;
+  padding: 1em;
+  text-align: center;
+}

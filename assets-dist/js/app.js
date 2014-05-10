@@ -1,4 +1,9 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+$('a[href="#wrapper"]').click(function() {
+  $('#wrapper').velocity('scroll', { duration: 150, easing: 'linear' });
+  return false;
+});
+},{}],2:[function(require,module,exports){
 var nav = require('./nav');
 
 var isMobile;
@@ -28,11 +33,12 @@ if (Modernizr.csstransforms) {
 }
 
 $(window).on('resize', _.throttle(checkViewportWidth, 500));
-},{"./nav":3}],2:[function(require,module,exports){
+},{"./nav":4}],3:[function(require,module,exports){
 require('./inject-nav');
 
 require('./testimonial');
-},{"./inject-nav":1,"./testimonial":4}],3:[function(require,module,exports){
+require('./footer');
+},{"./footer":1,"./inject-nav":2,"./testimonial":5}],4:[function(require,module,exports){
 var showingMenuClass = 'is-showing-menu',
     visibleClass = 'is-visible',
     $navContainer = $('#nav-container'),
@@ -127,13 +133,13 @@ module.exports = {
   init: init,
   remove: remove
 };
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 var $inner = $('#random-testimonial-inner');
 var $helper = $('<div />').appendTo($inner).css('display', 'none');
-var $link = $('.js-testimonials-link').first();
-var $btn = $link.clone()
-  .text('See Another')
-  .insertBefore($link);
+var $btn = $('<a />')
+  .attr('href', $inner.attr('data-random-href'))
+  .addClass('random-testimonial-btn')
+  .insertAfter($inner);
 var testimonials = [];
 var onDeck = 0;
 
@@ -167,4 +173,4 @@ $btn.click(function(e) {
     populateRandomTestimonials();
   }
 });
-},{}]},{},[2])
+},{}]},{},[3])

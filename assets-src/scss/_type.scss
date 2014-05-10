@@ -66,3 +66,17 @@ blockquote {
 .f-light {
   color: $color-gray;
 }
+
+.content {
+  h2 {
+    @extend .heading-2;
+  }
+  h3,h4,h5,h6 {
+    @extend .heading-3;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

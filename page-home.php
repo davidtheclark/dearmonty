@@ -133,24 +133,6 @@ get_header(); ?>
 
   <section>
     <div class="container container-padded">
-      <?php
-        // Homepage-specific content.
-        while ( have_posts() ) : the_post(); ?>
-
-        <div class="home-hero">
-          <h1 class="home-hero-text">Dear Monty</h1>
-        </div>
-
-        <?php the_content(); ?>
-
-        <?php include "module-actions.php"; ?>
-
-      <?php endwhile; ?>
-    </div>
-  </section>
-
-  <section>
-    <div class="container container-padded">
       <h2>Recent Posts</h2>
       <ol class="post-list">
       <?php
@@ -174,16 +156,44 @@ get_header(); ?>
     </div>
   </section>
 
-  <section>
-    <div id="random-testimonial" class="container container-padded">
-      <div class="well well-shadowed">
-        <div id="random-testimonial-inner">
-          <?php include "module-random-testimonial.php"; ?>
-        </div>
-        <a href="<?php echo get_permalink(get_page_by_path('Random Testimonial')); ?>" class="testimonial-btn btn-sm btn-light js-testimonials-link">See All</a>
+  <section class="container-container-padded">
+    <h2 class="hide-visually">Actions</h2>
+    <div class="row">
+      <div class="grid-third">
+        <a href="<?php echo get_permalink(43); ?>" class="home-action">
+          <h3 class="heading-2 home-action-learn">Learn</h3>
+          <p><strong>Knowledge is power.</strong> Read through hundreds of home buyer and seller questions and get 35 years of honest, expert advice.</p>
+        </a>
+      </div>
+      <div class="grid-third">
+        <a href="<?php echo get_permalink(39); ?> " class="home-action">
+          <h3 class="heading-2 home-action-ask">Ask a Question</h3>
+          <p><strong>Didn’t find the answer to your real estate question?</strong> Fill out a few simple questions and Monty may choose your question for an article.</p>
+        </a>
+      </div>
+      <div class="grid-third">
+        <a href="<?php echo get_permalink(41); ?> " class="home-action">
+          <h3 class="heading-2 home-action-find">Find an Agent</h3>
+          <p><strong>Ready to go?</strong> If you are ready to go and currently looking for a real estate  agent, you can work with us to find the best fit in your local area. By the way, it’s completely free, too!</p>
+        </a>
       </div>
     </div>
   </section>
+
+  <section class="container container-padded container-narrow">
+    <?php wp_reset_query();
+      while ( have_posts() ) : the_post(); ?>
+      <div class="content">
+        <?php the_content(); ?>
+      </div>
+    <?php endwhile; ?>
+  </section>
+
+  <div class="bg-rust rel">
+    <div id="random-testimonial-inner" class="container container-section container-narrow" data-random-href="<?php echo get_permalink(get_page_by_path('Random Testimonial')); ?>">
+      <?php include "module-random-testimonial.php"; ?>
+    </div>
+  </div>
 
 </main>
 

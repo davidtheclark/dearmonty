@@ -1,9 +1,9 @@
 var $inner = $('#random-testimonial-inner');
 var $helper = $('<div />').appendTo($inner).css('display', 'none');
-var $link = $('.js-testimonials-link').first();
-var $btn = $link.clone()
-  .text('See Another')
-  .insertBefore($link);
+var $btn = $('<a />')
+  .attr('href', $inner.attr('data-random-href'))
+  .addClass('random-testimonial-btn')
+  .insertAfter($inner);
 var testimonials = [];
 var onDeck = 0;
 

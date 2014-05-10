@@ -1,3 +1,5 @@
+$gutter: 4%;
+
 .row {
   @include scut-clearfix;
 }
@@ -10,11 +12,24 @@
   @extend %floater;
   width: (100% / 2);
 }
+.grid-half-guttered {
+  @extend %floater;
+  width: ((100% - $gutter) / 2);
+  &.m-first {
+    margin-right: $gutter;
+  }
+}
 
 @media (max-width: 37.5em) {
   .grid-third,
-  .grid-half {
+  .grid-half,
+  .grid-half-guttered {
     float: none;
     width: 100%;
+  }
+  .grid-half-guttered {
+    &.m-first {
+      margin-right: 0;
+    }
   }
 }

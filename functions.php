@@ -41,7 +41,7 @@ function dearmonty_setup() {
 	 */
 	register_nav_menus( array(
 		'header_primary' => 'Header Primary',
-		'header_secondary' => 'Heaer Secondary',
+		'header_secondary' => 'Header Secondary',
 		'footer_main' => 'Footer Main',
 		'footer_fine_print' => 'Footer Fine Print',
 	) );

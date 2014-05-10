@@ -21,7 +21,8 @@ $nav-gutter: 0.3em;
   @include scut-absolute(3em 0 n n);
 }
 
-.site-nav {
+.site-nav,
+.site-nav-secondary {
   @include scut-list-floated();
   text-transform: uppercase;
   margin: -6px -3px;
@@ -41,12 +42,24 @@ $nav-gutter: 0.3em;
   }
 }
 
-#header-follow-link {
+#nav-secondary {
   @include scut-absolute(0 0 n n);
-  background: lightgray;
-  padding: 0.5em 1em;
-  text-decoration: none;
 }
+
+.site-nav-secondary {
+  > li > a {
+    font-weight: normal;
+    font-size: 0.8em;
+    padding: 0.5em;
+  }
+}
+
+// #header-follow-link {
+//   @include scut-absolute(0 0 n n);
+//   background: lightgray;
+//   padding: 0.5em 1em;
+//   text-decoration: none;
+// }
 
 .mbl-header-btn {
   background: lightgray;

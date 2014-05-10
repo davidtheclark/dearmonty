@@ -19,7 +19,7 @@
 
             <div class="row">
               <div class="grid-third">
-                <a href="<?php echo get_permalink(43); ?>" class="action action-learn">Learn</a>
+                <a href="#wrapper" class="action action-learn">Back to Top</a>
               </div>
               <div class="grid-third">
                 <a href="<?php echo get_permalink(39); ?> " class="action action-ask">Ask a Question</a>

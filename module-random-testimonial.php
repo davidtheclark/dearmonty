@@ -11,4 +11,5 @@ while ( $testimonials_query->have_posts() ):
   $testimonials_query->the_post();
 ?>
 <?php include "module-testimonial-content.php"; ?>
+
 <?php endwhile; ?>

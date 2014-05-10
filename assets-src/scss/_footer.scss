@@ -1,7 +1,6 @@
 .site-footer {
   background: $color-brown-light;
   color: $color-gray;
-  margin-top: $f-med;
 }
 
 .footer-logo {
@@ -44,12 +43,12 @@
   @extend %scut-list-unstyled;
 }
 
-.footer-nav-primary-c {
-  columns: 2;
-  @media (max-width: scut-em(700)) {
-    columns: 1;
-  }
-}
+// .footer-nav-primary-c {
+//   columns: 2;
+//   @media (max-width: scut-em(700)) {
+//     columns: 1;
+//   }
+// }
 
 .footer-fine-print {
   text-align: right;
