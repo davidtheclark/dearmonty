@@ -67,6 +67,10 @@ blockquote {
   color: $color-gray;
 }
 
+.f-center {
+  text-align: center;
+}
+
 .content {
   h2 {
     @extend .heading-2;
@@ -79,4 +83,9 @@ blockquote {
       margin-top: 0;
     }
   }
+}
+
+.feature {
+  font-family: Georgia, "Times New Roman," serif;
+  font-size: $f-med;
 }

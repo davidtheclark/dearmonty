@@ -10,7 +10,7 @@ get_header(); ?>
 <main class="site-content" role="main">
 
   <!-- temporary pattern library -->
-  <div class="pattern-library container" style="padding: 2em;">
+  <!-- <div class="pattern-library container" style="padding: 2em;">
 
     <h1 class="heading-1">Pattern Library</h1>
 
@@ -128,66 +128,114 @@ get_header(); ?>
       </ul>
     </div>
 
-  </div>
+  </div> -->
   <!-- end pattern library -->
 
-  <section>
-    <div class="container container-padded">
-      <h2>Recent Posts</h2>
-      <ol class="post-list">
+  <section class="container container-padded row">
+    <section id="home-latest-post" class="grid-half-guttered">
+      <h2 class="heading-3">This Week's Article</h2>
       <?php
-      // Query for top 3 recent posts.
-      $recent_posts_args = array(
-        'posts_per_page' => 3,
-        'usepaging' => true
-      );
-      $recent_posts_query = new WP_Query($recent_posts_args);
-      // The Loop
-      while ( $recent_posts_query->have_posts() ):
-        $recent_posts_query->the_post();
+        $latest_post = new WP_Query('posts_per_page=1');
+        while($latest_post->have_posts()) {
+          $latest_post->the_post();
+          get_template_part( 'content', 'index' );
+        }
+        wp_reset_postdata();
       ?>
-        <li class="post-in-list">
-          <?php get_template_part( 'content', 'index' ); ?>
-        </li>
-      <?php endwhile; ?>
-      </ol>
-
-      <a href="<?php echo get_permalink(43); ?>">Read more Q&amp;A articles</a>
-    </div>
+    </section>
+    <section class="grid-half-guttered">
+      <div class="well well-brown well-shadowed">
+        <h2 class="heading-3">Recent Articles</h2>
+        <ol class="post-list post-list-home">
+          <?php
+          // Query for top 3 recent posts.
+          $recent_posts_args = array(
+            'posts_per_page' => 6,
+            'offset' => 1,
+          );
+          $recent_posts_query = new WP_Query($recent_posts_args);
+          // The Loop
+          while ( $recent_posts_query->have_posts() ):
+            $recent_posts_query->the_post();
+          ?>
+          <li class="post-in-list-home">
+            <a href="<?php the_permalink(); ?>" class="heading-3"><?php the_title(); ?>&nbsp;&raquo;</a>
+          <?php endwhile; ?>
+        </ol>
+        <a href="<?php echo get_permalink(43); ?>" class="btn btn-dark">Read more Q&amp;A articles</a>
+      </div>
+    </section>
   </section>
 
-  <section class="container-container-padded">
-    <h2 class="hide-visually">Actions</h2>
+  <section class="container container-section f-center">
+    <p class="feature">Start by browsing hundreds of&nbsp;articles&nbsp;&hellip;</p>
     <div class="row">
       <div class="grid-third">
         <a href="<?php echo get_permalink(43); ?>" class="home-action">
-          <h3 class="heading-2 home-action-learn">Learn</h3>
-          <p><strong>Knowledge is power.</strong> Read through hundreds of home buyer and seller questions and get 35 years of honest, expert advice.</p>
+          <div class="home-icon grunticon-home"></div>
+          <h3 class="heading-2">Buying</h3>
+          <p>Buy a home buy a home buy a home buy a home buy a home buy a home</p>
         </a>
       </div>
       <div class="grid-third">
         <a href="<?php echo get_permalink(39); ?> " class="home-action">
-          <h3 class="heading-2 home-action-ask">Ask a Question</h3>
-          <p><strong>Didn’t find the answer to your real estate question?</strong> Fill out a few simple questions and Monty may choose your question for an article.</p>
+          <div class="home-icon grunticon-home"></div>
+          <h3 class="heading-2">Selling</h3>
+          <p>Sell a home sell a home sell a home sell a home sell a home sell a home</p>
         </a>
       </div>
       <div class="grid-third">
         <a href="<?php echo get_permalink(41); ?> " class="home-action">
-          <h3 class="heading-2 home-action-find">Find an Agent</h3>
-          <p><strong>Ready to go?</strong> If you are ready to go and currently looking for a real estate  agent, you can work with us to find the best fit in your local area. By the way, it’s completely free, too!</p>
+          <div class="home-icon grunticon-home"></div>
+          <h3 class="heading-2">Owning a home</h3>
+          <p>Owning a home owning a home owning a home owning a home owning a home </p>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="container container-padded container-narrow">
+  <section class="bg-brown">
+    <div class="container container-section container-narrow f-center">
+      <p class="feature">Or try searching for a specific real&nbsp;estate&nbsp;topic&nbsp;&hellip;</p>
+      <form method="get" class="home-search-form" action="<?php echo esc_url( home_url( '/search' ) ); ?>" role="search">
+        <label for="home-search-input" class="hide-visually">Search</label>
+        <input id="home-search-input" type="search" class="home-search-input" name="q" placeholder="Search">
+        <button id="home-search-submit" type="submit" class="home-search-submit">
+          <span class="grunticon-search"></span>
+          <span class="hide-visually">Submit</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <section class="bg-green">
+    <div class="container container-section container-narrow f-center">
+      <p class="feature">Still have questions? Ask&nbsp;Monty!</p>
+      <p>Fill out our short form and Monty may choose your question for an article.</p>
+      <p>
+        <a href="<?php echo get_permalink(39); ?>" class="btn btn-clear">Ask Monty a Question</a>
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container container-section container-narrow f-center">
+      <p class="feature">Ready to buy or sell? Want guidance finding an agent?</p>
+      <p>If you are ready to go and currently looking for a real estate  agent, you can work with us to find the best fit in your local area. <em>By the way, it’s completely free, too!</em></p>
+      <p>
+        <a href="<?php echo get_permalink(41); ?>" class="btn btn-dark">Find an Agent</a>
+      </p>
+    </div>
+  </section>
+
+<!--   <section class="container container-section container-narrow">
     <?php wp_reset_query();
       while ( have_posts() ) : the_post(); ?>
       <div class="content">
         <?php the_content(); ?>
       </div>
     <?php endwhile; ?>
-  </section>
+  </section> -->
 
   <div class="bg-rust rel">
     <div id="random-testimonial-inner" class="container container-section container-narrow" data-random-href="<?php echo get_permalink(get_page_by_path('Random Testimonial')); ?>">

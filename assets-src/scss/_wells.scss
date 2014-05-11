@@ -1,6 +1,5 @@
 .well {
   border: 1px solid $color-gray-light;
-  border-radius: $curve;
   @extend .padded;
 }
 
@@ -10,6 +9,5 @@
 }
 
 .well-brown {
-  background-color: $color-brown-light;
-  color: $color-gray;
+  @extend .bg-brown;
 }

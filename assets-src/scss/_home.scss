@@ -1,13 +1,73 @@
 // main content
 
-.home-hero {
-  background: gray;
-  color: white;
-  @include scut-ratio-box(16/5);
+.post-list-home {
+  margin-bottom: 1em;
 }
 
-.home-hero-text {
-  @include scut-absolute(n n 1em 1em);
+.post-in-list-home {
+  @include scut-margin(0.5em n);
+  @extend %scut-hanging-indent;
+  > a {
+    display: block;
+    text-decoration: none;
+  }
+}
+
+.home-action {
+  color: inherit;
+  display: block;
+  text-decoration: none;
+  padding: 1em;
+}
+
+.home-icon {
+  display: block;
+  @extend %scut-center-block;
+  @include scut-size(scut-em(100));
+  background-size: 100% 100%;
+  & + .heading-2 {
+    margin-top: 0.3em;
+  }
+}
+
+$home-search-y: 3em;
+
+.home-search-form {
+  @include scut-center-block(20em);
+  font-size: $f-med;
+  margin-top: 0.5em;
+  position: relative;
+  border: 2px solid;
+  height: $home-search-y;
+  overflow: hidden;
+  @media #{$bp-until-sm} {
+    font-size: 1em;
+    border-width: 1px;
+    max-width: 100%;
+  }
+}
+
+#home-search-input {
+  @include scut-absolute(0 n n 0);
+  width: 100%;
+  padding: 0.85em ($home-search-y + 1em) 0.85em 1em;
+  border: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 0;
+  box-shadow: 0;
+}
+
+#home-search-submit {
+  @include scut-absolute(-2px -2px n n);
+  height: $home-search-y;
+  width: $home-search-y;
+  text-align: center;
+  border-left: 2px solid;
+  .grunticon-search {
+    @include scut-size(50%);
+    background-size: 100% 100%;
+  }
 }
 
 // testimonials

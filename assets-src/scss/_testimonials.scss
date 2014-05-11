@@ -59,7 +59,7 @@ $testimonial-info-x: scut-em(200);
       display: none;
     }
     &:before {
-      content: "see another";
+      content: "see another testimonial";
       line-height: 3em;
       color: $color-white;
       display: block;
@@ -67,32 +67,3 @@ $testimonial-info-x: scut-em(200);
     }
   }
 }
-
-// .testimonial-c {
-//   position: relative;
-//   border: 0;
-//   @include scut-margin(n 1em);
-//   @include scut-padding(1.5em);
-//   padding-right: $testimonial-info-x + 1.5em;
-// }
-
-// .testimonial-blockquote {
-//   font-size: 1.5rem;
-//   @include scut-margin(0 0 0 n);
-//   border-left: 0;
-//   padding-left: 0;
-// }
-
-// .testimonial-caption {
-//   background-color: $color-gray-light;
-//   color: $color-white;
-//   @include scut-absolute(0 0 0 n);
-//   padding: 1em;
-//   border-top-right-radius: $curve;
-//   border-bottom-right-radius: $curve;
-//   width: $testimonial-info-x;
-// }
-
-// .random-testimonial-btns-c {
-//   @include scut-absolute(n 0 0 n);
-// }
