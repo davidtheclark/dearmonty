@@ -657,7 +657,9 @@ blockquote {
 
 .feature {
   font-family: Georgia, "Times New Roman," serif;
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  line-height: 1;
+  margin-bottom: 0.5em; }
 
 .row:after {
   content: "";
