@@ -6,6 +6,11 @@ html, body {
   position: relative;
 }
 
+.link-block {
+  display: block;
+  text-decoration: none;
+}
+
 .container {
   @include scut-clearfix;
   @include scut-center-block(scut-em(1000));
@@ -40,6 +45,10 @@ html, body {
 }
 
 .bg-brown {
-  background-color: $color-brown-light;
+  background-color: $color-orange-light;
   color: $color-gray;
+}
+
+.bg-lined {
+  background: url(../images/bg-pattern-light-line.png) repeat;
 }

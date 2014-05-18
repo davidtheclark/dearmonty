@@ -34,3 +34,26 @@
     @include scut-margin(n 0.3em);
   }
 }
+
+.article {
+  float: left;
+  width: 75%;
+  padding-right: 2rem;
+  margin-bottom: 2em;
+
+  .alignleft {
+    float: left;
+    @include scut-margin(1em 1em 1em 0);
+    max-width: 50%;
+  }
+  .wp-caption {
+    @extend .well;
+    @extend .f-sm;
+    padding: 10px;
+  }
+}
+
+.article-side {
+  float: left;
+  width: 25%;
+}

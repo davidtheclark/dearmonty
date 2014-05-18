@@ -60,15 +60,19 @@
 
 					<a id="skip-nav" href="#site-body">Skip to content</a>
 
-					<div id="nav-container">
+					<div id="nav-container row">
 
-						<nav id="nav" role="navigation">
+						<nav id="nav" role="navigation" class="nav-primary">
 						  <?php wp_nav_menu( array(
 						    'theme_location' => 'header_primary',
 						    'menu_class' => 'site-nav',
 						    'container' => ''
 						  )); ?>
 						</nav>
+
+						<div id="header-search" class="header-search">
+							<?php get_search_form(); ?>
+						</div>
 
 					</div>
 
@@ -79,10 +83,6 @@
 					    'container' => ''
 					  )); ?>
 					</nav>
-
-					<div id="header-search" class="header-search">
-						<?php get_search_form(); ?>
-					</div>
 
 				</div>
 

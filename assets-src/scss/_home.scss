@@ -14,10 +14,19 @@
 }
 
 .home-action {
-  color: inherit;
-  display: block;
-  text-decoration: none;
-  padding: 1em;
+  color: $color-white !important;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  &.m-buying {
+    background-color: $color-buying;
+  }
+  &.m-selling {
+    background-color: $color-selling;
+  }
+  &.m-owning {
+    background-color: $color-owning;
+  }
 }
 
 .home-icon {

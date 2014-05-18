@@ -4,9 +4,8 @@
  */
 ?>
 
-<article>
-
-  <div class="container container-padded">
+<div class="container container-padded row">
+  <article class="article">
     <header>
       <h1 class="heading-1">
         <?php the_title(); ?>
@@ -18,6 +17,20 @@
     </div>
 
   	<?php include 'module-post-categories.php'; ?>
-  </div>
 
-</article>
+  </article>
+
+  <aside class="article-side">
+    <div class="well">
+      Monty's Recent Answers
+      <ol>
+        <li><a href="">something</a></li>
+        <li><a href="">something</a></li>
+        <li><a href="">something</a></li>
+        <li><a href="">something</a></li>
+        <li><a href="">something</a></li>
+        <li><a href="">something</a></li>
+      </ol>
+    </div>
+  </aside>
+</div>

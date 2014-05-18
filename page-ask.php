@@ -9,7 +9,7 @@ get_header(); ?>
 
 <main class="site-content" role="main">
 
-  <div class="container container-padded">
+  <div class="container container-padded article">
 
     <h1 class="heading-1"><?php the_title(); ?></h1>
 

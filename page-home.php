@@ -9,146 +9,26 @@ get_header(); ?>
 
 <main class="site-content" role="main">
 
-  <!-- temporary pattern library -->
-  <!-- <div class="pattern-library container" style="padding: 2em;">
-
-    <h1 class="heading-1">Pattern Library</h1>
-
-    <h2 class="heading-2">Colors</h2>
-
-    <div class="btn c-red">red</div>
-    <div class="btn c-rust">rust</div>
-    <div class="btn c-brown">brown</div>
-    <div class="btn c-blue">blue</div>
-    <div class="btn c-gray">gray</div>
-    <div class="btn c-dark">dark</div>
-    <div class="btn c-brown-light">brown-light</div>
-    <div class="btn c-gray-light">gray-light</div>
-
-    <h2 class="heading-2">Typography</h2>
-
-    <h3 class="heading-3">Regular Text</h3>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. <a href="#">And here is a hyperlink</a>. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. <a href="#">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</a> In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
-    <div class="heading-1">Heading 1</div>
-    <div class="heading-2">Heading 2</div>
-    <div class="heading-3">Heading 3</div>
-    <section class="m-sm-tb">
-      <h3 class="heading-3">Light Text</h3>
-      <p class="f-light">This is lighter text.</p>
-    </section>
-    <section class="m-sm-tb">
-      <h3 class="heading-3">Small Text</h3>
-      <p class="f-sm">This is smaller text, useful for stuff that people may as well ignore and probably will.</p>
-    </section>
-    <section class="m-sm-tb">
-      <h3 class="heading-3">Blockquote Text</h3>
-      <blockquote>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</blockquote>
-    </section>
-    <section class="m-sm-tb">
-      <h3 class="heading-3">Lists</h3>
-      <ul>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-      </ul>
-      <ol>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-      </ol>
-      <dl class="categories">
-        <dt>Categories</dt>
-        <dd>
-          <a href="#">some category</a>
-        </dd>
-        <dd>
-          <a href="#">some category</a>
-        </dd>
-        <dd>
-          <a href="#">some category</a>
-        </dd>
-      </dl>
-    </section>
-
-    <p>
-      <button class="btn btn-light">light button</button>
-      <button class="btn btn-dark">dark button</button>
-      <button class="btn-sm btn-light">small light button</button>
-      <button class="btn-sm btn-dark">small dark button</button>
-    </p>
-
-    <div class="m-tb">
-      <p class="well">
-        white well
-      </p>
-      <p class="well well-brown">
-        brown well
-      </p>
-      <p class="well well-shadowed">
-        white well shadowed
-      </p>
-      <p class="well well-brown well-shadowed">
-        brown well shadowed
-      </p>
-    </div>
-
-    <form class="m-tb">
-      <h2 class="heading-2">Form</h2>
-      <label>Input</label>
-      <input type="text">
-      <label>Textarea</label>
-      <textarea name="" id="" rows="3"></textarea>
-      <label>
-        <input type="radio">
-        radio
-      </label>
-      <label>
-        <input type="checkbox">
-        checkbox
-      </label>
-      <label>
-        <input type="radio">
-        radio
-      </label>
-      <label>
-        <input type="checkbox">
-        checkbox
-      </label>
-    </form>
-
-    <div class="m-tb">
-      <h2 class="heading-2">Page Numbers</h2>
-      <ul class="page-numbers">
-        <li><span class="page-numbers current">1</span></li>
-        <li><a class="page-numbers" href="#">2</a></li>
-        <li><a class="page-numbers" href="#">3</a></li>
-        <li><span class="page-numbers dots">…</span></li>
-        <li><a class="page-numbers" href="#">10</a></li>
-        <li><a class="next page-numbers" href="#">Next »</a></li>
-      </ul>
-    </div>
-
-  </div> -->
-  <!-- end pattern library -->
-
   <section class="container container-padded row">
     <section id="home-latest-post" class="grid-half-guttered">
-      <h2 class="heading-3">This Week's Article</h2>
       <?php
+        // Query for most recent post
         $latest_post = new WP_Query('posts_per_page=1');
-        while($latest_post->have_posts()) {
-          $latest_post->the_post();
-          get_template_part( 'content', 'index' );
-        }
-        wp_reset_postdata();
-      ?>
+        while($latest_post->have_posts()) : $latest_post->the_post(); ?>
+        <a href="<?php the_permalink(); ?>" class="link-block well well-brown well-shadowed">
+          <h2 class="heading-3">This Week's Article</h2>
+          <h3 class="heading-2"><?php the_title(); ?></h3>
+          <div class="entry-summary"><?php the_excerpt(); ?></div>
+        </a>
+      <?php endwhile;
+      wp_reset_postdata(); ?>
     </section>
     <section class="grid-half-guttered">
-      <div class="well well-brown well-shadowed">
+      <div class="well">
         <h2 class="heading-3">Recent Articles</h2>
         <ol class="post-list post-list-home">
           <?php
-          // Query for top 3 recent posts.
+          // Query for 6 recent posts, not including most recent.
           $recent_posts_args = array(
             'posts_per_page' => 6,
             'offset' => 1,
@@ -160,6 +40,7 @@ get_header(); ?>
           ?>
           <li class="post-in-list-home">
             <a href="<?php the_permalink(); ?>" class="heading-3"><?php the_title(); ?>&nbsp;&raquo;</a>
+          </li>
           <?php endwhile; ?>
         </ol>
         <a href="<?php echo get_permalink(43); ?>" class="btn btn-dark">Read more Q&amp;A articles</a>
@@ -168,28 +49,29 @@ get_header(); ?>
   </section>
 
   <section class="container container-section f-center">
-    <p class="feature">Start by browsing hundreds of&nbsp;articles&nbsp;&hellip;</p>
+    <p class="feature f-center">Start by browsing hundreds of&nbsp;articles&nbsp;&hellip;</p>
     <div class="row">
-      <div class="grid-third">
-        <a href="<?php echo get_permalink(43); ?>" class="home-action">
-          <div class="home-icon grunticon-home"></div>
-          <h3 class="heading-2">Buying</h3>
-          <p>Buy a home buy a home buy a home buy a home buy a home buy a home</p>
+      <div class="grid-third-guttered">
+        <a href="<?php echo get_permalink(43); ?>" class="link-block home-action m-buying heading-2">
+          <div class="home-icon grunticon-home-white"></div>
+          Buying
+        </a>
+        <p>Buy a home buy a home buy a home buy a home buy a home buy a home</p>
+      </div>
+      <div class="grid-third-guttered">
+        <a href="<?php echo get_permalink(39); ?> " class="link-block home-action m-selling heading-2">
+          <div class="home-icon grunticon-home-white"></div>
+          Selling
+        </a>
+        <p>Sell a home sell a home sell a home sell a home sell a home sell a home</p>
         </a>
       </div>
-      <div class="grid-third">
-        <a href="<?php echo get_permalink(39); ?> " class="home-action">
-          <div class="home-icon grunticon-home"></div>
-          <h3 class="heading-2">Selling</h3>
-          <p>Sell a home sell a home sell a home sell a home sell a home sell a home</p>
+      <div class="grid-third-guttered">
+        <a href="<?php echo get_permalink(41); ?> " class="link-block home-action m-owning heading-2">
+          <div class="home-icon grunticon-home-white"></div>
+          Owning
         </a>
-      </div>
-      <div class="grid-third">
-        <a href="<?php echo get_permalink(41); ?> " class="home-action">
-          <div class="home-icon grunticon-home"></div>
-          <h3 class="heading-2">Owning a home</h3>
-          <p>Owning a home owning a home owning a home owning a home owning a home </p>
-        </a>
+        <p>Owning a home owning a home owning a home owning a home owning a home </p>
       </div>
     </div>
   </section>
@@ -223,7 +105,7 @@ get_header(); ?>
       <p class="feature">Ready to buy or sell? Want guidance finding an agent?</p>
       <p>If you are ready to go and currently looking for a real estate  agent, you can work with us to find the best fit in your local area. <em>By the way, it’s completely free, too!</em></p>
       <p>
-        <a href="<?php echo get_permalink(41); ?>" class="btn btn-dark">Find an Agent</a>
+        <a href="<?php echo get_permalink(41); ?>" class="btn btn-orange">Find an Agent</a>
       </p>
     </div>
   </section>
@@ -237,7 +119,7 @@ get_header(); ?>
     <?php endwhile; ?>
   </section> -->
 
-  <div class="bg-rust rel">
+  <div class="bg-blue rel">
     <div id="random-testimonial-inner" class="container container-section container-narrow" data-random-href="<?php echo get_permalink(get_page_by_path('Random Testimonial')); ?>">
       <?php include "module-random-testimonial.php"; ?>
     </div>

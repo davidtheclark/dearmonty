@@ -5,8 +5,8 @@ COLORS
 $color-font: #2D2D2D;
 $color-red: #D92A1A;
 $color-rust: #A63921;
-$color-brown: #D97B29;
-$color-brown-light: #EAE7D9;
+$color-orange: #D97B29;
+$color-orange-light: #EAE7D9;
 $color-light: #D9D3B4;
 $color-blue: #3698BF;
 $color-white: #fff;
@@ -14,6 +14,10 @@ $color-gray: #696969;
 $color-gray-light: #b3b3b3;
 $color-dark: $color-font;
 $color-green: #85BF76;
+
+$color-buying: $color-blue;
+$color-selling: $color-green;
+$color-owning: $color-orange;
 
 
 /*==========================

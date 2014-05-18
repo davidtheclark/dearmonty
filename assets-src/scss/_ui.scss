@@ -2,6 +2,8 @@
 input.btn {
   color: $color-white;
   display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
   text-decoration: none;
   @include scut-selected {
     color: $color-white;
@@ -21,6 +23,14 @@ input.btn-dark  {
   @include scut-selected {
     background-color: $color-red;
   }
+}
+
+.btn-orange {
+  background-color: $color-orange;
+  @include scut-selected {
+    background-color: lighten($color-orange, 10);
+  }
+
 }
 
 .btn-light {
