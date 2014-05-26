@@ -1,7 +1,5 @@
 .post-in-list-home {
-  & + & {
-    margin-top: 10px;
-  }
+  margin-bottom: 10px;
 }
 
 #home-latest-post {
@@ -33,5 +31,17 @@
   background-size: 100% 100%;
   & + .heading-2 {
     margin-top: 0.3em;
+  }
+}
+
+#home-search {
+  margin-top: 20px;
+}
+
+#home-search-input {
+  background-color: $c-white;
+  width: 330px;
+  @media #{$bp-until-sm} {
+    width: 100%;
   }
 }

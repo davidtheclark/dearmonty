@@ -28,5 +28,6 @@ function dearmonty_pagination($the_query) {
 	  'current' => max( 1, get_query_var('paged') ),
 	  'total' => $the_query->max_num_pages,
 	  'type' => 'list',
+	  'mid_size' => 1,
 	) );
 }

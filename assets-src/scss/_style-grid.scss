@@ -28,11 +28,21 @@ $gutter: 2%;
   }
 }
 
+.col-main {
+  width: 70%;
+  padding: 40px 60px 40px 10px;
+  @media #{$bp-until-med} {
+    padding: 20px 10px;
+  }
+}
+
+.col-side {
+  width: 30%;
+  @include scut-padding(40px 10px 10px);
+}
+
 @media #{$bp-until-med} {
-  .col-third,
-  .col-half,
-  .col-half-guttered,
-  .col-third-guttered {
+  .col {
     float: none;
     width: 100%;
   }

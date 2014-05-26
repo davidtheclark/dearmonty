@@ -4,10 +4,10 @@
  */
 ?>
 
-<div class="container container-padded row">
-  <article class="article">
+<div class="content-container row">
+  <article class="col col-main">
     <header>
-      <h1 class="heading-1">
+      <h1 class="heading heading-1">
         <?php the_title(); ?>
       </h1>
     </header>
@@ -20,17 +20,23 @@
 
   </article>
 
-  <aside class="article-side">
-    <div class="well">
-      Monty's Recent Answers
-      <ol>
-        <li><a href="">something</a></li>
-        <li><a href="">something</a></li>
-        <li><a href="">something</a></li>
-        <li><a href="">something</a></li>
-        <li><a href="">something</a></li>
-        <li><a href="">something</a></li>
-      </ol>
-    </div>
+  <aside class="col col-side well well-brown well-shadowed">
+    <h1 class="heading heading-4">Monty's Recent Answers</h1>
+    <ol class="post-list-side">
+      <?php
+      // Query for 6 recent posts, not including most recent.
+      $recent_posts_args = array(
+        'posts_per_page' => 5,
+      );
+      $recent_posts_query = new WP_Query($recent_posts_args);
+      // The Loop
+      while ( $recent_posts_query->have_posts() ):
+        $recent_posts_query->the_post();
+      ?>
+      <li class="post-in-list-side">
+        <a href="<?php the_permalink(); ?>"><?php the_title(); ?>&nbsp;&raquo;</a>
+      </li>
+      <?php endwhile; ?>
+    </ol>
   </aside>
 </div>

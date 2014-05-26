@@ -1,0 +1,30 @@
+
+// PAGE NUMBERS
+
+ul.page-numbers {
+  @extend %scut-list-floated;
+  @extend .m-lg-tb;
+  display: table;
+  color: $c-gray;
+  border: 1px solid $c-blue;
+  border-radius: 4px;
+  > li {
+    border-left: 1px solid $c-blue;
+  }
+  > li:first-child {
+    border-left: 0;
+  }
+}
+a.page-numbers,
+span.page-numbers {
+  display: block;
+  padding: 10px 20px;
+  @extend .padded-xsm;
+  text-decoration: none;
+}
+a.page-numbers {
+  @include scut-selected {
+    background-color: $c-blue;
+    color: $c-white;
+  }
+}

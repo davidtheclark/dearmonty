@@ -1,0 +1,70 @@
+.categories {
+  @extend %scut-clearfix;
+  font-style: italic;
+  margin: 0;
+  > dt,
+  > dd {
+    float: left;
+  }
+  > dt {
+    &:after {
+      content: ":";
+      margin-right: 0.3em;
+    }
+  }
+  > dd {
+    margin-left: 0;
+  }
+  > dd + dd:before {
+    content: $scut-middot;
+    float: left;
+    @include scut-margin(n 0.3em);
+  }
+  .single-post & {
+    padding-top: 20px;
+    @include scut-margin(20px n);
+    border-top: 1px solid $c-gray-light;
+  }
+}
+
+
+.alignleft {
+  float: left;
+  @include scut-margin(1em 1em 1em 0);
+  max-width: 50%;
+  @media #{$bp-until-sm} {
+    display: block;
+    float: none;
+    @include scut-margin(1em auto);
+    max-width: 100%;
+  }
+}
+.wp-caption {
+  font-size: $fz-0;
+  padding: 10px;
+}
+
+.col-side.well {
+  margin-top: 40px;
+}
+
+.sidesteps {
+  &,
+  .heading,
+  a {
+    color: $c-white;
+    text-decoration: none;
+  }
+  a {
+    @include scut-selected {
+      text-decoration: underline;
+    }
+  }
+  @include scut-padding(n 20px);
+  &.m-home-buying {
+    background: $c-buying;
+  }
+  &.m-home-selling {
+    background: $c-selling;
+  }
+}

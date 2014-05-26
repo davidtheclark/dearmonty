@@ -1,3 +1,29 @@
 .post-list {
   @extend %scut-list-unstyled;
+  @include scut-margin(20px n);
+}
+
+.post-in-list {
+  @include scut-padding(20px n);
+  border-top: 1px solid $c-gray-light;
+  .heading > a {
+    color: $c-rust;
+    @include scut-selected {
+      text-decoration: underline;
+    }
+  }
+}
+
+.entry-summary {
+  margin-bottom: 10px;
+}
+
+.post-list-side {
+  @extend %scut-list-unstyled;
+}
+
+.post-in-list-side {
+  & + & {
+    margin-top: 10px;
+  }
 }

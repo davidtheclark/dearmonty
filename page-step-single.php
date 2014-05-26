@@ -7,19 +7,16 @@
 
 get_header();?>
 
-<main class="site-content container row" role="main">
-  <?php while ( have_posts() ) : the_post(); ?>
-
-  <?php
-    $parent_id = $post->post_parent;
-    $parent = get_post($parent_id);
-    $parent_title = $parent->post_title;
-    $steps_parent_id = $parent_id;
-    $steps_parent_name = $parent->post_name;
-    include "module-steps-sidebar.php";
+<main class="content-container row" role="main">
+  <?php while ( have_posts() ) : the_post();
+  $parent_id = $post->post_parent;
+  $parent = get_post($parent_id);
+  $parent_title = $parent->post_title;
+  $steps_parent_id = $parent_id;
+  $steps_parent_name = $parent->post_name;
   ?>
 
-  <div class="main-with-sidebar">
+  <div class="container col col-main">
     <?php
       $page_num = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
 
@@ -28,16 +25,15 @@ get_header();?>
       $step_title = get_the_title();
       ?>
 
-      <h1 class="heading-1">
-        <?php echo $parent_title; ?> &#35;<?php echo $post->menu_order; ?>: <?php the_title(); ?>
+      <a href="<?php echo $parent_url ?>" class="heading heading-4"><?php echo $parent_title; ?></a>
+      <h1 class="heading heading-1">
+        <?php the_title(); ?>
       </h1>
 
       <?php if ($page_num === 1) : ?>
-        <div class="well well-brown well-shadowed">
-          <?php the_content(); ?>
-        </div>
+        <?php the_content(); ?>
       <?php else: ?>
-        <h2>page <?php echo $page_num ?></h2>
+        <h2 class="heading heading-4">[page <?php echo $page_num ?>]</h2>
       <?php endif; ?>
 
       <ol class="post-list">
@@ -62,6 +58,12 @@ get_header();?>
 
     <?php endwhile; ?>
   </div>
+
+
+  <?php
+    include "module-steps-sidebar.php";
+  ?>
+
 
 </main>
 

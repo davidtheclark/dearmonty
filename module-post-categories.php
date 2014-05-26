@@ -11,7 +11,7 @@
           $cat = get_category($c);
     ?>
     <dd>
-      <a href="<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></a>
+      <a href="<?php echo get_category_link($c); ?>"><?php echo $cat->name; ?></a>
     </dd>
     <?php
       endif;

@@ -1,5 +1,5 @@
-<aside class="sidebar m-<?php echo $steps_parent_name; ?>">
-  <h2 class="heading-3">The Steps of <?php the_title(); ?></h2>
+<aside class="col col-side sidesteps m-<?php echo $steps_parent_name; ?>">
+  <h2 class="heading heading-4">The Steps of <?php echo $parent_title; ?></h2>
   <ol class="sidebar-steps-list">
     <?php
     // Get children pages -- the steps.

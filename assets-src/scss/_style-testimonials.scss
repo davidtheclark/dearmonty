@@ -15,8 +15,11 @@ $testimonial-info-x: scut-em(200);
     color: $c-white;
     font-size: 1.2em;
     @include scut-margin(0 0 n n);
-    padding-left: 0;
+    @include scut-padding(n 2em);
     border-left: 0;
+    @media #{$bp-until-sm} {
+      @include scut-padding(n 0);
+    }
   }
   .testimonial-caption {
     color: $c-brown;
@@ -44,7 +47,7 @@ $testimonial-info-x: scut-em(200);
   }
 }
 
-@media only screen and (max-width: scut-em(800)) {
+@media only screen and (max-width: 800px) {
   #random-testimonial-inner {
     @include scut-padding(n 1em 5em);
   }

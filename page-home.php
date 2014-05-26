@@ -42,7 +42,7 @@ get_header(); ?>
             while ( $recent_posts_query->have_posts() ):
               $recent_posts_query->the_post();
             ?>
-            <li class="post-in-list-home heading heading-4">
+            <li class="post-in-list-home">
               <a href="<?php the_permalink(); ?>"><?php the_title(); ?>&nbsp;&raquo;</a>
             </li>
             <?php endwhile; ?>
@@ -87,11 +87,11 @@ get_header(); ?>
   <section class="bg-brown">
     <div class="container p-y-lg f-center">
       <p class="feature">Or try searching for a specific real&nbsp;estate&nbsp;topic&nbsp;&hellip;</p>
-      <form method="get" class="home-search-form" action="<?php echo esc_url( home_url( '/search' ) ); ?>" role="search">
+      <form method="get" id="home-search" class="search-form" action="<?php echo esc_url( home_url( '/search' ) ); ?>" role="search">
         <label for="home-search-input" class="hide-visually">Search</label>
-        <input id="home-search-input" type="search" name="q" placeholder="Search">
-        <button id="home-search-submit" type="submit">
-          <span class="grunticon-search"></span>
+        <input id="home-search-input" class="search-input" type="search" name="q" placeholder="Search">
+        <button id="home-search-submit" class="search-submit" type="submit">
+          <span class="icon grunticon-search-gray"></span>
           <span class="hide-visually">Submit</span>
         </button>
       </form>
@@ -104,7 +104,7 @@ get_header(); ?>
       <p>Fill out our short form and Monty may choose your question for an article.</p>
       <p>
         <a href="<?php echo get_permalink(39); ?>" class="btn btn-clear btn-lg">
-          <span class="btn-icon grunticon-question-white"></span>
+          <span class="icon icon-inline grunticon-question-white"></span>
           Ask Monty a Question
         </a>
       </p>
@@ -117,7 +117,7 @@ get_header(); ?>
       <p>If you are ready to go and currently looking for a real estate  agent, you can work with us to find the best fit in your local area. <em>By the way, it’s completely free, too!</em></p>
       <p>
         <a href="<?php echo get_permalink(41); ?>" class="btn btn-orange btn-lg">
-          <span class="btn-icon grunticon-binoculars-white"></span>
+          <span class="icon icon-inline grunticon-binoculars-white"></span>
           Find an Agent
         </a>
       </p>

@@ -3,7 +3,7 @@
 }
 
 #site-body {
-  border-top: 1em solid $c-white;
+  border-top: 20px solid $c-white;
   .page-id-15 &,
   .parent-pageid-15 & {
     border-top-color: $c-buying;
@@ -61,6 +61,9 @@
     @extend %one-line-padded-lg;
     @include scut-padding(n 1em);
   }
+  > li {
+    margin-right: 10px;
+  }
 }
 
 .nav-buying > a {
@@ -81,33 +84,7 @@
   }
 }
 
-
-// SEARCH
-
 #header-search {
   float: left;
   position: relative;
-}
-
-#header-search-input {
-  height: 60px;
-  line-height: 58px;
-  box-sizing: border-box;
-  border: 2px solid $c-gray-light;
-  background: none;
-  padding: 0 76px 0 16px;
-  -webkit-appearance: none;
-  &::placeholder {
-    color: $c-gray;
-  }
-}
-
-#header-search-submit {
-  @include scut-absolute(0 0 0 n);
-  line-height: 58px;
-  width: 60px;
-  z-index: 2;
-  .icon {
-    @extend %scut-center-block;
-  }
 }

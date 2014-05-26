@@ -71,10 +71,10 @@
 				  )); ?>
 				</nav>
 
-				<form method="get" id="header-search"action="<?php echo esc_url( home_url( '/search' ) ); ?>" role="search">
+				<form method="get" id="header-search" class="search-form" action="<?php echo esc_url( home_url( '/search' ) ); ?>" role="search">
 					<label for="header-search-input" class="hide-visually">Search</label>
-					<input id="header-search-input" type="search" name="q" placeholder="Search">
-					<button id="header-search-submit" type="submit">
+					<input id="header-search-input" type="search" name="q" class="search-input" placeholder="Search">
+					<button id="header-search-submit" class="search-submit" type="submit">
 				    <span class="icon grunticon-search-gray"></span>
 				    <span class="hide-visually">Submit</span>
 				  </button>

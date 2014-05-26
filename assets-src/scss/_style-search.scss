@@ -1,0 +1,27 @@
+.search-form {
+  display: inline-block;
+  position: relative;
+}
+
+.search-input[type="search"] {
+  height: 60px;
+  line-height: 58px;
+  box-sizing: border-box;
+  border: 2px solid $c-gray-light;
+  background: none;
+  padding: 0 76px 0 16px;
+  -webkit-appearance: none;
+  &::placeholder {
+    color: $c-gray;
+  }
+}
+
+.search-submit {
+  @include scut-absolute(0 0 0 n);
+  line-height: 58px;
+  width: 60px;
+  z-index: 2;
+  .icon {
+    @extend %scut-center-block;
+  }
+}

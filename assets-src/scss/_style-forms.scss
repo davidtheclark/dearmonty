@@ -27,3 +27,28 @@
 .btn-lg {
   @extend %one-line-padded-lg;
 }
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="search"],
+textarea {
+  box-shadow: none;
+  border: 1px solid $c-gray-light;
+  line-height: 20px;
+  padding: 9px 1em;
+  width: 100%;
+  -webkit-appearance: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 0.3em;
+}
+
+label {
+  display: block;
+  @extend .m-sm-t;
+  @extend .m-xsm-b;
+  @extend .f-light;
+}

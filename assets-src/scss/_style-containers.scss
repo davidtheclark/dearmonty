@@ -1,6 +1,14 @@
 .container {
   @include scut-center-block($max-x);
-  padding: 1em;
+  padding: 10px;
+}
+
+.content-container {
+  @include scut-center-block(960px);
+}
+
+.container,
+.rel {
   position: relative;
 }
 

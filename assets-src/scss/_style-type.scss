@@ -22,6 +22,7 @@ body {
 .heading-1 {
   color: $c-rust;
   font-size: $fz-5;
+  margin-bottom: 20px;
   @media #{$bp-until-sm} {
     font-size: $fz-3;
   }
@@ -54,6 +55,9 @@ body {
 
 .feature {
   font-size: $fz-3;
+  @media #{$bp-until-sm} {
+    font-size: $fz-2;
+  }
 }
 
 a {
