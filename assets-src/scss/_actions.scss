@@ -1,32 +1,33 @@
 .action {
   display: block;
-  color: $color-white;
+  color: $c-white;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
   padding: 1.5em;
+  text-align: center;
   .heading-2 {
     border-bottom: 1px solid;
-    color: $color-white;
+    color: $c-white;
     margin-top: 0;
   }
   @include scut-selected {
-    color: $color-white;
+    color: $c-white;
   }
 }
 
 .action-learn {
-  background-color: $color-blue;
+  background-color: $c-blue;
   margin-right: 0.5em;
 }
 
 .action-ask {
-  background-color: $color-green;
+  background-color: $c-green;
   @include scut-margin(n 0.5em);
 }
 
 .action-find {
-  background-color: $color-orange;
+  background-color: $c-orange;
   margin-left: 0.5em;
 }
 

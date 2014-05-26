@@ -25,8 +25,8 @@
 
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets-dist/css/main.css">
-	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets-dist/css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
 	<!-- Don't forget to replace Modernizr's full dev script with a custom build! -->
 	<script src="<?php echo get_template_directory_uri(); ?>/assets-dist/js/modernizr-custom.js"></script>
@@ -44,48 +44,44 @@
 
 <body <?php body_class(); ?>>
 
-	<div id="wrapper">
+	<div id="page" class="page">
 
-		<div id="page" class="page">
+		<?php do_action( 'before' ); ?>
 
-			<?php do_action( 'before' ); ?>
+		<header class="site-header container row" role="banner">
 
-			<header class="site-header" role="banner">
+			<a id="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+				<span class="hide-visually"><?php bloginfo( 'name' ); ?></span>
+			</a>
 
-				<div id="header-container" class="container">
+			<a id="skip-nav" href="#site-body">Skip to content</a>
 
-					<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-						<span class="hide-visually"><?php bloginfo( 'name' ); ?></span>
-					</a>
+			<div id="nav-container" class="row">
 
-					<a id="skip-nav" href="#site-body">Skip to content</a>
+				<nav id="nav-inner" role="navigation">
+				  <?php wp_nav_menu( array(
+				    'theme_location' => 'header_primary',
+				    'menu_class' => 'nav nav-primary',
+				    'container' => ''
+				  )); ?>
+				  <?php wp_nav_menu( array(
+				    'theme_location' => 'header_secondary',
+				    'menu_class' => 'nav nav-secondary',
+				    'container' => ''
+				  )); ?>
+				</nav>
 
-					<div id="nav-container row">
+				<form method="get" id="header-search"action="<?php echo esc_url( home_url( '/search' ) ); ?>" role="search">
+					<label for="header-search-input" class="hide-visually">Search</label>
+					<input id="header-search-input" type="search" name="q" placeholder="Search">
+					<button id="header-search-submit" type="submit">
+				    <span class="icon grunticon-search-gray"></span>
+				    <span class="hide-visually">Submit</span>
+				  </button>
+				</form>
 
-						<nav id="nav" role="navigation" class="nav-primary">
-						  <?php wp_nav_menu( array(
-						    'theme_location' => 'header_primary',
-						    'menu_class' => 'site-nav',
-						    'container' => ''
-						  )); ?>
-						</nav>
+			</div>
 
-						<div id="header-search" class="header-search">
-							<?php get_search_form(); ?>
-						</div>
+		</header>
 
-					</div>
-
-					<nav id="nav-secondary" role="navigation">
-					  <?php wp_nav_menu( array(
-					    'theme_location' => 'header_secondary',
-					    'menu_class' => 'site-nav-secondary',
-					    'container' => ''
-					  )); ?>
-					</nav>
-
-				</div>
-
-			</header>
-
-			<div id="site-body" class="site-body">
+		<div id="site-body">

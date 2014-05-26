@@ -341,10 +341,10 @@ td, th {
 /*
 * Scut, a collection of Sass utilities
 * to ease and improve our implementations of common style-code patterns.
-* v0.10.3
+* v0.10.4
 * Docs at http://davidtheclark.github.io/scut
 */
-.categories:after {
+.row:after, .categories:after {
   content: "";
   display: table;
   clear: both; }
@@ -431,7 +431,6 @@ button, input[type="button"], input[type="submit"], input[type="reset"] {
   color: inherit;
   font: inherit;
   margin: 0;
-  outline: none;
   padding: 0;
   width: auto;
   -webkit-appearance: none;
@@ -462,20 +461,11 @@ figure {
 COLORS
 ==========================*/
 /*==========================
-FONTS
-==========================*/
-/*==========================
 DIMENSIONS
 ==========================*/
 /*==========================
 MEDIA QUERIES
 ==========================*/
-.svg-bg {
-  background-repeat: no-repeat;
-  background-position: center center;
-  -webkit-background-size: contain;
-  background-size: contain; }
-
 .hide-visually {
   border: 0;
   clip: rect(0 0 0 0);
@@ -486,12 +476,6 @@ MEDIA QUERIES
   position: absolute;
   width: 1px; }
 
-
-figure {
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0; }
 
 .us-li {
   list-style-type: none;
@@ -601,8 +585,51 @@ figure {
 .c-gray-light {
   background-color: #b3b3b3; }
 
+@font-face {
+  font-family: "Source Sans Pro";
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/sourcesanspro-regular-webfont.eot');
+  src: url('../fonts/sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/sourcesanspro-regular-webfont.woff') format('woff'), url('../fonts/sourcesanspro-regular-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-regular-webfont.svg#Source Sans Pro') format('svg'); }
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-style: normal;
+  src: url('../fonts/sourcesanspro-bold-webfont.eot');
+  src: url('../fonts/sourcesanspro-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/sourcesanspro-bold-webfont.woff') format('woff'), url('../fonts/sourcesanspro-bold-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-bold-webfont.svg#Source Sans Pro') format('svg'); }
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-weight: normal;
+  font-style: italic;
+  src: url('../fonts/sourcesanspro-it-webfont.eot');
+  src: url('../fonts/sourcesanspro-it-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/sourcesanspro-it-webfont.woff') format('woff'), url('../fonts/sourcesanspro-it-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-it-webfont.svg#Source Sans Pro') format('svg'); }
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-style: italic;
+  src: url('../fonts/sourcesanspro-boldit-webfont.eot');
+  src: url('../fonts/sourcesanspro-boldit-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/sourcesanspro-boldit-webfont.woff') format('woff'), url('../fonts/sourcesanspro-boldit-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-boldit-webfont.svg#Source Sans Pro') format('svg'); }
+
+@font-face {
+  font-family: "Source Serif Pro";
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/sourceserifpro-regular-webfont.eot');
+  src: url('../fonts/sourceserifpro-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/sourceserifpro-regular-webfont.woff') format('woff'), url('../fonts/sourceserifpro-regular-webfont.ttf') format('truetype'), url('../fonts/sourceserifpro-regular-webfont.svg#Source Serif Pro') format('svg'); }
+
+@font-face {
+  font-family: "Source Serif Pro";
+  font-weight: bold;
+  font-style: normal;
+  src: url('../fonts/sourceserifpro-bold-webfont.eot');
+  src: url('../fonts/sourceserifpro-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/sourceserifpro-bold-webfont.woff') format('woff'), url('../fonts/sourceserifpro-bold-webfont.ttf') format('truetype'), url('../fonts/sourceserifpro-bold-webfont.svg#Source Serif Pro') format('svg'); }
+
 body {
   color: #2D2D2D;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5; }
 
@@ -643,6 +670,14 @@ blockquote {
 .heading-3, .content h3, .content h4, .content h5, .content h6 {
   font-weight: bold; }
 
+.heading-4 {
+  color: #696969;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+.heading-1:first-child, .heading-2:first-child, .content h2:first-child, .heading-3:first-child, .content h3:first-child, .content h4:first-child, .content h5:first-child, .content h6:first-child, .heading-4:first-child {
+  margin-top: 0; }
+
 .f-sm, .article .wp-caption {
   font-size: 0.75em; }
 
@@ -656,10 +691,9 @@ blockquote {
   margin-top: 0; }
 
 .feature {
-  font-family: Georgia, "Times New Roman," serif;
-  font-size: 1.5em;
-  line-height: 1;
-  margin-bottom: 0.5em; }
+  font-size: 2em;
+  line-height: 1.2;
+  margin-bottom: 0.5em !important; }
 
 .row:after {
   content: "";
@@ -695,50 +729,45 @@ blockquote {
 html, body {
   overflow-x: hidden; }
 
+figure {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0; }
+
+.icon-regular {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5em;
+  width: 2em;
+  height: 2em; }
+
 .rel {
   position: relative; }
 
 .link-block {
+  color: inherit;
   display: block;
   text-decoration: none; }
 
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 62.5em;
-  position: relative; }
-  .container:after {
-    content: "";
-    display: table;
-    clear: both; }
-
-.container-padded {
+.sidebar {
+  float: right;
+  width: 25%;
+  color: #fff;
   padding: 1em; }
+  .sidebar.m-home-buying {
+    background: #3698BF; }
+  .sidebar.m-home-selling {
+    background: #85BF76; }
 
-.container-section {
-  padding: 3em 1em; }
+.main-with-sidebar {
+  float: right;
+  width: 75%;
+  padding-right: 2em;
+  padding-bottom: 3em; }
 
-.container-narrow {
-  max-width: 43.75em; }
-
-.bg-rust {
-  background-color: #A63921;
+.sidebar-steps-list a {
   color: #fff; }
-
-.bg-blue {
-  background-color: #3698BF;
-  color: #fff; }
-
-.bg-green {
-  background-color: #85BF76;
-  color: #fff; }
-
-.bg-brown, .well-brown {
-  background-color: #EAE7D9;
-  color: #696969; }
-
-.bg-lined {
-  background: url(../images/bg-pattern-light-line.png) repeat; }
 
 .btn, .btn-sm, input.btn, input.btn-sm {
   color: #fff;
@@ -753,12 +782,12 @@ html, body {
 .btn-dark, input.btn-dark {
   background-color: #A63921; }
   .btn-dark:hover, .btn-dark:focus, input.btn-dark:hover, input.btn-dark:focus {
-    background-color: #D92A1A; }
+    background-color: #7b2919; }
 
 .btn-orange {
   background-color: #D97B29; }
   .btn-orange:hover, .btn-orange:focus {
-    background-color: #e19354; }
+    background-color: #b0601f; }
 
 .btn-light {
   background-color: #3698BF; }
@@ -773,7 +802,15 @@ html, body {
   color: #3698BF;
   border: 1px solid; }
 
-input[type="text"], input[type="email"], input[type="search"], textarea {
+.btn-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 2em;
+  height: 2em;
+  margin-right: 0.5em;
+  margin-left: -0.5em; }
+
+input[type="text"], input[type="tel"], input[type="email"], input[type="search"], textarea {
   -webkit-box-shadow: none;
   box-shadow: none;
   border: 1px solid #b3b3b3;
@@ -808,6 +845,51 @@ a.page-numbers:hover, a.page-numbers:focus {
   background-color: #3698BF;
   color: #fff; }
 
+
+.cc, .cc-full, .cc-med {
+  margin-left: auto;
+  margin-right: auto; }
+
+.cc-full {
+  max-width: 75em; }
+
+.cc-med {
+  max-width: 37.5em; }
+
+.cp {
+  padding: 1.5em; }
+
+.cp-y-lg {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  padding-left: 1em;
+  padding-right: 1em; }
+  @media only screen and (max-width: 48em) {
+    .cp-y-lg {
+      padding-top: 1.5em;
+      padding-bottom: 1.5em; } }
+
+.bg-white {
+  background-color: #fff; }
+
+.bg-rust {
+  background-color: #A63921;
+  color: #fff; }
+
+.bg-blue {
+  background-color: #3698BF;
+  color: #fff; }
+
+.bg-green {
+  background-color: #85BF76;
+  color: #fff; }
+
+.bg-brown, .well-brown {
+  background-color: #EAE7D9; }
+
+.bg-lined {
+  background: url(../images/bg-pattern-light-line.png) repeat; }
+
 .well, .article .wp-caption {
   border: 1px solid #b3b3b3; }
 
@@ -817,24 +899,9 @@ a.page-numbers:hover, a.page-numbers:focus {
   border-color: #fff; }
 
 
-.breadcrumb {
-  list-style-type: none;
-  padding-left: 0;
-  margin-top: 0;
-  margin-bottom: 0; }
-  .breadcrumb:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .breadcrumb > li {
-    float: left; }
-  .breadcrumb > li:before {
-    content: "\203A";
-    float: left;
-    margin-left: 0.3em;
-    margin-right: 0.3em; }
-  .breadcrumb > li:first-child:before {
-    display: none; }
+.well-empty {
+  border: 0;
+  background-color: #fff; }
 
 .post-list {
   list-style-type: none;
@@ -844,9 +911,6 @@ a.page-numbers:hover, a.page-numbers:focus {
 
 .post-in-list + .post-in-list {
   margin-top: 1.5em; }
-
-.entry-summary {
-  margin-top: 0.5em; }
 
 .categories > dt, .categories > dd {
   float: left; }
@@ -949,10 +1013,15 @@ a.page-numbers:hover, a.page-numbers:focus {
   margin: 2px; }
 
 .site-header {
-  border-bottom: 2px solid #2D2D2D;
   padding-top: 1em;
-  padding-bottom: 2px;
-  overflow: hidden; }
+  overflow: hidden;
+  border-bottom: 1em solid; }
+  .page-id-15 .site-header, .parent-pageid-15 .site-header {
+    border-bottom-color: #3698BF; }
+  .page-id-2 .site-header, .parent-pageid-2 .site-header {
+    border-bottom-color: #85BF76; }
+  .page-id-2262 .site-header, .parent-pageid-2262 .site-header {
+    border-bottom-color: #D97B29; }
 
 .site-title {
   background: url(http://www.dearmonty.com/wp-content/themes/dearmonty-wp/images/main/logoint.png) no-repeat center center;
@@ -967,24 +1036,22 @@ a.page-numbers:hover, a.page-numbers:focus {
 .nav-primary, .header-search {
   float: left; }
 
-.site-nav, .site-nav-secondary {
+.site-nav {
   list-style-type: none;
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
   text-transform: uppercase;
-  margin: -6px -3px;
   font-weight: bold; }
-  .site-nav:after, .site-nav-secondary:after {
+  .site-nav:after {
     content: "";
     display: table;
     clear: both; }
-  .site-nav > li, .site-nav-secondary > li {
+  .site-nav > li {
     float: left; }
-  .site-nav > li, .site-nav-secondary > li {
-    background-color: #3698BF;
-    margin: 6px 3px; }
-    .site-nav > li > a, .site-nav-secondary > li > a {
+  .site-nav > li {
+    background-color: #3698BF; }
+    .site-nav > li > a {
       color: #fff;
       display: block;
       padding: 1em;
@@ -1004,10 +1071,19 @@ a.page-numbers:hover, a.page-numbers:focus {
   top: 0;
   right: 0; }
 
-.site-nav-secondary > li > a {
-  font-weight: normal;
-  font-size: 0.8em;
-  padding: 0.5em; }
+.site-nav-secondary {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0; }
+  .site-nav-secondary:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .site-nav-secondary > li {
+    float: left; }
+  .site-nav-secondary > li > a {
+    padding: 0.5em; }
 
 .mbl-header-btn {
   background: lightgray;
@@ -1181,7 +1257,6 @@ SMALLER SIZE
   text-align: center; }
   #random-testimonial-inner .testimonial-blockquote {
     color: #fff;
-    font-family: Georgia, 'Times New Roman', serif;
     font-size: 1.2em;
     margin-top: 0;
     margin-right: 0;
@@ -1250,7 +1325,8 @@ SMALLER SIZE
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
-  padding: 1.5em; }
+  padding: 1.5em;
+  text-align: center; }
   .action .heading-2, .action .content h2, .content .action h2 {
     border-bottom: 1px solid;
     color: #fff;

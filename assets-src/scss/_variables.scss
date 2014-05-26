@@ -2,34 +2,29 @@
 COLORS
 ==========================*/
 
-$color-font: #2D2D2D;
-$color-red: #D92A1A;
-$color-rust: #A63921;
-$color-orange: #D97B29;
-$color-orange-light: #EAE7D9;
-$color-light: #D9D3B4;
-$color-blue: #3698BF;
-$color-white: #fff;
-$color-gray: #696969;
-$color-gray-light: #b3b3b3;
-$color-dark: $color-font;
-$color-green: #85BF76;
+$c-font: #2D2D2D;
+$c-red: #D92A1A;
+$c-rust: #A63921;
+$c-orange: #D97B29;
+$c-orange-light: #EAE7D9;
+$c-light: #D9D3B4;
+$c-blue: #3698BF;
+$c-white: #fff;
+$c-gray: #696969;
+$c-gray-light: #b3b3b3;
+$c-dark: $c-font;
+$c-green: #85BF76;
 
-$color-buying: $color-blue;
-$color-selling: $color-green;
-$color-owning: $color-orange;
-
-
-/*==========================
-FONTS
-==========================*/
-
-$font-base: 'Lato', "lucida grande", lucida, "trebuchet ms", trebuchet, arial, verdana, sans-serif;
+$c-buying: $c-blue;
+$c-selling: $c-green;
+$c-owning: $c-orange;
 
 
 /*==========================
 DIMENSIONS
 ==========================*/
+
+$site-x: scut-em(1200);
 
 $search-y: 40px;
 $search-x: 250px;

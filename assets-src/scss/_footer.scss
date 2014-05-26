@@ -1,6 +1,6 @@
 .site-footer {
-  background: $color-orange-light;
-  color: $color-gray;
+  background: $c-orange-light;
+  color: $c-gray;
 }
 
 .footer-logo {
@@ -14,7 +14,7 @@
 .footer-signup {
   @include scut-margin(1em n);
   @include scut-padding(1em n);
-  @include scut-border(1px solid $color-gray-light, y n);
+  @include scut-border(1px solid $c-gray-light, y n);
   text-align: center;
 }
 

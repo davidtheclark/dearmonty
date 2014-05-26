@@ -4,7 +4,7 @@
   position: relative;
   width: $search-x;
   height: $search-total-y;
-  border: $search-bd-x solid $color-font;
+  border: $search-bd-x solid $c-font;
   //box-sizing: content-box;
 }
 
@@ -32,7 +32,7 @@
   height: $search-y;
   width: 40px;
   text-align: center;
-  border-left: 2px solid $color-font;
+  border-left: 2px solid $c-font;
 }
 
 

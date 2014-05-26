@@ -1,0 +1,33 @@
+.container {
+  @include scut-center-block($max-x);
+  padding: 1em;
+  position: relative;
+}
+
+// padding
+.p-y-lg {
+  @include scut-padding(60px n);
+}
+
+// backgrounds
+.bg-white {
+  background-color: #fff;
+}
+.bg-rust {
+  background-color: $c-rust;
+  color: $c-white;
+}
+.bg-blue {
+  background-color: $c-blue;
+  color: $c-white;
+}
+.bg-green {
+  background-color: $c-green;
+  color: $c-white;
+}
+.bg-brown {
+  background-color: $c-brown;
+}
+.bg-lined {
+  background: url(../images/bg-pattern-light-line.png) repeat;
+}

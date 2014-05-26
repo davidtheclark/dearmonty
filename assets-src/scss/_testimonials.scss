@@ -12,15 +12,14 @@ $testimonial-info-x: scut-em(200);
   @include scut-padding(n 3em);
   text-align: center;
   .testimonial-blockquote {
-    color: $color-white;
-    font-family: Georgia, 'Times New Roman', serif;
+    color: $c-white;
     font-size: 1.2em;
     @include scut-margin(0 0 n n);
     padding-left: 0;
     border-left: 0;
   }
   .testimonial-caption {
-    color: $color-orange-light;
+    color: $c-orange-light;
     &:before {
       content: "";
       display: block;
@@ -41,7 +40,7 @@ $testimonial-info-x: scut-em(200);
   &:after {
     content: "";
     @include scut-center-absolutely(1.5em 2em);
-    @include scut-triangle(right, 1.5em 2em, $color-white);
+    @include scut-triangle(right, 1.5em 2em, $c-white);
   }
 }
 
@@ -61,7 +60,7 @@ $testimonial-info-x: scut-em(200);
     &:before {
       content: "see another testimonial";
       line-height: 3em;
-      color: $color-white;
+      color: $c-white;
       display: block;
       text-align: center;
     }

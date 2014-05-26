@@ -1,0 +1,76 @@
+body {
+  color: $c-font;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 100%; // 16px
+  line-height: 1.5; // 24px
+}
+
+.heading,
+.feature {
+  font-weight: bold;
+  line-height: 1.1;
+  @include scut-margin(20px n 10px);
+  text-decoration: none;
+  > a {
+    text-decoration: none;
+  }
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.heading-1 {
+  color: $c-rust;
+  font-size: $fz-5;
+  @media #{$bp-until-sm} {
+    font-size: $fz-3;
+  }
+}
+.heading-2 {
+  color: $c-rust;
+  font-size: $fz-4;
+  @media #{$bp-until-sm} {
+    font-size: $fz-2;
+  }
+}
+.heading-3 {
+  color: $c-rust;
+  font-size: $fz-3;
+  @media #{$bp-until-sm} {
+    font-size: $fz-1;
+  }
+}
+.heading-4 {
+  color: $c-gray;
+  font-size: $fz-2;
+  @media #{$bp-until-sm} {
+    font-size: $fz-1;
+  }
+}
+.heading-5 {
+  color: $c-gray;
+  font-size: $fz-0;
+}
+
+.feature {
+  font-size: $fz-3;
+}
+
+a {
+  color: $c-blue;
+  @include scut-selected {
+    color: darken($c-blue,10);
+  }
+}
+
+b {
+  font-weight: bold;
+}
+
+blockquote {
+  font-style: italic;
+  margin-left: 0;
+  color: $c-gray;
+  border-left: 2px solid $c-gray-light;
+  padding-left: 20px;
+}

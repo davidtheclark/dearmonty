@@ -14,18 +14,18 @@
 }
 
 .home-action {
-  color: $color-white !important;
+  color: $c-white !important;
   padding: 1rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
   &.m-buying {
-    background-color: $color-buying;
+    background-color: $c-buying;
   }
   &.m-selling {
-    background-color: $color-selling;
+    background-color: $c-selling;
   }
   &.m-owning {
-    background-color: $color-owning;
+    background-color: $c-owning;
   }
 }
 

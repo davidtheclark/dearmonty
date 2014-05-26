@@ -1,0 +1,20 @@
+// compiles to /style/css/main.css -- one stylesheet for the whole site
+
+@import "../../bower_components/normalize-scss/normalize";
+
+// SCSS-utils
+@import "../../bower_components/scut/dist/scut";
+@include scut-reset();
+
+@import "style-variables";
+@import "style-utility";
+@import "style-type";
+@import "style-containers";
+@import "style-grid";
+
+@import "style-forms";
+@import "style-header";
+@import "style-wells";
+@import "style-post-list";
+@import "style-home";
+@import "style-testimonials";

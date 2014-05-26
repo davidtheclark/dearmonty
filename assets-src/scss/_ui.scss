@@ -1,12 +1,12 @@
 .btn,
 input.btn {
-  color: $color-white;
+  color: $c-white;
   display: inline-block;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   @include scut-selected {
-    color: $color-white;
+    color: $c-white;
   }
   @extend .p-sm-tb;
   @extend .p-lr;
@@ -19,24 +19,24 @@ input.btn {
 
 .btn-dark,
 input.btn-dark  {
-  background-color: $color-rust;
+  background-color: $c-rust;
   @include scut-selected {
-    background-color: $color-red;
+    background-color: darken($c-rust, 10);
   }
 }
 
 .btn-orange {
-  background-color: $color-orange;
+  background-color: $c-orange;
   @include scut-selected {
-    background-color: lighten($color-orange, 10);
+    background-color: darken($c-orange, 10);
   }
 
 }
 
 .btn-light {
-  background-color: $color-blue;
+  background-color: $c-blue;
   @include scut-selected {
-    background-color: darken($color-blue, 10);
+    background-color: darken($c-blue, 10);
   }
 }
 
@@ -46,16 +46,27 @@ input.btn-dark  {
 }
 
 .btn-empty {
-  color: $color-blue;
+  color: $c-blue;
   border: 1px solid;
 }
 
+.btn-icon {
+  display: inline-block;
+  vertical-align: middle;
+  @include scut-size(scut-em(32));
+  margin-right: 0.5em;
+  margin-left: -0.5em;
+}
+
+// FORMS
+
 input[type="text"],
+input[type="tel"],
 input[type="email"],
 input[type="search"],
 textarea {
   box-shadow: none;
-  border: 1px solid $color-gray-light;
+  border: 1px solid $c-gray-light;
   padding: 0.5em 1em;
   width: 100%;
   -webkit-appearance: none;
@@ -78,17 +89,17 @@ label {
 }
 
 
-// page numbers
+// PAGE NUMBERS
 
 ul.page-numbers {
   @extend %scut-list-floated;
   @extend .m-lg-tb;
   display: table;
-  color: $color-gray;
-  border: 1px solid $color-blue;
+  color: $c-gray;
+  border: 1px solid $c-blue;
   border-radius: $curve;
   > li {
-    border-left: 1px solid $color-blue;
+    border-left: 1px solid $c-blue;
   }
   > li:first-child {
     border-left: 0;
@@ -102,7 +113,7 @@ span.page-numbers {
 }
 a.page-numbers {
   @include scut-selected {
-    background-color: $color-blue;
-    color: $color-white;
+    background-color: $c-blue;
+    color: $c-white;
   }
 }

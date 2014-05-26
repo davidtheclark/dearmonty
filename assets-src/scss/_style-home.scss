@@ -1,0 +1,37 @@
+.post-in-list-home {
+  & + & {
+    margin-top: 10px;
+  }
+}
+
+#home-latest-post {
+  @media #{$bp-until-med} {
+    margin-bottom: 40px;
+  }
+}
+
+.home-action {
+  color: $c-white !important;
+  padding: 16px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  &.m-buying {
+    background-color: $c-buying;
+  }
+  &.m-selling {
+    background-color: $c-selling;
+  }
+  &.m-owning {
+    background-color: $c-owning;
+  }
+}
+
+.home-icon {
+  display: block;
+  @extend %scut-center-block;
+  @include scut-size(100px);
+  background-size: 100% 100%;
+  & + .heading-2 {
+    margin-top: 0.3em;
+  }
+}

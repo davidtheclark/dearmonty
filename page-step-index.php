@@ -7,14 +7,18 @@
 
 get_header(); ?>
 
-<main class="site-content" role="main">
+<main class="site-content container row" role="main">
 
-  <div class="container container-padded">
+  <?php
+    $steps_parent_id = $post->ID;
+    $steps_parent_name = $post->post_name;
+    include "module-steps-sidebar.php";
+  ?>
+
+  <div class="main-with-sidebar container-padded">
     <?php while ( have_posts() ) : the_post(); ?>
 
-      <?php // include('breadcrumb.php'); ?>
-
-      <h1><?php the_title(); ?></h1>
+      <h1 class="heading-1"><?php the_title(); ?></h1>
       <?php the_content(); ?>
 
       <h2>Steps</h2>
@@ -23,6 +27,7 @@ get_header(); ?>
         // Get children pages -- the steps.
         $steps_args = array(
           'order' => 'ASC',
+          'orderby' => 'menu_order',
           'post_type' => 'page',
           'post_parent' => $post->ID,
           'nopaging' => true

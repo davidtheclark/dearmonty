@@ -1,10 +1,26 @@
 $nav-gutter: 0.3em;
 
 .site-header {
-  border-bottom: 2px solid $color-font;
   padding-top: 1em;
-  padding-bottom: 2px;
   overflow: hidden;
+  border-bottom: 1em solid;
+
+  // bottom borders
+  // buying
+  .page-id-15 &,
+  .parent-pageid-15 & {
+    border-bottom-color: $c-buying;
+  }
+  // selling
+  .page-id-2 &,
+  .parent-pageid-2 & {
+    border-bottom-color: $c-selling;
+  }
+  // owning
+  .page-id-2262 &,
+  .parent-pageid-2262 & {
+    border-bottom-color: $c-owning;
+  }
 }
 
 .site-title {
@@ -22,17 +38,16 @@ $nav-gutter: 0.3em;
   float: left;
 }
 
-.site-nav,
-.site-nav-secondary {
+.site-nav {
   @include scut-list-floated();
   text-transform: uppercase;
-  margin: -6px -3px;
+  // margin: -6px -3px;
   font-weight: bold;
   > li {
-    background-color: $color-blue;
-    margin: 6px 3px;
+    background-color: $c-blue;
+    // margin: 6px 3px;
     > a {
-      color: $color-white;
+      color: $c-white;
       display: block;
       padding: 1em;
       text-decoration: none;
@@ -41,13 +56,13 @@ $nav-gutter: 0.3em;
 }
 
 .nav-buying > a {
-  background-color: $color-buying;
+  background-color: $c-buying;
 }
 .nav-selling > a {
-  background-color: $color-selling;
+  background-color: $c-selling;
 }
 .nav-owning > a {
-  background-color: $color-owning;
+  background-color: $c-owning;
 }
 
 #nav-secondary {
@@ -55,9 +70,8 @@ $nav-gutter: 0.3em;
 }
 
 .site-nav-secondary {
+  @include scut-list-floated;
   > li > a {
-    font-weight: normal;
-    font-size: 0.8em;
     padding: 0.5em;
   }
 }
@@ -129,7 +143,7 @@ SMALLER SIZE
 //     min-height: 100%;
 //     padding: 1em;
 //     width: 230px;
-//     background-color: $color-font;
+//     background-color: $c-font;
 //   }
 
 //   #wrapper {

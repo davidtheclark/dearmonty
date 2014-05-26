@@ -1,0 +1,29 @@
+.btn {
+  @extend %one-line-padded;
+  @include scut-padding(n 1em);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $c-white;
+  text-align: center;
+  display: inline-block;
+  @include scut-selected {
+    color: $c-white;
+  }
+}
+
+.btn-rust {
+  background-color: $c-rust;
+}
+
+.btn-orange {
+  background-color: $c-orange;
+}
+
+.btn-clear {
+  border: 2px solid;
+}
+
+.btn-lg {
+  @extend %one-line-padded-lg;
+}

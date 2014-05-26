@@ -1,14 +1,22 @@
+@include scut-font-face("Source Sans Pro", "../fonts/sourcesanspro-regular-webfont");
+@include scut-font-face("Source Sans Pro", "../fonts/sourcesanspro-bold-webfont", bold);
+@include scut-font-face("Source Sans Pro", "../fonts/sourcesanspro-it-webfont", italic);
+@include scut-font-face("Source Sans Pro", "../fonts/sourcesanspro-boldit-webfont", bold, italic);
+@include scut-font-face("Source Serif Pro", "../fonts/sourceserifpro-regular-webfont");
+@include scut-font-face("Source Serif Pro", "../fonts/sourceserifpro-bold-webfont", bold);
+
+
 body {
-  color: $color-font;
-  //font-family: $font-base;
+  color: $c-font;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
   font-size: 100%; // 16px
   line-height: 1.5; // 24px
 }
 
 a {
-  color: $color-blue;
+  color: $c-blue;
   @include scut-selected {
-    color: darken($color-blue,10);
+    color: darken($c-blue,10);
   }
 }
 
@@ -19,15 +27,16 @@ b {
 blockquote {
   font-style: italic;
   margin-left: 0;
-  color: $color-gray;
-  border-left: 2px solid $color-gray-light;
+  color: $c-gray;
+  border-left: 2px solid $c-gray-light;
   padding-left: $f-sm;
 }
 
 .heading-1,
 .heading-2 {
-  &, & > a {
-    color: $color-rust;
+  &,
+  & > a {
+    color: $c-rust;
     font-weight: bold;
     line-height: 1.38;
     text-decoration: none;
@@ -59,12 +68,27 @@ blockquote {
   font-weight: bold;
 }
 
+.heading-4 {
+  color: $c-gray;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4 {
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
 .f-sm {
   font-size: $f-sm;
 }
 
 .f-light {
-  color: $color-gray;
+  color: $c-gray;
 }
 
 .f-center {
@@ -86,8 +110,8 @@ blockquote {
 }
 
 .feature {
-  font-family: Georgia, "Times New Roman," serif;
-  font-size: $f-med;
-  line-height: 1;
-  margin-bottom: 0.5em;
+  // font-family: "Source Serif Pro", Georgia, "Times New Roman," serif;
+  font-size: 2em;
+  line-height: 1.2;
+  margin-bottom: 0.5em !important;
 }

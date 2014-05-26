@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<main class="site-content" role="main">
+<main class="site-content row" role="main">
 
   <div class="container container-padded article">
 

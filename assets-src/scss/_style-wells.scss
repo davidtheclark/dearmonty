@@ -1,0 +1,18 @@
+.well {
+  border: 1px solid $c-gray-light;
+  padding: 1.5em;
+}
+
+.well-shadowed {
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.52);
+  border-color: $c-white;
+}
+
+.well-brown {
+  @extend .bg-brown;
+}
+
+.well-white {
+  border: 0;
+  background-color: #fff;
+}

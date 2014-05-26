@@ -1,0 +1,41 @@
+/*==========================
+COLORS
+==========================*/
+
+$c-font: #2D2D2D;
+$c-red: #D92A1A;
+$c-rust: #A63921;
+$c-orange: #D97B29;
+$c-brown: #EAE7D9;
+$c-blue: #3698BF;
+$c-green: #85BF76;
+$c-white: #fff;
+$c-gray: #696969;
+$c-gray-light: #b3b3b3;
+$c-dark: $c-font;
+
+$c-buying: $c-blue;
+$c-selling: $c-green;
+$c-owning: $c-orange;
+
+
+/*==========================
+DIMENSIONS
+==========================*/
+
+$max-x: scut-em(1200);
+
+$fz-0: scut-em(13);
+$fz-1: scut-em(16);
+$fz-2: scut-em(20);
+$fz-3: scut-em(27);
+$fz-4: scut-em(34);
+$fz-5: scut-em(41);
+
+
+/*==========================
+MEDIA QUERIES
+==========================*/
+
+$bp-until-sm: 'only screen and (max-width: 30em)';
+$bp-until-med: 'only screen and (max-width: 48em)';

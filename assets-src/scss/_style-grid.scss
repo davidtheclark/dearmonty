@@ -1,0 +1,45 @@
+$gutter: 2%;
+
+.row {
+  @include scut-clearfix;
+}
+
+.col {
+  float: left;
+}
+
+.col-third {
+  width: (100% / 3);
+}
+.col-half {
+  width: (100% / 2);
+}
+.col-half-guttered {
+  width: ((100% - $gutter) / 2);
+  &:first-child {
+    margin-right: $gutter;
+  }
+}
+.col-third-guttered {
+  width: ((100% - ($gutter * 2)) / 3);
+  margin-left: $gutter;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+@media #{$bp-until-med} {
+  .col-third,
+  .col-half,
+  .col-half-guttered,
+  .col-third-guttered {
+    float: none;
+    width: 100%;
+  }
+  .col-half-guttered {
+    margin-right: 0;
+  }
+  .col-third-guttered {
+    margin-left: 0;
+  }
+}

@@ -38,9 +38,13 @@ module.exports = (grunt) ->
     sass:
       options:
         sourceComments: "map"
-      style:
+      main:
         dest: "<%= vars.cssDir %>/main.css"
         src: "<%= vars.scssDir %>/main.scss"
+      style:
+        dest: "<%= vars.cssDir %>/style.css"
+        src: "<%= vars.scssDir %>/style.scss"
+
 
     # Add vendor prefixes to CSS.
     autoprefixer:
@@ -48,6 +52,7 @@ module.exports = (grunt) ->
         browsers: ["> 1%", "last 3 versions", "ie 9"]
       style:
         files:
+          "<%= sass.main.dest %>": "<%= sass.main.dest %>"
           "<%= sass.style.dest %>": "<%= sass.style.dest %>"
 
     # Compress CSS.
@@ -78,6 +83,7 @@ module.exports = (grunt) ->
         cssprefix: ".grunticon-"
         colors:
           white: "#fff"
+          gray: "#696969"
       all:
         files: [
           expand: true

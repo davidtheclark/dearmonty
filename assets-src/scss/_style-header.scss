@@ -1,0 +1,113 @@
+.site-header {
+  padding-bottom: 0;
+}
+
+#site-body {
+  border-top: 1em solid $c-white;
+  .page-id-15 &,
+  .parent-pageid-15 & {
+    border-top-color: $c-buying;
+  }
+  // selling
+  .page-id-2 &,
+  .parent-pageid-2 & {
+    border-top-color: $c-selling;
+  }
+  // owning
+  .page-id-2262 &,
+  .parent-pageid-2262 & {
+    border-top-color: $c-owning;
+  }
+}
+
+#site-title {
+  background: url(../images/dearmonty-logo.png) no-repeat center center;
+  background-size: contain;
+  display: block;
+  height: 99px;
+  width: 322px;
+  max-width: 100%;
+
+  float: left;
+}
+
+
+#nav-container {
+  float: right;
+  margin-top: scut-em(40);
+  @media only screen and (max-width: 1100px) {
+    clear: both;
+    float: left;
+    margin-top: scut-em(10);
+  }
+}
+
+#nav-inner {
+  float: left;
+}
+
+.nav {
+  @extend %scut-list-floated;
+  > li {
+    > a {
+      display: block;
+    }
+  }
+}
+
+.nav-primary {
+  > li > a {
+    @extend .btn;
+    @extend %one-line-padded-lg;
+    @include scut-padding(n 1em);
+  }
+}
+
+.nav-buying > a {
+  background-color: $c-buying;
+}
+.nav-selling > a {
+  background-color: $c-selling;
+}
+.nav-owning > a {
+  background-color: $c-owning;
+}
+
+.nav-secondary {
+  @include scut-absolute(0 1em n n);
+  > li > a {
+    @extend %one-line-padded;
+    padding-left: scut-em(10);
+  }
+}
+
+
+// SEARCH
+
+#header-search {
+  float: left;
+  position: relative;
+}
+
+#header-search-input {
+  height: 60px;
+  line-height: 58px;
+  box-sizing: border-box;
+  border: 2px solid $c-gray-light;
+  background: none;
+  padding: 0 76px 0 16px;
+  -webkit-appearance: none;
+  &::placeholder {
+    color: $c-gray;
+  }
+}
+
+#header-search-submit {
+  @include scut-absolute(0 0 0 n);
+  line-height: 58px;
+  width: 60px;
+  z-index: 2;
+  .icon {
+    @extend %scut-center-block;
+  }
+}
