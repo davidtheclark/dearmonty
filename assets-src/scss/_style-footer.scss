@@ -1,5 +1,4 @@
 .site-footer {
-  background: $c-brown;
   color: $c-gray;
 }
 
@@ -15,7 +14,6 @@
   @include scut-margin(1em n);
   @include scut-padding(1em n);
   @include scut-border(1px solid $c-gray-light, y n);
-  text-align: center;
 }
 
 .footer-signup-blurb {
@@ -43,18 +41,19 @@
   @extend %scut-list-unstyled;
 }
 
-// .footer-nav-primary-c {
-//   columns: 2;
-//   @media (max-width: scut-em(700)) {
-//     columns: 1;
-//   }
-// }
-
 .footer-fine-print {
   text-align: right;
 }
 
 @media (max-width: 37.5em) {
+  .footer-nav-primary {
+    a {
+      display: block;
+      line-height: 40px;
+      text-decoration: none;
+      border-bottom: 1px solid $c-gray-light;
+    }
+  }
   .footer-nav-primary {
     @include scut-margin(1em n);
   }

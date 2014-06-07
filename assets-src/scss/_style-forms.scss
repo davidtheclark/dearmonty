@@ -26,6 +26,10 @@
 
 .btn-lg {
   @extend %one-line-padded-lg;
+  font-size: $fz-2;
+  @media #{$bp-until-med} {
+    font-size: $fz-1;
+  }
 }
 
 input[type="text"],

@@ -1,20 +1,27 @@
-.container {
+.cc {
   @include scut-center-block($max-x);
-  padding: 10px;
+  padding: $fz-1;
 }
 
-.content-container {
-  @include scut-center-block(960px);
+.cc-med {
+  max-width: $med-x;
 }
 
-.container,
+.cc-sm {
+  max-width: $sm-x;
+}
+
+.cc,
 .rel {
   position: relative;
 }
 
 // padding
 .p-y-lg {
-  @include scut-padding(60px n);
+  @include scut-padding($pad-lg n);
+}
+.p-y-med {
+  @include scut-padding($pad-med n);
 }
 
 // backgrounds

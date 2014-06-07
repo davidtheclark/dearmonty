@@ -2,6 +2,10 @@
   @extend %scut-hide-visually;
 }
 
+.list-unstyled {
+  @extend %scut-list-unstyled;
+}
+
 .link-block {
   color: inherit;
   display: block;
@@ -23,6 +27,12 @@
   @include scut-size(32px);
 }
 
+.icon-sm {
+  @include scut-size(16px);
+  position: relative;
+  bottom: 2px;
+}
+
 .icon-inline {
   display: inline-block;
   vertical-align: middle;
@@ -31,4 +41,8 @@
 
 .f-center {
   text-align: center;
+}
+
+.f-bold {
+  font-weight: bold;
 }

@@ -10,6 +10,10 @@
 
 .grunticon-books { background-image: url('png/books.png'); background-repeat: no-repeat; }
 
+.grunticon-close-gray { background-image: url('png/close-gray.png'); background-repeat: no-repeat; }
+
+.grunticon-close { background-image: url('png/close.png'); background-repeat: no-repeat; }
+
 .grunticon-envelope-white { background-image: url('png/envelope-white.png'); background-repeat: no-repeat; }
 
 .grunticon-envelope { background-image: url('png/envelope.png'); background-repeat: no-repeat; }
@@ -25,6 +29,8 @@
 .grunticon-home3-white { background-image: url('png/home3-white.png'); background-repeat: no-repeat; }
 
 .grunticon-home3 { background-image: url('png/home3.png'); background-repeat: no-repeat; }
+
+.grunticon-menu-white { background-image: url('png/menu-white.png'); background-repeat: no-repeat; }
 
 .grunticon-menu { background-image: url('png/menu.png'); background-repeat: no-repeat; }
 

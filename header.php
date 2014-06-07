@@ -12,7 +12,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- CHECK META CONTENT -->
+
 	<title>
 		<?php echo get_bloginfo( 'title' ); ?>
 	</title>
@@ -28,7 +28,6 @@
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets-dist/css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
-	<!-- Don't forget to replace Modernizr's full dev script with a custom build! -->
 	<script src="<?php echo get_template_directory_uri(); ?>/assets-dist/js/modernizr-custom.js"></script>
 
 	<?php // skip nav styling and JS fix from http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links ?>
@@ -39,7 +38,7 @@
 	<script>/* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.createElementNS||!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||window.opera&&-1===navigator.userAgent.indexOf("Chrome")),o=function(o){var r=t.document.createElement("link"),a=t.document.getElementsByTagName("script")[0];r.rel="stylesheet",r.href=e[o&&n?0:o?1:2],a.parentNode.insertBefore(r,a)},r=new t.Image;r.onerror=function(){o(!1)},r.onload=function(){o(1===r.width&&1===r.height)},r.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};grunticon(["<?php echo get_template_directory_uri(); ?>/assets-dist/grunticon/icons.data.svg.css", "<?php echo get_template_directory_uri(); ?>/assets-dist/grunticon/icons.data.png.css", "<?php echo get_template_directory_uri(); ?>/assets-dist/grunticon/icons.fallback.css"]);
 </script>
 
-	<?php wp_head(); ?>
+<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -48,13 +47,13 @@
 
 		<?php do_action( 'before' ); ?>
 
-		<header class="site-header container row" role="banner">
-
-			<a id="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				<span class="hide-visually"><?php bloginfo( 'name' ); ?></span>
-			</a>
+		<header id="header" class="site-header cc row" role="banner">
 
 			<a id="skip-nav" href="#site-body">Skip to content</a>
+
+			<a id="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets-dist/images/dearmonty-logo.png" alt="DearMonty: No-nonsense real estate advice">
+			</a>
 
 			<div id="nav-container" class="row">
 

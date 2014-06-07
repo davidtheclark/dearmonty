@@ -10,9 +10,9 @@
 
     	</div>
 
-    	<footer class="site-footer">
+    	<footer class="site-footer bg-brown">
 
-        <div class="container p-y-lg">
+        <div class="cc p-y-lg">
 
           <div class="row">
             <div class="col col-third-guttered">
@@ -23,23 +23,25 @@
             </div>
             <div class="col col-third-guttered">
               <a href="<?php echo get_permalink(39); ?> " class="action action-ask">
-                <span class="icon icon-inline grunticon-question-white"></span>
+                <span class="icon icon-inline grunticon-quill-white"></span>
                 Ask a Question
               </a>
             </div>
             <div class="col col-third-guttered">
               <a href="<?php echo get_permalink(41); ?> " class="action action-find">
-                <span class="icon icon-inline grunticon-binoculars-white"></span>
+                <span class="icon icon-inline grunticon-profile-white"></span>
                 Find an Agent
               </a>
             </div>
           </div>
 
-          <form id="subscribe" action="" class="footer-signup">
-            <div class="footer-signup-blurb">Read new questions every Tuesday</div>
-            <label for="signup-email" class="hide-visually">Enter your email</label>
+          <form id="subscribe" action="" class="footer-signup f-center">
+            <label for="signup-email" class="footer-signup-blurb">Sign up to read new articles every Tuesday</label>
             <input id="signup-email" type="email" placeholder="Enter your email">
-            <button id="signup-submit" type="submit" class="btn btn-rust">Subscribe</button>
+            <button id="signup-submit" type="submit" class="btn btn-rust">
+              <span class="icon icon-sm icon-inline grunticon-envelope-white"></span>
+              Subscribe
+            </button>
           </form>
 
           <div class="row">

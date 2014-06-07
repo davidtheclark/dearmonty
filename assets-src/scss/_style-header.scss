@@ -21,13 +21,6 @@
 }
 
 #site-title {
-  background: url(../images/dearmonty-logo.png) no-repeat center center;
-  background-size: contain;
-  display: block;
-  height: 99px;
-  width: 322px;
-  max-width: 100%;
-
   float: left;
 }
 
@@ -87,4 +80,139 @@
 #header-search {
   float: left;
   position: relative;
+}
+
+.mbl-btn {
+  display: none;
+}
+
+.mbl-nav-btn {
+  background-color: $c-rust;
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: ($fz-0 / 2);
+  color: $c-white;
+  text-align: right;
+}
+
+.mbl-close-btn {
+  margin-top: 2em;
+  @include scut-center-block(6em);
+}
+
+.mbl-close-btn-top {
+  @include scut-absolute($fz-0 $fz-0 n n);
+}
+
+.mbl-home-btn {
+  font-size: $fz-2;
+  font-weight: bold;
+  text-align: left;
+  text-transform: none;
+  max-width: 10em;
+}
+
+// click to reveal
+
+@media #{$bp-until-med} {
+
+  #nav-container {
+    &.is-mbl-hidden {
+      margin-top: 0;
+      padding-top: 1em;
+      position: absolute;
+      left: 0;
+      right: 0;
+      background: $c-white;
+      z-index: 10;
+      @include scut-padding(n 1em 1em);
+    }
+    &.is-transition-ready {
+      transition: transform 0.3s;
+    }
+  }
+
+  .csstransforms3d #nav-container.is-mbl-hidden {
+    transform: translate3d(0, -100%, 0);
+    &.is-active {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .no-csstransforms3d #nav-container.is-mbl-hidden {
+    transform: translateY(-100%);
+    &.is-active {
+      transform: translateY(0);
+    }
+  }
+
+  #nav-inner,
+  #header-search {
+    @include scut-center-block(23em);
+  }
+
+  #header {
+    position: relative;
+    z-index: 11;
+    padding: 0;
+  }
+
+  #site-title {
+    padding: 1em;
+  }
+
+  #site-body {
+    position: relative;
+    border-top: 0;
+    &.is-showing-nav {
+      &:before {
+        content: "";
+        display: block;
+        @include scut-fill;
+        background-color: rgba(0,0,0,0.8);
+        z-index: 10;
+      }
+    }
+  }
+
+  #nav-container,
+  #nav-inner,
+  #header-search,
+  .nav > li {
+    float: none;
+  }
+
+  .nav {
+    > li {
+      margin-right: 0;
+      margin-top: $fz-0;
+    }
+  }
+
+  .nav-secondary {
+    position: static;
+    > li > a {
+      // copying button styles
+      @include scut-padding(n 1em);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: $c-gray;
+      text-align: center;
+      border: 2px solid;
+      line-height: 20px;
+      @include scut-padding(20px n);
+    }
+  }
+
+  #header-search {
+    display: block;
+    margin-top: $fz-0;
+  }
+
+  .mbl-btn {
+    display: block;
+  }
+
 }

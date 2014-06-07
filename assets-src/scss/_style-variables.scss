@@ -24,6 +24,8 @@ DIMENSIONS
 ==========================*/
 
 $max-x: scut-em(1200);
+$med-x: scut-em(960);
+$sm-x: scut-em(768);
 
 $fz-0: scut-em(13);
 $fz-1: scut-em(16);
@@ -31,6 +33,11 @@ $fz-2: scut-em(20);
 $fz-3: scut-em(27);
 $fz-4: scut-em(34);
 $fz-5: scut-em(41);
+
+$pad-sm: $fz-1;
+$pad-med: $fz-4;
+$pad-lg: scut-em(72);
+
 
 
 /*==========================

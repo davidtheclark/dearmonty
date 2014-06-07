@@ -132,6 +132,7 @@ module.exports = (grunt) ->
         parseFiles: false
         tests: [
           "csstransforms"
+          "csstransforms3d"
         ]
         devFile: "<%= vars.jsSrcDir %>/lib/modernizr-dev.js"
         outputFile: "<%= vars.jsDistDir %>/modernizr-custom.js"

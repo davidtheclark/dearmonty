@@ -1,0 +1,9 @@
+.link-list {
+  @extend %scut-list-unstyled;
+}
+
+.link-in-list {
+  border-top: 1px solid $c-gray-light;
+  text-decoration: none;
+  @include scut-padding($fz-0 n);
+}

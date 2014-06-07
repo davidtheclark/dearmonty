@@ -1,28 +1,21 @@
 $testimonial-info-x: scut-em(200);
 
-.testimonial-caption {
-  font-weight: bold;
-}
-
-.testimonial-btn {
-  margin-top: 0.5em;
-}
-
-#random-testimonial-inner {
-  @include scut-padding(n 3em);
-  text-align: center;
+#random-testimonial {
+  @include scut-padding(n 5em);
   .testimonial-blockquote {
     color: $c-white;
-    font-size: 1.2em;
-    @include scut-margin(0 0 n n);
-    @include scut-padding(n 2em);
+    font-size: $fz-2;
+    @include scut-margin(0 auto n auto);
+    max-width: 40em;
     border-left: 0;
     @media #{$bp-until-sm} {
+      font-size: $fz-1;
       @include scut-padding(n 0);
     }
   }
   .testimonial-caption {
     color: $c-brown;
+    font-weight: bold;
     &:before {
       content: "";
       display: block;
@@ -38,7 +31,7 @@ $testimonial-info-x: scut-em(200);
   right: 0;
   top: 0;
   bottom: 0;
-  width: 3em;
+  width: $fz-5;
   background: rgba(255,255,255,0.2);
   &:after {
     content: "";
@@ -48,24 +41,21 @@ $testimonial-info-x: scut-em(200);
 }
 
 @media only screen and (max-width: 800px) {
-  #random-testimonial-inner {
+  #random-testimonial {
     @include scut-padding(n 1em 5em);
   }
   .random-testimonial-btn {
-    text-decoration: none;
     top: auto;
     left: 0;
     width: 100%;
-    height: 3em;
+    height: $fz-5;
     &:after {
       display: none;
     }
     &:before {
       content: "see another testimonial";
-      line-height: 3em;
-      color: $c-white;
+      line-height: $fz-5;
       display: block;
-      text-align: center;
     }
   }
 }

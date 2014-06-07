@@ -9,7 +9,7 @@ body {
 .feature {
   font-weight: bold;
   line-height: 1.1;
-  @include scut-margin(20px n 10px);
+  @include scut-margin(20px n 13px);
   text-decoration: none;
   > a {
     text-decoration: none;
@@ -63,7 +63,7 @@ body {
 a {
   color: $c-blue;
   @include scut-selected {
-    color: darken($c-blue,10);
+    color: darken($c-blue, 10);
   }
 }
 
