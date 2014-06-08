@@ -79,21 +79,21 @@ get_header(); ?>
     <h2 class="feature">Start by browsing hundreds of&nbsp;articles&nbsp;&hellip;</h2>
     <div class="row">
       <div class="col col-third-guttered">
-        <a href="<?php echo get_permalink(43); ?>" class="link-block home-action m-buying heading-2">
+        <a href="<?php echo esc_url(get_permalink(get_page_by_title('Home Buying'))); ?>" class="link-block home-action m-buying heading-2">
           <div class="home-icon grunticon-home-white"></div>
           Buying
         </a>
         <p>Buy a home buy a home buy a home buy a home buy a home buy a home</p>
       </div>
       <div class="col col-third-guttered">
-        <a href="<?php echo get_permalink(39); ?> " class="link-block home-action m-selling heading-2">
+        <a href="<?php echo esc_url(get_permalink(get_page_by_title('Home Selling'))); ?> " class="link-block home-action m-selling heading-2">
           <div class="home-icon grunticon-home2-white"></div>
           Selling
         </a>
         <p>Sell a home sell a home sell a home sell a home sell a home sell a home</p>
       </div>
       <div class="col col-third-guttered">
-        <a href="<?php echo get_permalink(41); ?> " class="link-block home-action m-owning heading-2">
+        <a href="<?php echo esc_url(get_permalink(get_page_by_title('Home Owning'))); ?> " class="link-block home-action m-owning heading-2">
           <div class="home-icon grunticon-home3-white"></div>
           Owning
         </a>
