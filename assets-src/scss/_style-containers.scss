@@ -19,6 +19,9 @@
 // padding
 .p-y-lg {
   @include scut-padding($pad-lg n);
+  @media #{$bp-until-med} {
+    @include scut-padding($pad-med n);
+  }
 }
 .p-y-med {
   @include scut-padding($pad-med n);

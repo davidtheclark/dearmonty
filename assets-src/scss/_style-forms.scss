@@ -57,6 +57,7 @@ input[type="submit"] {
   @extend .btn-rust;
   @extend .btn-lg;
   @include scut-margin(1em n);
+  border-radius: 0;
 }
 
 label {

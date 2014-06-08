@@ -11,7 +11,15 @@
     $recent_posts_query->the_post();
   ?>
   <li>
-    <a href="<?php the_permalink(); ?>" class="link-in-list"><?php the_title(); ?></a>
+    <a href="<?php the_permalink(); ?>" class="link-in-list">
+      <?php
+      if (get_field('question')) {
+        the_field('question');
+      } else {
+        the_title();
+      }
+      ?>
+    </a>
   </li>
   <?php endwhile; ?>
 </ol>

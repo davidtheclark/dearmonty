@@ -600,6 +600,10 @@ blockquote {
 .p-y-lg {
   padding-top: 4.5em;
   padding-bottom: 4.5em; }
+  @media only screen and (max-width: 47em) {
+    .p-y-lg {
+      padding-top: 2.125em;
+      padding-bottom: 2.125em; } }
 
 .p-y-med {
   padding-top: 2.125em;
@@ -654,9 +658,6 @@ blockquote {
 .col-main {
   width: 70%;
   padding: 2.5625em 2.125em 4.5em 0; }
-  @media only screen and (max-width: 48em) {
-    .col-main {
-      padding: 1.25em 0.8125em; } }
 
 .col-side {
   width: 30%;
@@ -665,7 +666,7 @@ blockquote {
   padding-left: 0.8125em;
   padding-bottom: 0.8125em; }
 
-@media only screen and (max-width: 48em) {
+@media only screen and (max-width: 47em) {
   .col {
     float: none;
     width: 100%; }
@@ -674,12 +675,13 @@ blockquote {
   .col-third-guttered {
     margin-left: 0; }
   .col-main {
-    padding: 4.5em 0; }
+    padding: 2.125em 0; }
   .col-side {
-    margin-left: -1em;
     margin-right: -1em;
+    margin-left: -1em;
+    margin-bottom: 2.125em;
     width: auto;
-    padding: 4.5em 1em; } }
+    padding: 2.125em 1em; } }
 
 ul.page-numbers {
   display: table;
@@ -761,7 +763,7 @@ a.page-numbers:hover, a.page-numbers:focus {
 
 .btn-lg, input[type="submit"] {
   font-size: 1.25em; }
-  @media only screen and (max-width: 48em) {
+  @media only screen and (max-width: 47em) {
     .btn-lg {
       font-size: 1em; } }
 
@@ -781,13 +783,14 @@ input[type="radio"], input[type="checkbox"] {
 
 input[type="submit"] {
   margin-top: 1em;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  border-radius: 0; }
 
 label {
   display: block; }
 
 .site-header {
-  padding-bottom: 0; }
+  padding-top: 1em; }
 
 #site-body {
   border-top: 20px solid #fff; }
@@ -872,7 +875,7 @@ label {
   text-transform: none;
   max-width: 10em; }
 
-@media only screen and (max-width: 48em) {
+@media only screen and (max-width: 47em) {
   #nav-container.is-mbl-hidden {
     margin-top: 0;
     padding-top: 1em;
@@ -1127,7 +1130,7 @@ label {
 .post-in-list-home {
   margin-bottom: 10px; }
 
-@media only screen and (max-width: 48em) {
+@media only screen and (max-width: 47em) {
   #home-latest-post {
     margin-bottom: 40px; } }
 
