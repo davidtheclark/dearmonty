@@ -38,9 +38,6 @@ module.exports = (grunt) ->
     sass:
       options:
         sourceComments: "map"
-      main:
-        dest: "<%= vars.cssDir %>/main.css"
-        src: "<%= vars.scssDir %>/main.scss"
       style:
         dest: "<%= vars.cssDir %>/style.css"
         src: "<%= vars.scssDir %>/style.scss"
@@ -52,7 +49,6 @@ module.exports = (grunt) ->
         browsers: ["> 1%", "last 3 versions", "ie 9"]
       style:
         files:
-          "<%= sass.main.dest %>": "<%= sass.main.dest %>"
           "<%= sass.style.dest %>": "<%= sass.style.dest %>"
 
     # Compress CSS.

@@ -14,8 +14,8 @@
     border-top-color: $c-selling;
   }
   // owning
-  .page-id-2262 &,
-  .parent-pageid-2262 & {
+  .page-id-2457 &,
+  .parent-pageid-2457 & {
     border-top-color: $c-owning;
   }
 }
@@ -27,7 +27,7 @@
 
 #nav-container {
   float: right;
-  margin-top: scut-em(40);
+  margin-top: 3em;
   @media only screen and (max-width: 1100px) {
     clear: both;
     float: left;

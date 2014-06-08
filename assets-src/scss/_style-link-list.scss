@@ -1,9 +1,37 @@
-.link-list {
-  @extend %scut-list-unstyled;
-}
-
 .link-in-list {
+  display: block;
   border-top: 1px solid $c-gray-light;
   text-decoration: none;
   @include scut-padding($fz-0 n);
+}
+
+.steps-list {
+  @include scut-list-custom(count, 2em);
+  padding-left: 0;
+  > li {
+    &:before {
+      border: 1px solid;
+      border-radius: 50%;
+      top: 0.9em;
+      left: 0;
+      width: 1.5em;
+      height: 1.5em;
+      text-align: center;
+      line-height: 1.3;
+    }
+    > a {
+      padding-left: 2em;
+      display: block;
+      @include scut-padding($fz-0 n);
+      border-bottom: 1px solid;
+    }
+  }
+}
+
+.steps-owning {
+  > li {
+    &:before {
+      content: $scut-circle;
+    }
+  }
 }

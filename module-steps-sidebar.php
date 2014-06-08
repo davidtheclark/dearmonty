@@ -1,6 +1,11 @@
+<?php $owning = ($steps_parent_name === 'home-owning'); ?>
 <aside class="col col-side sidesteps m-<?php echo $steps_parent_name; ?>">
-  <h2 class="heading heading-4">The Steps of <?php echo $parent_title; ?></h2>
-  <ol class="sidebar-steps-list">
+  <h2 class="heading heading-4">
+    <?php if (!$owning): ?>
+    The Steps of
+    <?php endif; ?>
+    <?php echo $parent_title; ?></h2>
+  <ol class="steps-list<?php if ($owning) { echo ' steps-owning'; } ?>">
     <?php
     // Get children pages -- the steps.
     $steps_args = array(

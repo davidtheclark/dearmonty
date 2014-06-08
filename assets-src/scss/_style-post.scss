@@ -55,16 +55,14 @@
     color: $c-white;
     text-decoration: none;
   }
-  a {
-    @include scut-selected {
-      text-decoration: underline;
-    }
-  }
   @include scut-padding(n 20px);
   &.m-home-buying {
     background: $c-buying;
   }
   &.m-home-selling {
     background: $c-selling;
+  }
+  &.m-home-owning {
+    background: $c-owning;
   }
 }

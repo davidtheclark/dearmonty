@@ -1,6 +1,6 @@
 .cc {
   @include scut-center-block($max-x);
-  padding: $fz-1;
+  @include scut-padding(n $fz-1);
 }
 
 .cc-med {

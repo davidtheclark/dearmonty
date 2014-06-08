@@ -7,7 +7,7 @@
 
 get_header();?>
 
-<main class="content-container row" role="main">
+<main class="cc cc-med row" role="main">
   <?php while ( have_posts() ) : the_post();
   $parent_id = $post->post_parent;
   $parent = get_post($parent_id);
@@ -16,7 +16,7 @@ get_header();?>
   $steps_parent_name = $parent->post_name;
   ?>
 
-  <div class="container col col-main">
+  <div class="col col-main">
     <?php
       $page_num = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
 

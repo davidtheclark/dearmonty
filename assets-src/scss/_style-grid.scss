@@ -33,15 +33,15 @@ $gutter: 2%;
 
 .col-main {
   width: 70%;
-  padding: 40px 60px 40px 10px;
+  padding: $fz-5 $pad-med $pad-lg 0;
   @media #{$bp-until-med} {
-    padding: 20px 10px;
+    padding: $fz-2 $fz-0;
   }
 }
 
 .col-side {
   width: 30%;
-  @include scut-padding(40px 10px 10px);
+  @include scut-padding($fz-5 $fz-0 $fz-0);
 }
 
 @media #{$bp-until-med} {
@@ -57,6 +57,16 @@ $gutter: 2%;
 
   .col-third-guttered {
     margin-left: 0;
+  }
+
+  .col-main {
+    padding: $pad-lg 0;
+  }
+
+  .col-side {
+    @include scut-margin(n -1em);
+    width: auto;
+    padding: $pad-lg 1em;
   }
 
 }

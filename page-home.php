@@ -22,8 +22,18 @@ get_header(); ?>
               <span class="icon icon-inline grunticon-newspaper-gray"></span>
               This Week's Article
             </h2>
-            <h3 class="heading heading-3"><?php the_field('question'); ?></h3>
-            <?php the_field('answer'); ?>
+            <h3 class="heading heading-3">
+              <?php if (get_field('question')) {
+                the_field('question');
+              } else {
+                the_title();
+              } ?>
+            </h3>
+            <?php if (get_field('answer')) {
+              the_field('answer');
+            } else {
+              the_excerpt();
+            } ?>
           </a>
         <?php endwhile;
         wp_reset_postdata(); ?>
@@ -45,7 +55,13 @@ get_header(); ?>
               $recent_posts_query->the_post();
             ?>
             <li>
-              <a href="<?php the_permalink(); ?>" class="link-block link-in-list"><?php the_field('question'); ?></a>
+              <a href="<?php the_permalink(); ?>" class="link-block link-in-list">
+                <?php if (get_field('question')) {
+                  the_field('question');
+                } else {
+                  the_title();
+                } ?>
+              </a>
             </li>
             <?php endwhile; ?>
           </ol>

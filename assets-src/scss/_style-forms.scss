@@ -39,9 +39,11 @@ input[type="search"],
 textarea {
   box-shadow: none;
   border: 1px solid $c-gray-light;
+  border-radius: 0;
   line-height: 20px;
   padding: 9px 1em;
   width: 100%;
+  margin-bottom: 1em;
   -webkit-appearance: none;
 }
 
@@ -50,9 +52,13 @@ input[type="checkbox"] {
   margin-right: 0.3em;
 }
 
+input[type="submit"] {
+  @extend .btn;
+  @extend .btn-rust;
+  @extend .btn-lg;
+  @include scut-margin(1em n);
+}
+
 label {
   display: block;
-  @extend .m-sm-t;
-  @extend .m-xsm-b;
-  @extend .f-light;
 }
