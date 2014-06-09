@@ -1,1 +1,5 @@
-Keep track here of things that need keeping-track-of, such as which Modernizr tasks are used (in order to prepare a custom build for production).
+# Refactoring
+
+- wordpress style guide
+- get question or title function, and answer or summary
+-

@@ -7,9 +7,17 @@
 <div class="cc cc-med row">
   <article class="col col-main">
     <header>
+      <div class="heading heading-4"><?php the_date(); ?></div>
       <h1 class="heading heading-1">
-        <?php the_title(); ?>
+        <?php if (get_field('question')) {
+          the_field('question');
+        } else {
+          the_title();
+        } ?>
       </h1>
+      <?php if (get_field('answer')): ?>
+        <div class="blockquote"><?php the_field('answer'); ?></div>
+      <?php endif; ?>
     </header>
 
     <div class="entry-content">

@@ -27,3 +27,21 @@
     margin-top: 10px;
   }
 }
+
+.post-list-date {
+  color: $c-gray;
+  font-weight: bold;
+  float: left;
+  margin-right: 0.5em;
+  &:after {
+    content: $scut-bull;
+    margin-left: 0.5em;
+  }
+  @media #{$bp-until-sm} {
+    float: none;
+    margin-right: 0;
+    &:after {
+      display: none;
+    }
+  }
+}

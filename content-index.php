@@ -26,6 +26,8 @@
     } ?>
   </div>
 
+  <div class="post-list-date"><?php the_date(); ?></div>
+
   <?php include 'module-post-categories.php'; ?>
 
 </article>

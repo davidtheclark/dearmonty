@@ -71,10 +71,13 @@ b {
   font-weight: bold;
 }
 
-blockquote {
+blockquote,
+.blockquote {
   font-style: italic;
   margin-left: 0;
   color: $c-gray;
+  font-size: $fz-2;
   border-left: 2px solid $c-gray-light;
   padding-left: 20px;
+  margin: 1em 0;
 }
