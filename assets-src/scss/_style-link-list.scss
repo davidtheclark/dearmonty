@@ -14,18 +14,40 @@
       border-radius: 50%;
       top: 0.9em;
       left: 0;
-      width: 1.5em;
-      height: 1.5em;
+      width: 24px;
+      height: 24px;
+      line-height: 20px;
       text-align: center;
-      line-height: 1.3;
-    }
-    > a {
-      padding-left: 2em;
-      display: block;
-      @include scut-padding($fz-0 n);
-      border-bottom: 1px solid;
+      z-index: 2;
     }
   }
+}
+
+.sidestep-link {
+  padding-left: 30px;
+  display: block;
+  @include scut-padding($fz-0 n);
+  border-bottom: 1px solid;
+  &.is-current {
+    @include scut-margin(n -20px);
+    border-top: 1px solid;
+    position: relative;
+    top: -1px;
+    padding-left: 50px;
+    padding-right: 20px;
+  }
+
+  .m-home-selling &.is-current {
+    background-color: darken($c-selling, 10);
+  }
+  .m-home-buying &.is-current {
+    background-color: darken($c-buying, 10);
+  }
+  .m-home-owning &.is-current {
+    background-color: darken($c-owning, 10);
+  }
+
+
 }
 
 .steps-owning {

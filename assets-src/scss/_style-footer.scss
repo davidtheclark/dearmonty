@@ -27,6 +27,7 @@
 #signup-email {
   width: scut-em(250);
   margin-left: 1em;
+  margin-bottom: 0;
   @media (max-width: scut-em(700)) {
     margin-left: 0;
   }
@@ -43,23 +44,6 @@
 
 .footer-fine-print {
   text-align: right;
-}
-
-@media (max-width: 37.5em) {
-  .footer-nav-primary {
-    a {
-      display: block;
-      line-height: 40px;
-      text-decoration: none;
-      border-bottom: 1px solid $c-gray-light;
-    }
-  }
-  .footer-nav-primary {
-    @include scut-margin(1em n);
-  }
-  .footer-fine-print {
-    text-align: left;
-  }
 }
 
 .action {
@@ -92,7 +76,26 @@
   background-color: $c-orange;
 }
 
-@media (max-width: 37.5em) {
+@media #{$bp-until-med} {
+
+  .footer-nav-primary {
+    a {
+      display: block;
+      line-height: 40px;
+      text-decoration: none;
+      border-bottom: 1px solid $c-gray-light;
+    }
+  }
+
+  .footer-nav-primary {
+    @include scut-margin(1em n);
+  }
+
+
+  .footer-fine-print {
+    text-align: left;
+  }
+
   .action {
     @include scut-margin(n 0);
   }

@@ -63,3 +63,18 @@ input[type="submit"] {
 label {
   display: block;
 }
+
+.form-full-c {
+  form {
+    margin-top: $pad-med;
+    @extend .well;
+    @extend .well-brown;
+    @extend .well-shadowed;
+
+    section + section {
+      border-top: 1px solid $c-gray-light;
+      padding-top: $pad-sm;
+      margin-top: 0.5em;
+    }
+  }
+}

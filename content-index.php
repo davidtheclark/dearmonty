@@ -18,14 +18,6 @@
     </h1>
   </header>
 
-  <div class="entry-summary">
-    <?php if (get_field('answer')) {
-      the_field('answer');
-    } else {
-      the_excerpt();
-    } ?>
-  </div>
-
   <div class="post-list-date"><?php the_date(); ?></div>
 
   <?php include 'module-post-categories.php'; ?>

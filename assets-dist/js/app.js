@@ -23,6 +23,7 @@ module.exports = links;
 var links = require('./links');
 var Testimonials = require('./testimonial');
 var MobileNav = require('./mobile-nav');
+var sidesteps = require('./sidesteps');
 
 $(function() {
 
@@ -36,8 +37,10 @@ $(function() {
     var mobileNav = new MobileNav();
   }
 
+  sidesteps();
+
 });
-},{"./links":1,"./mobile-nav":3,"./testimonial":4}],3:[function(require,module,exports){
+},{"./links":1,"./mobile-nav":3,"./sidesteps":4,"./testimonial":5}],3:[function(require,module,exports){
 function MobileNav() {
 
   var $nav = $('#nav-container'),
@@ -94,6 +97,24 @@ function MobileNav() {
 
 module.exports = MobileNav;
 },{}],4:[function(require,module,exports){
+function sidebar() {
+
+  var $links = $('.sidestep-link');
+  var currentClass = 'is-current';
+
+  if (!$links.length) return;
+
+  $links.each(function () {
+    var $link = $(this);
+    if ($link.attr('href') === window.location.href) {
+      $link.addClass('is-current');
+    }
+  });
+
+}
+
+module.exports = sidebar;
+},{}],5:[function(require,module,exports){
 function Testimonials(elementId) {
   // element whose id is passed needs to have a
   // `data-random-href` attribute pointing to a page

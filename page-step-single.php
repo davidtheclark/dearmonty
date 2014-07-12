@@ -17,6 +17,7 @@ get_header();?>
   ?>
 
   <div class="col col-main">
+
     <?php
       $page_num = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
 
@@ -49,7 +50,9 @@ get_header();?>
           $steps_posts_query->the_post();
         ?>
         <li class="post-in-list">
-          <?php get_template_part( 'content', 'index' ); ?>
+          <div class="well well-brown well-shadowed">
+            <?php get_template_part( 'content', 'index' ); ?>
+          </div>
         </li>
         <?php endwhile; ?>
       </ol>

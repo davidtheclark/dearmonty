@@ -18,6 +18,7 @@
   > dd + dd:before {
     content: $scut-middot;
     float: left;
+    font-style: normal;
     @include scut-margin(n 0.3em);
   }
   .single-post & {

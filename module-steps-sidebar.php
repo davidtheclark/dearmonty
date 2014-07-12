@@ -21,7 +21,7 @@
       $steps_query->the_post();
     ?>
     <li>
-      <a href="<?php the_permalink(); ?> "><?php the_title(); ?></a>
+      <a href="<?php the_permalink(); ?>" class="sidestep-link"><?php the_title(); ?></a>
     </li>
     <?php endwhile; wp_reset_query(); ?>
   </ol>

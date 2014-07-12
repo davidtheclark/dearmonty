@@ -7,7 +7,9 @@
 <div class="cc cc-med row">
   <article class="col col-main">
     <header>
-      <div class="heading heading-4"><?php the_date(); ?></div>
+      <?php if (!is_page()): ?>
+        <div class="heading heading-4"><?php the_date(); ?></div>
+      <?php endif; ?>
       <h1 class="heading heading-1">
         <?php if (get_field('question')) {
           the_field('question');

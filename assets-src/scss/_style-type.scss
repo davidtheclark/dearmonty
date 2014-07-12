@@ -38,7 +38,7 @@ body {
   color: $c-rust;
   font-size: $fz-3;
   @media #{$bp-until-sm} {
-    font-size: $fz-1;
+    font-size: $fz-2;
   }
 }
 .heading-4 {
@@ -76,7 +76,6 @@ blockquote,
   font-style: italic;
   margin-left: 0;
   color: $c-gray;
-  font-size: $fz-2;
   border-left: 2px solid $c-gray-light;
   padding-left: 20px;
   margin: 1em 0;

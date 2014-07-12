@@ -83,21 +83,21 @@ get_header(); ?>
           <div class="home-icon grunticon-home-white"></div>
           Buying
         </a>
-        <p>Buy a home buy a home buy a home buy a home buy a home buy a home</p>
+        <p>Read about everything related to buying a home, from getting a good mortgage to making your offer the most attractive.</p>
       </div>
       <div class="col col-third-guttered">
         <a href="<?php echo esc_url(get_permalink(get_page_by_title('Home Selling'))); ?> " class="link-block home-action m-selling heading-2">
           <div class="home-icon grunticon-home2-white"></div>
           Selling
         </a>
-        <p>Sell a home sell a home sell a home sell a home sell a home sell a home</p>
+        <p>Learn how to maximize your home's value and read what issues come up in the home selling process.</p>
       </div>
       <div class="col col-third-guttered">
         <a href="<?php echo esc_url(get_permalink(get_page_by_title('Home Owning'))); ?> " class="link-block home-action m-owning heading-2">
           <div class="home-icon grunticon-home3-white"></div>
           Owning
         </a>
-        <p>Owning a home owning a home owning a home owning a home owning a home </p>
+        <p>From maintenance to investment income, read articles about owning and managing your property.</p>
       </div>
     </div>
   </section>

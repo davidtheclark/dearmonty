@@ -547,7 +547,7 @@ body {
   font-size: 1.6875em; }
   @media only screen and (max-width: 30em) {
     .heading-3 {
-      font-size: 1em; } }
+      font-size: 1.25em; } }
 
 .heading-4 {
   color: #696969;
@@ -578,7 +578,6 @@ blockquote, .blockquote {
   font-style: italic;
   margin-left: 0;
   color: #696969;
-  font-size: 1.25em;
   border-left: 2px solid #b3b3b3;
   padding-left: 20px;
   margin: 1em 0; }
@@ -626,7 +625,7 @@ blockquote, .blockquote {
   background-color: #85BF76;
   color: #fff; }
 
-.bg-brown, .well-brown {
+.bg-brown, .well-brown, .form-full-c form {
   background-color: #EAE7D9; }
 
 .bg-lined {
@@ -666,7 +665,8 @@ blockquote, .blockquote {
   padding-top: 2.5625em;
   padding-right: 0.8125em;
   padding-left: 0.8125em;
-  padding-bottom: 0.8125em; }
+  padding-bottom: 0.8125em;
+  margin-bottom: 2.125em; }
 
 @media only screen and (max-width: 47em) {
   .col {
@@ -679,8 +679,6 @@ blockquote, .blockquote {
   .col-main {
     padding: 2.125em 0; }
   .col-side {
-    margin-right: -1em;
-    margin-left: -1em;
     margin-bottom: 2.125em;
     width: auto;
     padding: 2.125em 1em; } }
@@ -790,6 +788,13 @@ input[type="submit"] {
 
 label {
   display: block; }
+
+.form-full-c form {
+  margin-top: 2.125em; }
+  .form-full-c form section + section {
+    border-top: 1px solid #b3b3b3;
+    padding-top: 1em;
+    margin-top: 0.5em; }
 
 .site-header {
   padding-top: 1em; }
@@ -982,7 +987,8 @@ label {
 
 #signup-email {
   width: 15.625em;
-  margin-left: 1em; }
+  margin-left: 1em;
+  margin-bottom: 0; }
   @media (max-width: 43.75em) {
     #signup-email {
       margin-left: 0; } }
@@ -995,18 +1001,6 @@ label {
 
 .footer-fine-print {
   text-align: right; }
-
-@media (max-width: 37.5em) {
-  .footer-nav-primary a {
-    display: block;
-    line-height: 40px;
-    text-decoration: none;
-    border-bottom: 1px solid #b3b3b3; }
-  .footer-nav-primary {
-    margin-top: 1em;
-    margin-bottom: 1em; }
-  .footer-fine-print {
-    text-align: left; } }
 
 .action {
   display: block;
@@ -1032,16 +1026,26 @@ label {
 .action-find {
   background-color: #D97B29; }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 47em) {
+  .footer-nav-primary a {
+    display: block;
+    line-height: 40px;
+    text-decoration: none;
+    border-bottom: 1px solid #b3b3b3; }
+  .footer-nav-primary {
+    margin-top: 1em;
+    margin-bottom: 1em; }
+  .footer-fine-print {
+    text-align: left; }
   .action {
     margin-left: 0;
     margin-right: 0; } }
 
-.well {
+.well, .form-full-c form {
   border: 1px solid #b3b3b3;
   padding: 1.5em; }
 
-.well-shadowed {
+.well-shadowed, .form-full-c form {
   -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.52);
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.52);
   border-color: #fff; }
@@ -1064,6 +1068,7 @@ label {
   .categories > dd + dd:before {
     content: "\00b7";
     float: left;
+    font-style: normal;
     margin-left: 0.3em;
     margin-right: 0.3em; }
   .single-post .categories {
@@ -1093,7 +1098,7 @@ label {
   font-size: 0.8125em;
   padding: 10px; }
 
-.col-side.well {
+.col-side.well, .form-full-c form.col-side {
   margin-top: 40px; }
 
 .sidesteps {
@@ -1115,8 +1120,7 @@ label {
 
 .post-in-list {
   padding-top: 20px;
-  padding-bottom: 20px;
-  border-top: 1px solid #b3b3b3; }
+  padding-bottom: 20px; }
   .post-in-list .heading > a {
     color: #A63921; }
     .post-in-list .heading > a:hover, .post-in-list .heading > a:focus {
@@ -1279,16 +1283,32 @@ label {
     border-radius: 50%;
     top: 0.9em;
     left: 0;
-    width: 1.5em;
-    height: 1.5em;
+    width: 24px;
+    height: 24px;
+    line-height: 20px;
     text-align: center;
-    line-height: 1.3; }
-  .steps-list > li > a {
-    padding-left: 2em;
-    display: block;
-    padding-top: 0.8125em;
-    padding-bottom: 0.8125em;
-    border-bottom: 1px solid; }
+    z-index: 2; }
+
+.sidestep-link {
+  padding-left: 30px;
+  display: block;
+  padding-top: 0.8125em;
+  padding-bottom: 0.8125em;
+  border-bottom: 1px solid; }
+  .sidestep-link.is-current {
+    margin-left: -20px;
+    margin-right: -20px;
+    border-top: 1px solid;
+    position: relative;
+    top: -1px;
+    padding-left: 50px;
+    padding-right: 20px; }
+  .m-home-selling .sidestep-link.is-current {
+    background-color: #67af53; }
+  .m-home-buying .sidestep-link.is-current {
+    background-color: #2b7997; }
+  .m-home-owning .sidestep-link.is-current {
+    background-color: #b0601f; }
 
 .steps-owning > li:before {
   content: "\25cf"; }

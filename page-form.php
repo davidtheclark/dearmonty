@@ -13,7 +13,7 @@ get_header(); ?>
 
     <h1 class="heading heading-1"><?php the_title(); ?></h1>
 
-    <div class="well well-brown">
+    <div class="form-full-c">
 
       <?php while ( have_posts() ) : the_post(); ?>
         <?php the_content(); ?>

@@ -5,7 +5,6 @@
 
 .post-in-list {
   @include scut-padding(20px n);
-  border-top: 1px solid $c-gray-light;
   .heading > a {
     color: $c-rust;
     @include scut-selected {
