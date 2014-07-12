@@ -29,12 +29,12 @@ get_header(); ?>
         s.parentNode.insertBefore(gcse, s);
       })();
     </script>
-    <gcse:searchresults-only></gcse:searchresults-only>
+    <gcse:searchresults-only>Searching &hellip;</gcse:searchresults-only>
 
   </main>
 
   <aside class="col col-side well well-brown well-shadowed">
-      <?php include "module-recent.php"; ?>
+    <?php include "module-recent.php"; ?>
   </aside>
 
 </div>

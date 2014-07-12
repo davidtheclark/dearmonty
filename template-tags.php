@@ -30,5 +30,7 @@ function dearmonty_pagination($the_query) {
 	  'type' => 'list',
 	  'end_size' => 0,
 	  'mid_size' => 0,
+	  'prev_text' => __('« Newer'),
+	  'next_text' => __('Older »'),
 	) );
 }

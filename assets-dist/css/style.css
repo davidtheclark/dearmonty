@@ -516,15 +516,15 @@ body {
   font-size: 100%;
   line-height: 1.5; }
 
-.heading, .feature {
+.heading, .entry-content h2, .entry-content h3, .feature {
   font-weight: bold;
   line-height: 1.1;
   margin-top: 20px;
   margin-bottom: 13px;
   text-decoration: none; }
-  .heading > a, .feature > a {
+  .heading > a, .heading > .entry-content h2, .entry-content .heading > h2, .heading > .entry-content h3, .entry-content .heading > h3, .feature > a {
     text-decoration: none; }
-  .heading:first-child, .feature:first-child {
+  .heading:first-child, .entry-content h2:first-child, .entry-content h3:first-child, .feature:first-child {
     margin-top: 0; }
 
 .heading-1 {
@@ -542,14 +542,14 @@ body {
     .heading-2 {
       font-size: 1.25em; } }
 
-.heading-3 {
+.heading-3, .entry-content h2 {
   color: #A63921;
   font-size: 1.6875em; }
   @media only screen and (max-width: 30em) {
     .heading-3 {
       font-size: 1.25em; } }
 
-.heading-4 {
+.heading-4, .entry-content h3 {
   color: #696969;
   font-size: 1.25em; }
   @media only screen and (max-width: 30em) {
@@ -1104,7 +1104,7 @@ label {
 .sidesteps {
   padding-left: 20px;
   padding-right: 20px; }
-  .sidesteps, .sidesteps .heading, .sidesteps a {
+  .sidesteps, .sidesteps .heading, .sidesteps .entry-content h2, .entry-content .sidesteps h2, .sidesteps .entry-content h3, .entry-content .sidesteps h3, .sidesteps a {
     color: #fff;
     text-decoration: none; }
   .sidesteps.m-home-buying {
@@ -1114,6 +1114,7 @@ label {
   .sidesteps.m-home-owning {
     background: #D97B29; }
 
+
 .post-list {
   margin-top: 20px;
   margin-bottom: 20px; }
@@ -1121,9 +1122,9 @@ label {
 .post-in-list {
   padding-top: 20px;
   padding-bottom: 20px; }
-  .post-in-list .heading > a {
+  .post-in-list .heading > a, .post-in-list .heading > .entry-content h2, .entry-content .post-in-list .heading > h2, .post-in-list .heading > .entry-content h3, .entry-content .post-in-list .heading > h3 {
     color: #A63921; }
-    .post-in-list .heading > a:hover, .post-in-list .heading > a:focus {
+    .post-in-list .heading > a:hover, .post-in-list .heading > .entry-content h2, .entry-content .post-in-list .heading > h2, .post-in-list .heading > .entry-content h3, .entry-content .post-in-list .heading > h3, .post-in-list .heading > a:focus, .post-in-list .heading > .entry-content h2, .entry-content .post-in-list .heading > h2, .post-in-list .heading > .entry-content h3, .entry-content .post-in-list .heading > h3 {
       text-decoration: underline; }
 
 .entry-summary {

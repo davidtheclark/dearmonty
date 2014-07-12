@@ -67,3 +67,14 @@
     background: $c-owning;
   }
 }
+
+.entry-content {
+  h2 {
+    @extend .heading;
+    @extend .heading-3;
+  }
+  h3 {
+    @extend .heading;
+    @extend .heading-4;
+  }
+}

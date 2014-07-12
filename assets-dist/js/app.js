@@ -89,6 +89,7 @@ function MobileNav() {
     } else {
       $body.off('click.nav');
     }
+    $('html,body').animate({ scrollTop: 0 }, 'fast');
     $nav.toggleClass(activeClass);
     $body.toggleClass(showingClass);
   }
