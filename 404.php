@@ -17,9 +17,9 @@ get_header(); ?>
 
 	    <div class="entry-content">
 	    	<ul>
-	    		<li>Try searching below (or above, in the menu) for what your looking for</li>
-	    		<li>Check out one of Monty's Recent Answers</li>
-	    		<li>Or <a rel="home" href="<?php echo home_url(); ?>">go to the homepage</a></li>
+	    		<li>Try searching below (or above, in the menu) for what you're looking for &hellip;</li>
+	    		<li>Or check out one of Monty's Recent Answers &hellip;</li>
+	    		<li>Or <a rel="home" href="<?php echo home_url(); ?>">go to the homepage</a>.</li>
 	    	</ul>
 
 	    	<form method="get" id="home-search" class="search-form" action="<?php echo esc_url( home_url( '/search' ) ); ?>" role="search">

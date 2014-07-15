@@ -38,7 +38,7 @@ $gutter: 2%;
 
 .col-side {
   width: 30%;
-  @include scut-padding($fz-5 $fz-0 $fz-0);
+  @include scut-padding($fz-5 $fz-0 0);
   margin-bottom: $pad-med;
 }
 
@@ -64,7 +64,7 @@ $gutter: 2%;
   .col-side {
     margin-bottom: $pad-med;
     width: auto;
-    padding: $pad-med 1em;
+    padding: $pad-med 1em 0;
   }
 
 }

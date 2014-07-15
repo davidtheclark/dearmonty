@@ -16,7 +16,6 @@ get_header(); ?>
       <div class="heading heading-1">
         &ldquo;<?php echo $_GET['q']; ?>&rdquo;</div>
     </h1>
-
     <script>
       (function() {
         var cx = '016029436127461204131:xu04bzsrofm';
@@ -29,7 +28,9 @@ get_header(); ?>
         s.parentNode.insertBefore(gcse, s);
       })();
     </script>
-    <gcse:searchresults-only>Searching &hellip;</gcse:searchresults-only>
+    <gcse:searchresults-only>
+      <div id="search-placeholder">Searching &hellip;</div>
+    </gcse:searchresults-only>
 
   </main>
 

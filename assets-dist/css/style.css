@@ -665,7 +665,7 @@ blockquote, .blockquote {
   padding-top: 2.5625em;
   padding-right: 0.8125em;
   padding-left: 0.8125em;
-  padding-bottom: 0.8125em;
+  padding-bottom: 0;
   margin-bottom: 2.125em; }
 
 @media only screen and (max-width: 47em) {
@@ -681,7 +681,7 @@ blockquote, .blockquote {
   .col-side {
     margin-bottom: 2.125em;
     width: auto;
-    padding: 2.125em 1em; } }
+    padding: 2.125em 1em 0; } }
 
 ul.page-numbers {
   display: table;
@@ -1268,7 +1268,10 @@ label {
 .steps-list {
   padding-left: 2em;
   list-style-type: none;
-  padding-left: 0; }
+  padding-left: 0;
+  margin-right: -20px;
+  margin-left: -20px;
+  margin-bottom: 0; }
   .steps-list > li {
     position: relative;
     counter-increment: scutlistcounter; }
@@ -1283,33 +1286,30 @@ label {
     border: 1px solid;
     border-radius: 50%;
     top: 0.9em;
-    left: 0;
+    left: 20px;
     width: 24px;
     height: 24px;
     line-height: 20px;
     text-align: center;
     z-index: 2; }
+  .steps-list > li.is-current {
+    z-index: 0;
+    top: -1px; }
+  .m-home-selling .steps-list > li.is-current {
+    background-color: #67af53; }
+  .m-home-buying .steps-list > li.is-current {
+    background-color: #2b7997; }
+  .m-home-owning .steps-list > li.is-current {
+    background-color: #b0601f; }
 
 .sidestep-link {
-  padding-left: 30px;
+  padding-left: 50px;
   display: block;
   padding-top: 0.8125em;
   padding-bottom: 0.8125em;
-  border-bottom: 1px solid; }
-  .sidestep-link.is-current {
-    margin-left: -20px;
-    margin-right: -20px;
-    border-top: 1px solid;
-    position: relative;
-    top: -1px;
-    padding-left: 50px;
-    padding-right: 20px; }
-  .m-home-selling .sidestep-link.is-current {
-    background-color: #67af53; }
-  .m-home-buying .sidestep-link.is-current {
-    background-color: #2b7997; }
-  .m-home-owning .sidestep-link.is-current {
-    background-color: #b0601f; }
+  border-top: 1px solid; }
+  .is-current .sidestep-link {
+    border-bottom: 0; }
 
 .steps-owning > li:before {
   content: "\25cf"; }
@@ -1378,4 +1378,7 @@ div.gsc-cursor-page {
   border-color: #3698BF;
   background-color: #3698BF;
   color: #fff !important; }
+
+.no-csstransforms #search-placeholder {
+  display: none; }
 /*# sourceMappingURL=style.css.map */

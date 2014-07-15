@@ -8,46 +8,44 @@
 .steps-list {
   @include scut-list-custom(count, 2em);
   padding-left: 0;
+  @include scut-margin(n -20px 0);
   > li {
     &:before {
       border: 1px solid;
       border-radius: 50%;
       top: 0.9em;
-      left: 0;
+      left: 20px;
       width: 24px;
       height: 24px;
       line-height: 20px;
       text-align: center;
       z-index: 2;
     }
+    &.is-current {
+      z-index: 0;
+      top: -1px;
+    }
+    .m-home-selling &.is-current {
+      background-color: darken($c-selling, 10);
+    }
+    .m-home-buying &.is-current {
+      background-color: darken($c-buying, 10);
+    }
+    .m-home-owning &.is-current {
+      background-color: darken($c-owning, 10);
+    }
   }
 }
 
 .sidestep-link {
-  padding-left: 30px;
+  padding-left: 50px;
   display: block;
   @include scut-padding($fz-0 n);
-  border-bottom: 1px solid;
-  &.is-current {
-    @include scut-margin(n -20px);
-    border-top: 1px solid;
-    position: relative;
-    top: -1px;
-    padding-left: 50px;
-    padding-right: 20px;
-  }
+  border-top: 1px solid;
 
-  .m-home-selling &.is-current {
-    background-color: darken($c-selling, 10);
+  .is-current & {
+    border-bottom: 0;
   }
-  .m-home-buying &.is-current {
-    background-color: darken($c-buying, 10);
-  }
-  .m-home-owning &.is-current {
-    background-color: darken($c-owning, 10);
-  }
-
-
 }
 
 .steps-owning {

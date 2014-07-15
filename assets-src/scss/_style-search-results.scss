@@ -84,3 +84,9 @@ div.gsc-cursor-page {
   background-color: $c-blue;
   color: $c-white !important;
 }
+
+.no-csstransforms {
+  #search-placeholder {
+    display: none;
+  }
+}

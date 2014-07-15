@@ -8,7 +8,7 @@ function sidebar() {
   $links.each(function () {
     var $link = $(this);
     if ($link.attr('href') === window.location.href) {
-      $link.addClass('is-current');
+      $link.parent().addClass('is-current');
     }
   });
 
