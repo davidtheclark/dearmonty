@@ -727,8 +727,10 @@ a.page-numbers:hover, a.page-numbers:focus {
     color: #696969; }
   .search-input[type="search"].m-lg {
     height: 76px;
-    line-height: 74px;
+    line-height: 24px;
     padding-left: 24px;
+    padding-top: 26px;
+    padding-bottom: 26px;
     font-size: 1.25em; }
 
 .search-submit {
