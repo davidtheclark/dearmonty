@@ -5,11 +5,11 @@
 
 .search-input[type="search"] {
   height: 60px;
-  line-height: 58px;
+  line-height: 20px;
+  padding: 20px 76px 20px 16px;
   box-sizing: border-box;
   border: 2px solid $c-gray-light;
   background: none;
-  padding: 0 76px 0 16px;
   margin-bottom: 0;
   -webkit-appearance: none;
   &::placeholder {

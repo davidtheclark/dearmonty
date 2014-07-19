@@ -708,13 +708,13 @@ a.page-numbers:hover, a.page-numbers:focus {
 
 .search-input[type="search"] {
   height: 60px;
-  line-height: 58px;
+  line-height: 20px;
+  padding: 20px 76px 20px 16px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: 2px solid #b3b3b3;
   background: none;
-  padding: 0 76px 0 16px;
   margin-bottom: 0;
   -webkit-appearance: none; }
   .search-input[type="search"]::-webkit-input-placeholder {
