@@ -35,9 +35,12 @@
             </div>
           </div>
 
-          <form id="subscribe" action="" class="footer-signup f-center">
+          <form id="subscribe" action="http://dearmonty.us8.list-manage.com/subscribe/post" method="POST" class="footer-signup f-center">
+            <input type="hidden" name="u" value="4383b02db8a051c3d24713404">
+            <input type="hidden" name="id" value="f8590afd7e">
+
             <label for="signup-email" class="footer-signup-blurb">Sign up to read new articles every Tuesday</label>
-            <input id="signup-email" type="email" placeholder="Enter your email">
+            <input id="signup-email" type="email" name="MERGE0" placeholder="Enter your email">
             <button id="signup-submit" type="submit" class="btn btn-rust">
               <span class="icon icon-sm icon-inline grunticon-envelope-white"></span>
               Subscribe
