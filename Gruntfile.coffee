@@ -105,8 +105,7 @@ module.exports = (grunt) ->
         dest: "<%= vars.jsSrcDir %>/lib/lodash.build.js"
         options:
           include: [
-            "throttle"
-            "sample"
+            # choose functions here
           ]
           flags: ["debug"]
 
@@ -115,10 +114,7 @@ module.exports = (grunt) ->
       lib:
         src: [
           # Insert third-party JS here, in the right order
-          "<%= lodash.build.dest %>"
-          "bower_components/jquery/dist/jquery.js"
-          "bower_components/velocity/jquery.velocity.js"
-          "bower_components/matchmedia/matchMedia.js"
+          # "<%= lodash.build.dest %>"
         ]
         dest: "<%= vars.jsDistDir %>/libs.js"
 
@@ -139,7 +135,7 @@ module.exports = (grunt) ->
       dist:
         files: [
           # libs
-          "<%= concat.lib.dest %>": "<%= concat.lib.dest %>"
+          # "<%= concat.lib.dest %>": "<%= concat.lib.dest %>"
           # app
           "<%= browserify.main.dest %>": "<%= browserify.main.dest %>"
         ]
@@ -234,8 +230,8 @@ module.exports = (grunt) ->
   # JS things
   grunt.registerTask "jsLibs", [
     "modernizr:build"
-    "lodash:build"
-    "concat:lib"
+    #"lodash:build"
+    #"concat:lib"
   ]
 
   # Build

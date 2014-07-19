@@ -19,11 +19,9 @@
 	<meta name="description" content="<?php echo get_bloginfo( 'description' ); ?>">
 	<meta property="og:title" content="<?php echo get_bloginfo( 'title' ); ?>">
   <meta property="og:description" content="<?php echo get_bloginfo( 'description' ); ?>">
-  <meta property="og:image" content="">
+  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets-dist/images/dearmonty-logo.png">
   <meta property="og:url" content="<?php echo get_bloginfo( 'url' ); ?>">
   <meta property="og:type" content="website">
-
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets-dist/css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>

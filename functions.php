@@ -77,11 +77,15 @@ function dearmonty_scripts() {
 	if (!is_admin()) add_action("wp_enqueue_scripts", "the_scripts", 11);
 	function the_scripts() {
 		global $wp_scripts;
-		// load third-party libs
+		// jquery
 		wp_deregister_script('jquery');
-		wp_register_script( 'libs', get_template_directory_uri() . '/assets-dist/js/libs.js', array(), false, true);
+	  wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js", false, null);
+		wp_enqueue_script('jquery');
+		// load third-party libs
+		//  -- not necessary at this time; if adding in the future be sure to add the dependency to app.js below
+		// wp_register_script( 'libs', get_template_directory_uri() . '/assets-dist/js/libs.js', array(), false, true);
 		// load compiled app
-		wp_register_script( 'app', get_template_directory_uri() . '/assets-dist/js/app.js', array('libs'), false, true);
+		wp_register_script( 'app', get_template_directory_uri() . '/assets-dist/js/app.js', array('jquery'), false, true);
 	 	wp_enqueue_script('app');
 	}
 }
