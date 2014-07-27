@@ -47,6 +47,10 @@ textarea {
   -webkit-appearance: none;
 }
 
+textarea {
+  display: block;
+}
+
 input[type="radio"],
 input[type="checkbox"] {
   margin-right: 0.3em;
@@ -56,7 +60,7 @@ input[type="submit"] {
   @extend .btn;
   @extend .btn-rust;
   @extend .btn-lg;
-  @include scut-margin(1em n);
+  margin-top: 1em;
   border-radius: 0;
 }
 
@@ -77,4 +81,31 @@ label {
       margin-top: 0.5em;
     }
   }
+}
+
+// stupid contact form 7
+
+.wpcf7-form-control-wrap {
+  display: block;
+}
+
+.wpcf7-not-valid-tip.wpcf7-not-valid-tip.wpcf7-not-valid-tip {
+  background-color: $c-error;
+  font-size: 1em;
+  display: block;
+  color: $c-white;
+  padding: 0.2em 0.5em;
+  margin-top: -1em;
+  margin-bottom: 1em;
+}
+
+.wpcf7-response-output.wpcf7-response-output {
+  background-color: $c-white;
+  color: $c-error;
+  margin: 1em 0 0 0;
+}
+
+.wpcf7-validation-errors.wpcf7-validation-errors {
+  border-color: $c-error;
+  padding: 0.2em 0.5em;
 }
