@@ -14,11 +14,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title><?php wp_title('|'); ?></title>
-	<meta property="og:title" content="<?php echo get_bloginfo( 'title' ); ?>">
-  <meta property="og:description" content="<?php echo get_bloginfo( 'description' ); ?>">
-  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets-dist/images/dearmonty-logo.png">
-  <meta property="og:url" content="<?php echo get_bloginfo( 'url' ); ?>">
-  <meta property="og:type" content="website">
 
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets-dist/css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
