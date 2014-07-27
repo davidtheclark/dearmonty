@@ -109,3 +109,10 @@ label {
   border-color: $c-error;
   padding: 0.2em 0.5em;
 }
+
+.wpcf7-mail-sent-ok.wpcf7-mail-sent-ok {
+  background-color: $c-green;
+  color: $c-white;
+  border: 0;
+  padding: 0.2em 0.5em;
+}

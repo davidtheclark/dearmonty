@@ -822,6 +822,12 @@ label {
   border-color: #E70000;
   padding: 0.2em 0.5em; }
 
+.wpcf7-mail-sent-ok.wpcf7-mail-sent-ok {
+  background-color: #85BF76;
+  color: #fff;
+  border: 0;
+  padding: 0.2em 0.5em; }
+
 .site-header {
   padding-top: 1em; }
 
