@@ -13,9 +13,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>
-		<?php echo get_bloginfo( 'title' ); ?>
-	</title>
+	<title><?php wp_title(''); ?></title>
 	<meta property="og:title" content="<?php echo get_bloginfo( 'title' ); ?>">
   <meta property="og:description" content="<?php echo get_bloginfo( 'description' ); ?>">
   <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets-dist/images/dearmonty-logo.png">
