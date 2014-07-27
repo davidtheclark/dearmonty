@@ -16,7 +16,6 @@
 	<title>
 		<?php echo get_bloginfo( 'title' ); ?>
 	</title>
-	<meta name="description" content="<?php echo get_bloginfo( 'description' ); ?>">
 	<meta property="og:title" content="<?php echo get_bloginfo( 'title' ); ?>">
   <meta property="og:description" content="<?php echo get_bloginfo( 'description' ); ?>">
   <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets-dist/images/dearmonty-logo.png">
